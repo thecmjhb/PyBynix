@@ -1,0 +1,20 @@
+{
+  "symbol": "EUR/USD OTC",
+  "interval": "1m",
+  "price": 1.09163,
+  "timestamp": 1792514717425,
+  "server_time": 1792514717425,
+  "payout": 94,
+  "candle": {
+    "timestamp": 1792514700,
+    "open": 1.09192,
+    "high": 1.09205,
+    "low": 1.09163,
+    "close": 1.09163,
+    "volume": 21.17
+  },
+  "closed": null,
+  "source": "live_engine",
+  "market": "otc",
+  "epoch": 0
+}

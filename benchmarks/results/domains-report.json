@@ -1,0 +1,156 @@
+[
+  {
+    "host": "bynixbrokers.com",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix-broker.com",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix-brokers.com",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix.app",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix.market",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix.net",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix.online",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.app",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.biz",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.blog",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.broker",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.capital",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.cash",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.forex",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.help",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.info",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.io",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.live",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.markets",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.online",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.pro",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.si",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.space",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixbroker.xyz",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynixtrade.com",
+    "reachable": true,
+    "trading_enabled": true,
+    "maintenance_mode": false
+  },
+  {
+    "host": "bynix.io",
+    "reachable": false
+  }
+]

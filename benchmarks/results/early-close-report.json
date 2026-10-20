@@ -1,0 +1,1 @@
+{"account_event_kind": "subscribed", "close_early_response_keys": ["success", "trade_id", "status", "refund", "return_pct", "profit_loss", "exit_price", "challenge", "balance"], "reconciled_status": "closed", "client_ref_roundtrip": false}

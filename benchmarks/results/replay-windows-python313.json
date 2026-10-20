@@ -1,0 +1,25 @@
+{
+  "benchmark": "json_decode_plus_decimal_tick_model",
+  "version": "0.1.0a1",
+  "python": "3.13.2",
+  "system": "Windows",
+  "machine": "AMD64",
+  "iterations_per_batch": 10000,
+  "batches": 10,
+  "warmup": 1000,
+  "fixture": "tests/fixtures/tick.json",
+  "batch_mean_ns_per_event": [
+    8741.78,
+    8846.37,
+    8694.58,
+    9757.93,
+    8846.89,
+    9330.08,
+    8690.0,
+    8921.89,
+    8644.97,
+    9099.93
+  ],
+  "median_batch_mean_ns_per_event": 8846.630000000001,
+  "limitations": "One recorded market tick; no network, queue dispatch, trading or competing SDK comparison."
+}

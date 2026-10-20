@@ -1,0 +1,15 @@
+{
+  "kind": "short_read_only_demo_data_observation",
+  "duration_seconds": 181.66420840000137,
+  "ticks": 356,
+  "max_arrival_gap_seconds": 2.4413100000001577,
+  "client_metrics": {
+    "ticks": 356,
+    "malformed_ticks": 0,
+    "connections": 1,
+    "requests": 1
+  },
+  "traced_python_peak_bytes": 2959944,
+  "process_cpu_seconds": 0.6875,
+  "limitations": "Three minutes on one Windows PC, one symbol, no deliberately induced outage; not a long stability study."
+}

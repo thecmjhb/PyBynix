@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-20",
+  "version": "0.1.0a1",
+  "offline_tests_passed": 24,
+  "ruff": "passed",
+  "wheel_and_sdist": "built",
+  "clean_wheel_live_candles": "passed",
+  "browser_login": "passed",
+  "real_funds_used": false,
+  "public_secret_scan": "no supplied owner credentials or saved session tokens found",
+  "ci_execution": "not run remotely"
+}

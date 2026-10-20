@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pybynix"
+version = "0.1.0a1"
+description = "Unofficial asynchronous Bynix market data and execution client"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "C. M. Jubayer Hossain Bappy"}]
+dependencies = ["httpx>=0.28,<1", "httpcore>=1,<2", "aiohttp>=3.12,<4", "python-socketio[asyncio_client]>=5.13,<6"]
+classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.49,<2"]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.9", "build>=1.2"]
+
+[project.scripts]
+pybynix = "pybynix.cli:main"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pybynix"]
