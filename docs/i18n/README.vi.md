@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Token phiên, đăng nhập bằng mật khẩu hoặc trình duyệt và callback 2FA. |
 | `get_assets · get_asset · get_payouts` | Danh mục tài sản, tra cứu đúng mã, trạng thái khả dụng và tỷ lệ chi trả. |
-| `get_candles · get_historical_candles` | Nến OHLCV mới và lịch sử phân trang với dấu thời gian UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Nến OHLCV mới và lịch sử phân trang với dấu thời gian UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Tick trực tiếp, nến đang hình thành hoặc đã đóng và REST polling dự phòng tự động. |
-| `place_order · wait_order_result · close_trade_early` | Lệnh demo, thật và funded được gửi rõ ràng, theo dõi kết quả và đóng sớm. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Lệnh demo, thật và funded được gửi rõ ràng, theo dõi kết quả và đóng sớm. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Nhật ký lệnh bền vững, khôi phục sau khởi động lại và ngăn mã tham chiếu trùng. |
 | `ClientPool · account_events · get_balance_breakdown` | Client độc lập có tên, sự kiện tài khoản và số dư chi tiết. |
 | `proxy · dns_servers · connect_any` | Proxy HTTP/SOCKS5, DNS tùy chỉnh và chuyển sang tên miền đáng tin cậy. |
@@ -124,10 +124,11 @@ pybynix domains
 Chữ ký hàm, giá trị trả về, ví dụ chạy được và cơ chế khôi phục được ghi bên dưới. Dùng đúng giá trị trade_symbol từ danh mục.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

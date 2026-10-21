@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | 会话令牌、密码登录、浏览器辅助登录与双重验证回调。 |
 | `get_assets · get_asset · get_payouts` | 发现资产、精确查找交易代码，并读取可用状态和收益率。 |
-| `get_candles · get_historical_candles` | 获取近期及分页历史 OHLCV 蜡烛数据，使用 UTC 时间戳。 |
+| `get_candles · get_historical_candles · get_candles_batch` | 获取近期及分页历史 OHLCV 蜡烛数据，使用 UTC 时间戳。 |
 | `subscribe_ticks · stream_candles · get_tick` | 实时行情、未完成与已收盘蜡烛，以及自动 REST 轮询备用通道。 |
-| `place_order · wait_order_result · close_trade_early` | 显式提交模拟、真实和资金账户订单，查询结算并提前平仓。 |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | 显式提交模拟、真实和资金账户订单，查询结算并提前平仓。 |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | 持久化订单日志、重启恢复和重复引用保护。 |
 | `ClientPool · account_events · get_balance_breakdown` | 独立命名客户端、账户事件与详细余额。 |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 代理、自定义 DNS 与可信域名连接回退。 |
@@ -124,10 +124,11 @@ pybynix domains
 以下文档提供方法签名、返回值、可运行示例和恢复行为。请使用资产目录中的精确 trade_symbol。
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

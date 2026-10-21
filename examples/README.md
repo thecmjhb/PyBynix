@@ -13,6 +13,7 @@ no credentials. Authenticated examples use a session created by `pybynix login`.
 | `sentiment_stream.py` | Observe the explicitly derived sentiment model |
 | `demo_order.py` | One explicit demo order; requires --execute-demo-order and amount/direction |
 | `order_recovery.py` | Reconcile a journal reference without resubmitting |
+| `orchestration.py` | Safe callback orchestration; dry-run by default |
 
 ```console
 python examples/public_data.py

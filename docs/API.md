@@ -127,6 +127,13 @@ conditions or account benefits. The server's final order response is authoritati
 ```python
 await client.get_tick("EUR/USD OTC", interval="1m")
 await client.get_candles("EUR/USD OTC", interval="1m", count=100, before=None)
+await client.get_candles_batch(
+    [
+        {"symbol": "EUR/USD OTC", "interval": "1m", "count": 200},
+        {"symbol": "GBP/USD OTC", "interval": "5m", "count": 100, "before": unix_end},
+    ],
+    max_concurrency=4,
+)
 await client.get_historical_candles(
     "EUR/USD OTC", start=unix_start_seconds, end=unix_end_seconds,
     interval="1m", max_pages=100,
@@ -136,6 +143,14 @@ await client.get_historical_candles(
 - `get_tick` uses the public REST tick endpoint and returns `Tick`.
 - Candle `count` is an integer 1..500. The SDK sorts and deduplicates platform output,
   filters exclusive `before`, and returns at most `count` records.
+- `get_candles_batch(requests, max_concurrency=4, cache_ttl=0)` fetches independent
+  candle queries concurrently, returns lists in request order, and limits in-flight
+  history calls to 1..32. Each request is a mapping with only `symbol`, `interval`,
+  `count` and `before`; the helper reuses the observed single-history endpoint rather
+  than assuming an unsupported bulk endpoint or page layout.
+- `cache_ttl` is opt-in and capped at 3,600 seconds. It caches only calls with an
+  explicit `before` boundary (historical pages); latest/forming-candle queries are
+  never cached. The in-memory cache is bounded to 256 query keys and is per client.
 - `start`, `end`, `before`, and `Candle.timestamp` are Unix **seconds** in UTC. History
   ranges are `[start, end)`. Tick and server timestamps are **milliseconds**.
 - `Candle` fields are timestamp, open, high, low, close and volume. Prices and volume
@@ -219,6 +234,24 @@ challenge. No real-money order is placed by installation, login, diagnostics or 
 
 Terminal statuses handled are won, lost, draw, refunded and closed. Early close does not
 promise a full refund. Read [recovery](RECOVERY.md) before automating order recovery.
+
+## Callback orchestration
+
+`ExecutionOrchestrator(client, symbol, decision_callback, interval="1m",`
+`dry_run=True, demo_only=True, cooldown=0.0, max_concurrent_orders=1,`
+`settle=True, settlement_timeout=120.0, settlement_poll_interval=2.0)`
+consumes client ticks and passes each event to the caller's sync or async
+callback. The callback returns `OrderIntent` (or `None`); it supplies no
+strategy or signal model. `await runner.submit(intent)` is the explicit intent
+boundary for applications with their own event source.
+
+Use `await runner.run()` for foreground operation, or `await runner.start()`
+and `await runner.stop()` for graceful background operation. Dry-run is the
+default and makes no order request. With `dry_run=False`, demo-only is still
+the default; cooldown and `max_concurrent_orders` are enforced before the
+single `Bynix.place_order()` call. Accepted orders are tracked with
+`wait_order_result()`. Unknown outcomes and journal persistence failures are
+recorded and never retried. See [callback orchestration](AUTOMATION.md).
 
 ## Multi-client pool
 

@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Session token, password లేదా browser login, అలాగే 2FA callbacks. |
 | `get_assets · get_asset · get_payouts` | Asset జాబితా, ఖచ్చితమైన symbol శోధన, అందుబాటు మరియు payout సమాచారం. |
-| `get_candles · get_historical_candles` | UTC timestamps‌తో తాజా మరియు పేజీలుగా historical OHLCV candles. |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC timestamps‌తో తాజా మరియు పేజీలుగా historical OHLCV candles. |
 | `subscribe_ticks · stream_candles · get_tick` | Live ticks, కొనసాగుతున్న లేదా ముగిసిన candles, ఆటోమేటిక్ REST polling fallback. |
-| `place_order · wait_order_result · close_trade_early` | స్పష్టమైన demo, real, funded orders; settlement మరియు early close. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | స్పష్టమైన demo, real, funded orders; settlement మరియు early close. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | శాశ్వత order journal, restart recovery, duplicate reference రక్షణ. |
 | `ClientPool · account_events · get_balance_breakdown` | స్వతంత్ర named clients, account events, వివరణాత్మక balances. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy, custom DNS, నమ్మకమైన domain fallback. |
@@ -124,10 +124,11 @@ pybynix domains
 Signatures, return values, నడిపించగల ఉదాహరణలు, recovery behavior క్రింద వివరించబడ్డాయి. Asset catalog‌లోని ఖచ్చితమైన trade_symbol వాడండి.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

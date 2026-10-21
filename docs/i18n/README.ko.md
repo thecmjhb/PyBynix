@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | 세션 토큰, 비밀번호 및 브라우저 로그인, 2FA 콜백을 지원합니다. |
 | `get_assets · get_asset · get_payouts` | 자산 목록, 정확한 심볼 검색, 이용 가능 여부와 지급률을 조회합니다. |
-| `get_candles · get_historical_candles` | UTC 타임스탬프를 사용하는 최근 및 페이지 단위 과거 OHLCV 캔들을 제공합니다. |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC 타임스탬프를 사용하는 최근 및 페이지 단위 과거 OHLCV 캔들을 제공합니다. |
 | `subscribe_ticks · stream_candles · get_tick` | 실시간 틱, 진행 중·마감 캔들 및 자동 REST 폴링 대체 경로를 제공합니다. |
-| `place_order · wait_order_result · close_trade_early` | 명시적인 데모·실거래·펀디드 주문, 정산 조회 및 조기 종료를 지원합니다. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | 명시적인 데모·실거래·펀디드 주문, 정산 조회 및 조기 종료를 지원합니다. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | 영구 주문 저널, 재시작 복구 및 중복 참조 방지 기능을 제공합니다. |
 | `ClientPool · account_events · get_balance_breakdown` | 독립적인 이름 지정 클라이언트, 계좌 이벤트와 상세 잔액을 지원합니다. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 프록시, 사용자 지정 DNS 및 신뢰 도메인 연결 대체를 지원합니다. |
@@ -124,10 +124,11 @@ pybynix domains
 아래 문서에서 시그니처, 반환값, 실행 예제와 복구 동작을 확인할 수 있습니다. 자산 목록의 정확한 trade_symbol 값을 사용하세요.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

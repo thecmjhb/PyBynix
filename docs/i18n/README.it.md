@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Token di sessione, accesso con password o browser e callback 2FA. |
 | `get_assets · get_asset · get_payouts` | Catalogo degli asset, ricerca esatta dei simboli, disponibilità e rendimenti. |
-| `get_candles · get_historical_candles` | Candele OHLCV recenti e storiche paginate con timestamp UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Candele OHLCV recenti e storiche paginate con timestamp UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Tick in tempo reale, candele in formazione e chiuse, con fallback REST automatico. |
-| `place_order · wait_order_result · close_trade_early` | Ordini demo, reali e finanziati espliciti, verifica dell’esito e chiusura anticipata. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Ordini demo, reali e finanziati espliciti, verifica dell’esito e chiusura anticipata. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Registro persistente degli ordini, recupero dopo il riavvio e protezione dai riferimenti duplicati. |
 | `ClientPool · account_events · get_balance_breakdown` | Client indipendenti con nome, eventi del conto e saldi dettagliati. |
 | `proxy · dns_servers · connect_any` | Proxy HTTP/SOCKS5, DNS personalizzato e connessione alternativa a domini affidabili. |
@@ -124,10 +124,11 @@ pybynix domains
 Firme, valori restituiti, esempi eseguibili e comportamento di recupero sono descritti qui sotto. Usa i valori trade_symbol esatti del catalogo.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

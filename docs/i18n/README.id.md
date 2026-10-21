@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Token sesi, login kata sandi atau browser, serta callback 2FA. |
 | `get_assets · get_asset · get_payouts` | Katalog aset, pencarian simbol yang tepat, ketersediaan, dan informasi payout. |
-| `get_candles · get_historical_candles` | Candle OHLCV terkini dan historis berhalaman dengan timestamp UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Candle OHLCV terkini dan historis berhalaman dengan timestamp UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Tick langsung, candle berjalan dan tertutup, serta fallback polling REST otomatis. |
-| `place_order · wait_order_result · close_trade_early` | Order demo, riil, dan funded secara eksplisit, hasil penyelesaian, serta penutupan awal. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Order demo, riil, dan funded secara eksplisit, hasil penyelesaian, serta penutupan awal. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Jurnal order persisten, pemulihan setelah restart, dan perlindungan referensi ganda. |
 | `ClientPool · account_events · get_balance_breakdown` | Klien bernama yang independen, peristiwa akun, dan rincian saldo. |
 | `proxy · dns_servers · connect_any` | Proxy HTTP/SOCKS5, DNS khusus, dan fallback koneksi ke domain tepercaya. |
@@ -124,10 +124,11 @@ pybynix domains
 Signature, nilai kembalian, contoh siap dijalankan, dan perilaku pemulihan dijelaskan di bawah. Gunakan trade_symbol yang persis dari katalog aset.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

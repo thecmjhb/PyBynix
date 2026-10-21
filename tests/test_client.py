@@ -169,6 +169,84 @@ async def test_candles_sorted_deduplicated_and_exclusive_before():
         await client.close()
 
 
+async def test_candle_batch_preserves_order_and_bounds_concurrency():
+    active = peak = 0
+
+    async def handler(request):
+        nonlocal active, peak
+        active += 1
+        peak = max(peak, active)
+        await asyncio.sleep(0.01)
+        symbol = request.url.params["symbol"]
+        active -= 1
+        return httpx.Response(
+            200,
+            json={
+                "candles": [
+                    {
+                        "timestamp": len(symbol),
+                        "open": 1,
+                        "high": 2,
+                        "low": 1,
+                        "close": 1.5,
+                        "volume": 3,
+                    }
+                ]
+            },
+        )
+
+    client = await mocked_client(handler)
+    try:
+        result = await client.get_candles_batch(
+            [{"symbol": "x" * length, "count": 1} for length in range(1, 7)],
+            max_concurrency=2,
+        )
+        assert [candles[0].timestamp for candles in result] == [1, 2, 3, 4, 5, 6]
+        assert peak <= 2
+    finally:
+        await client.close()
+
+
+async def test_historical_candle_cache_is_opt_in_and_never_caches_latest_query():
+    calls = 0
+
+    def handler(request):
+        nonlocal calls
+        calls += 1
+        return httpx.Response(
+            200,
+            json={
+                "candles": [
+                    {"timestamp": 90, "open": 1, "high": 2, "low": 1, "close": 1.5, "volume": 3}
+                ]
+            },
+        )
+
+    client = await mocked_client(handler)
+    try:
+        await client.get_candles("EUR/USD OTC", before=100, cache_ttl=60)
+        await client.get_candles("EUR/USD OTC", before=100, cache_ttl=60)
+        await client.get_candles("EUR/USD OTC", cache_ttl=60)
+        await client.get_candles("EUR/USD OTC", cache_ttl=60)
+        assert calls == 3
+    finally:
+        await client.close()
+
+
+async def test_candle_batch_rejects_unsafe_or_ambiguous_requests_before_network():
+    def handler(request):
+        raise AssertionError("validation must happen before network access")
+
+    client = await mocked_client(handler)
+    try:
+        with pytest.raises(ValueError):
+            await client.get_candles_batch([{"symbol": "EUR/USD OTC", "endpoint": "other"}])
+        with pytest.raises(ValueError):
+            await client.get_candles_batch([{"symbol": "EUR/USD OTC"}], max_concurrency=0)
+    finally:
+        await client.close()
+
+
 async def test_isolated_account_defaults():
     first, second = Bynix(), Bynix()
     try:

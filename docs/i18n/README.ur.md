@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Session token، password یا browser login اور 2FA callbacks۔ |
 | `get_assets · get_asset · get_payouts` | Assets کی فہرست، درست symbol، دستیابی اور payout کی معلومات۔ |
-| `get_candles · get_historical_candles` | UTC timestamps کے ساتھ تازہ اور paginated تاریخی OHLCV candles۔ |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC timestamps کے ساتھ تازہ اور paginated تاریخی OHLCV candles۔ |
 | `subscribe_ticks · stream_candles · get_tick` | Live ticks، جاری اور بند candles، اور خودکار REST polling fallback۔ |
-| `place_order · wait_order_result · close_trade_early` | واضح demo، real اور funded orders، settlement اور early close۔ |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | واضح demo، real اور funded orders، settlement اور early close۔ |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | مستقل order journal، restart کے بعد بحالی اور duplicate reference سے حفاظت۔ |
 | `ClientPool · account_events · get_balance_breakdown` | آزاد named clients، account events اور تفصیلی balances۔ |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy، custom DNS اور trusted domain fallback۔ |
@@ -124,10 +124,11 @@ pybynix domains
 Signatures، return values، چلنے والی مثالیں اور recovery behavior نیچے کی documentation میں ہیں۔ Asset catalog کے درست trade_symbol استعمال کریں۔
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

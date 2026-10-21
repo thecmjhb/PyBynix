@@ -26,6 +26,7 @@ PyBynix/
 | Complete public API | `docs/API.md` |
 | Login/session providers | `docs/AUTHENTICATION.md` |
 | Fallback, reconnect, and uncertain orders | `docs/RECOVERY.md` |
+| Caller-owned auto-execution boundary | `docs/AUTOMATION.md` |
 | Protocol evidence | `docs/PROTOCOL.md` |
 | Feature and fallback coverage | `docs/FEATURE_MATRIX.md` |
 | Validation scope and measured limits | `docs/VALIDATION.md` |

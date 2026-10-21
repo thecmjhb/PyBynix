@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Tokens de sesión, inicio con contraseña o navegador y callbacks de 2FA. |
 | `get_assets · get_asset · get_payouts` | Catálogo de activos, símbolos exactos, disponibilidad y porcentajes de pago. |
-| `get_candles · get_historical_candles` | Velas OHLCV recientes e históricas paginadas con marcas de tiempo UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Velas OHLCV recientes e históricas paginadas con marcas de tiempo UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Ticks en vivo, velas abiertas y cerradas, y respaldo automático mediante REST. |
-| `place_order · wait_order_result · close_trade_early` | Órdenes demo, reales y financiadas explícitas, liquidación y cierre anticipado. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Órdenes demo, reales y financiadas explícitas, liquidación y cierre anticipado. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Registro persistente de órdenes, recuperación tras reinicios y control de referencias duplicadas. |
 | `ClientPool · account_events · get_balance_breakdown` | Clientes independientes con nombre, eventos de cuenta y saldos desglosados. |
 | `proxy · dns_servers · connect_any` | Proxies HTTP/SOCKS5, DNS personalizado y conexión alternativa a dominios de confianza. |
@@ -124,10 +124,11 @@ pybynix domains
 Consulta las firmas, valores devueltos, ejemplos ejecutables y recuperación en la documentación siguiente. Usa los valores trade_symbol exactos del catálogo.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

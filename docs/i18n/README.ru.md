@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Токены сессии, вход по паролю или через браузер, обратные вызовы 2FA. |
 | `get_assets · get_asset · get_payouts` | Каталог активов, точный поиск символов, доступность и информация о выплатах. |
-| `get_candles · get_historical_candles` | Свежие и постраничные исторические свечи OHLCV с метками времени UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Свежие и постраничные исторические свечи OHLCV с метками времени UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Поток тиков, текущие и закрытые свечи, автоматический резервный опрос REST. |
-| `place_order · wait_order_result · close_trade_early` | Явные демо-, реальные и funded-ордера, результат расчёта и досрочное закрытие. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Явные демо-, реальные и funded-ордера, результат расчёта и досрочное закрытие. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Постоянный журнал ордеров, восстановление после перезапуска и защита от повторных ссылок. |
 | `ClientPool · account_events · get_balance_breakdown` | Независимые именованные клиенты, события счёта и подробные балансы. |
 | `proxy · dns_servers · connect_any` | Прокси HTTP/SOCKS5, свой DNS и подключение к доверенным резервным доменам. |
@@ -124,10 +124,11 @@ pybynix domains
 Ниже описаны сигнатуры, возвращаемые значения, запускаемые примеры и восстановление. Используйте точные значения trade_symbol из каталога.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

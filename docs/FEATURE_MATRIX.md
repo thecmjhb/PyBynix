@@ -11,13 +11,15 @@ Quotex clone and does not invent an endpoint when Bynix behavior has not been ob
 | Authentication | Imported host-bound session, password login, browser-assisted login, OTP callback, `AuthChain` | Provider refresh after an eligible authenticated GET failure | Offline-tested; password/browser/session flows live-observed on the owner's demo setup |
 | Host selection | Bundled trusted domains and `connect_any` | Fresh authentication per fallback host; existing tokens are never moved silently | Offline-tested; selected alternate hosts live-observed |
 | Market transport | Socket.IO/WebSocket stream | REST tick polling in `auto` mode when WebSocket is unavailable, disconnected, or stale | Offline-tested and demo-soak observed |
-| Market history | Recent candles, bounded paginated history, exact asset lookup, payouts | Page-boundary deduplication and exclusive time bounds | Offline-tested; catalog/history live-observed |
+| Market history | Recent candles, bounded paginated history, ordered bounded-concurrency candle batch, exact asset lookup, payouts | Page-boundary deduplication, exclusive time bounds, opt-in bounded cache for explicit historical boundaries | Offline-tested; catalog/history live-observed |
 | Live streams | Ticks, forming/closed candles, account events, connection events | Bounded per-consumer queues; explicit overflow and reconnect-gap events | Offline-tested; live ticks and reconnect observed |
 | Explicit execution | Demo-default order, real/funded guards, settlement wait, early close | One POST only; journal + pending/history reconciliation after uncertainty | Offline-tested; demo execution and early close observed |
+| Callback automation | `ExecutionOrchestrator` / `AutoExecutor` for caller-owned explicit intents | Dry-run default, demo-only default, cooldown, concurrency cap, settlement tracking; never retries uncertain orders | Offline-tested only; no automatic strategy or signal is supplied |
 | Account state | Profile, balances, balance breakdown, local account default, funded/tournament metadata | Profile health runs independently from market supervision | Offline-tested; profile/balance paths live-observed |
 | Network routing | HTTP CONNECT, SOCKS5/SOCKS5h, static DNS, explicit DNS servers | TLS hostname verification remains enabled; proxy and custom DNS are mutually exclusive | Offline-tested; local authenticated proxy/DNS lab observed |
 | Derived data | Platform-style derived sentiment, candle sentiment, export, pandas conversion, resampling | No claim that sentiment equals customer positioning | Offline-tested; sentiment is a derived display helper |
 | CLI | Login, diagnostics, balances, assets, candles, stream, sentiment, domains | Public data commands work without an account | Offline-tested |
+| Support surface | API docs, examples, contribution/security guidance, localized READMEs | No paid support channel or SLA is implied by the open-source package | Documentation is public; support commitments are not claimed |
 
 ## Supervision order
 

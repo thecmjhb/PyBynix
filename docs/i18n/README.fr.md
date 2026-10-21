@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Jetons de session, connexion par mot de passe ou navigateur et callbacks 2FA. |
 | `get_assets · get_asset · get_payouts` | Catalogue d’actifs, recherche exacte des symboles, disponibilité et taux de paiement. |
-| `get_candles · get_historical_candles` | Bougies OHLCV récentes et historiques paginées avec horodatages UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Bougies OHLCV récentes et historiques paginées avec horodatages UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Ticks en direct, bougies en cours et clôturées, et secours automatique par REST. |
-| `place_order · wait_order_result · close_trade_early` | Ordres démo, réels et financés explicites, règlement et clôture anticipée. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Ordres démo, réels et financés explicites, règlement et clôture anticipée. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Journal persistant, reprise après redémarrage et protection des références uniques. |
 | `ClientPool · account_events · get_balance_breakdown` | Clients nommés indépendants, événements de compte et soldes détaillés. |
 | `proxy · dns_servers · connect_any` | Proxies HTTP/SOCKS5, DNS personnalisé et repli vers des domaines de confiance. |
@@ -124,10 +124,11 @@ pybynix domains
 Retrouvez les signatures, résultats, exemples exécutables et règles de reprise ci-dessous. Utilisez les valeurs trade_symbol exactes du catalogue.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

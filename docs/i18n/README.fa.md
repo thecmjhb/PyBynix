@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | توکن نشست، ورود با گذرواژه یا مرورگر و callback احراز هویت دومرحله‌ای. |
 | `get_assets · get_asset · get_payouts` | فهرست دارایی‌ها، جست‌وجوی دقیق نماد، دسترس‌پذیری و اطلاعات پرداخت. |
-| `get_candles · get_historical_candles` | کندل‌های OHLCV جدید و تاریخی صفحه‌بندی‌شده با زمان UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | کندل‌های OHLCV جدید و تاریخی صفحه‌بندی‌شده با زمان UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | تیک زنده، کندل جاری و بسته‌شده و مسیر جایگزین خودکار REST. |
-| `place_order · wait_order_result · close_trade_early` | سفارش صریح آزمایشی، واقعی و تأمین‌شده، بررسی تسویه و بستن زودهنگام. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | سفارش صریح آزمایشی، واقعی و تأمین‌شده، بررسی تسویه و بستن زودهنگام. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | دفتر دائمی سفارش‌ها، بازیابی پس از راه‌اندازی مجدد و جلوگیری از مرجع تکراری. |
 | `ClientPool · account_events · get_balance_breakdown` | کلاینت‌های نام‌گذاری‌شده مستقل، رویداد حساب و جزئیات موجودی. |
 | `proxy · dns_servers · connect_any` | پروکسی HTTP/SOCKS5، DNS سفارشی و اتصال جایگزین به دامنه‌های معتبر. |
@@ -124,10 +124,11 @@ pybynix domains
 امضاها، مقدار بازگشتی، مثال‌های قابل اجرا و رفتار بازیابی در ادامه آمده‌اند. از مقدار دقیق trade_symbol در فهرست دارایی‌ها استفاده کنید.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

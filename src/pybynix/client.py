@@ -8,6 +8,7 @@ import re
 import time
 import uuid
 from collections import OrderedDict
+from collections.abc import Mapping
 from decimal import Decimal, InvalidOperation
 from importlib.resources import files
 from urllib.parse import quote
@@ -128,6 +129,8 @@ class Bynix:
         self.challenge_id = challenge_id
         self._asset_cache = (0.0, [])
         self._rules_cache = (0.0, {})
+        self._historical_candle_cache = OrderedDict()
+        self._historical_candle_cache_lock = asyncio.Lock()
         if not isinstance(max_subscriptions, int) or max_subscriptions < 1:
             raise ValueError("max_subscriptions must be positive")
         self.max_subscriptions = max_subscriptions
@@ -718,22 +721,114 @@ class Bynix:
     async def get_platform_status(self):
         return await self._request("platform/status", auth=False)
 
-    async def get_candles(self, symbol, *, interval="1m", count=100, before=None):
+    async def get_candles(
+        self, symbol, *, interval="1m", count=100, before=None, cache_ttl=0.0
+    ):
         if isinstance(count, bool) or not isinstance(count, int) or not 1 <= count <= 500:
             raise ValueError("Count must be an integer from 1 to 500")
-        params = {"symbol": symbol, "interval": _interval(interval), "count": count}
+        if (
+            isinstance(cache_ttl, bool)
+            or not isinstance(cache_ttl, (int, float))
+            or not math.isfinite(cache_ttl)
+            or not 0 <= cache_ttl <= 3600
+        ):
+            raise ValueError("cache_ttl must be finite and between 0 and 3600 seconds")
+        interval = _interval(interval)
+        params = {"symbol": symbol, "interval": interval, "count": count}
         if before is not None:
             if not isinstance(before, int) or isinstance(before, bool) or before <= 0:
                 raise ValueError("before must be a positive Unix timestamp in seconds")
             params["before"] = before
+        cache_key = (
+            (symbol, interval, count, before)
+            if before is not None and cache_ttl and isinstance(symbol, str)
+            else None
+        )
+        if cache_key is not None:
+            async with self._historical_candle_cache_lock:
+                cached = self._historical_candle_cache.get(cache_key)
+                if cached is not None:
+                    expires, values = cached
+                    if expires > time.monotonic():
+                        self._historical_candle_cache.move_to_end(cache_key)
+                        return list(values)
+                    self._historical_candle_cache.pop(cache_key, None)
         data = await self._request("synthetic/history", params=params, auth=False)
         if not isinstance(data.get("candles"), list):
             raise ProtocolError("Candle response lacks candles")
         candles = {c["timestamp"]: Candle.from_wire(c) for c in data["candles"]}
-        return sorted(
+        result = sorted(
             (c for c in candles.values() if before is None or c.timestamp < before),
             key=lambda c: c.timestamp,
         )[-count:]
+        if cache_key is not None:
+            async with self._historical_candle_cache_lock:
+                self._historical_candle_cache[cache_key] = (
+                    time.monotonic() + cache_ttl,
+                    tuple(result),
+                )
+                self._historical_candle_cache.move_to_end(cache_key)
+                while len(self._historical_candle_cache) > 256:
+                    self._historical_candle_cache.popitem(last=False)
+        return result
+
+    async def get_candles_batch(self, requests, *, max_concurrency=4, cache_ttl=0.0):
+        """Fetch independent candle queries with bounded in-flight requests.
+
+        Each request is a mapping containing ``symbol`` and optional ``interval``,
+        ``count`` and ``before`` keys. Results retain request order. This helper
+        schedules existing ``synthetic/history`` calls only; it does not infer
+        page cursors or invent a bulk broker endpoint.
+        """
+        if (
+            isinstance(max_concurrency, bool)
+            or not isinstance(max_concurrency, int)
+            or not 1 <= max_concurrency <= 32
+        ):
+            raise ValueError("max_concurrency must be an integer from 1 to 32")
+        if (
+            isinstance(cache_ttl, bool)
+            or not isinstance(cache_ttl, (int, float))
+            or not math.isfinite(cache_ttl)
+            or not 0 <= cache_ttl <= 3600
+        ):
+            raise ValueError("cache_ttl must be finite and between 0 and 3600 seconds")
+        try:
+            request_list = list(requests)
+        except TypeError:
+            raise TypeError("requests must be an iterable of mappings") from None
+        jobs = []
+        allowed = {"symbol", "interval", "count", "before"}
+        for item in request_list:
+            if not isinstance(item, Mapping):
+                raise TypeError("Each candle request must be a mapping")
+            unknown = set(item) - allowed
+            if unknown:
+                raise ValueError(f"Unsupported candle request fields: {sorted(unknown)}")
+            if "symbol" not in item or not isinstance(item["symbol"], str) or not item["symbol"].strip():
+                raise ValueError("Each candle request needs a nonempty symbol")
+            jobs.append(
+                (
+                    item["symbol"],
+                    item.get("interval", "1m"),
+                    item.get("count", 100),
+                    item.get("before"),
+                )
+            )
+        limiter = asyncio.Semaphore(max_concurrency)
+
+        async def fetch(job):
+            async with limiter:
+                symbol, interval, count, before = job
+                return await self.get_candles(
+                    symbol,
+                    interval=interval,
+                    count=count,
+                    before=before,
+                    cache_ttl=cache_ttl,
+                )
+
+        return await asyncio.gather(*(fetch(job) for job in jobs))
 
     async def get_historical_candles(self, symbol, *, start, end, interval="1m", max_pages=100):
         if not isinstance(start, int) or not isinstance(end, int) or not 0 < start < end:

@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | رموز الجلسة وتسجيل الدخول بكلمة المرور أو المتصفح واستدعاءات التحقق الثنائي. |
 | `get_assets · get_asset · get_payouts` | اكتشاف الأصول والبحث الدقيق عن الرموز ومعرفة الإتاحة ونسب العائد. |
-| `get_candles · get_historical_candles` | شموع OHLCV حديثة وتاريخية مقسمة إلى صفحات بطوابع زمنية UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | شموع OHLCV حديثة وتاريخية مقسمة إلى صفحات بطوابع زمنية UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | أسعار لحظية وشموع جارية ومغلقة مع بديل REST تلقائي. |
-| `place_order · wait_order_result · close_trade_early` | أوامر تجريبية وحقيقية وممولة صريحة، ومتابعة التسوية والإغلاق المبكر. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | أوامر تجريبية وحقيقية وممولة صريحة، ومتابعة التسوية والإغلاق المبكر. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | سجل دائم للأوامر واستعادة بعد إعادة التشغيل وحماية من المراجع المكررة. |
 | `ClientPool · account_events · get_balance_breakdown` | عملاء مستقلون بأسماء وأحداث الحساب وتفاصيل الأرصدة. |
 | `proxy · dns_servers · connect_any` | وكلاء HTTP/SOCKS5 وDNS مخصص واتصال بديل عبر نطاقات موثوقة. |
@@ -124,10 +124,11 @@ pybynix domains
 توضح الوثائق أدناه التواقيع والقيم المرجعة والأمثلة القابلة للتشغيل وسلوك الاستعادة. استخدم قيم trade_symbol الدقيقة من فهرس الأصول.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

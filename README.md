@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Session tokens, password login, browser-assisted login and 2FA callbacks. |
 | `get_assets · get_asset · get_payouts` | Asset discovery, exact symbol lookup, availability and payout information. |
-| `get_candles · get_historical_candles` | Recent candles and paginated historical OHLCV with UTC timestamps. |
+| `get_candles · get_historical_candles · get_candles_batch` | Recent candles and paginated historical OHLCV with UTC timestamps. |
 | `subscribe_ticks · stream_candles · get_tick` | Live ticks, forming/closed candles and automatic REST polling fallback. |
-| `place_order · wait_order_result · close_trade_early` | Explicit demo, real and funded orders, settlement lookup and early close. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Explicit demo, real and funded orders, settlement lookup and early close. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Durable order records, restart recovery and duplicate-reference protection. |
 | `ClientPool · account_events · get_balance_breakdown` | Independent named clients, account events and detailed balances. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxies, custom DNS and trusted-domain connection fallback. |
@@ -124,10 +124,11 @@ pybynix domains
 Detailed signatures, return values, runnable examples and recovery behavior are documented below. Use exact trade_symbol values from the asset catalog.
 
 - [API reference](docs/API.md)
-- [Authentication](docs/AUTHENTICATION.md)
-- [Examples](examples)
-- [Recovery and networking](docs/RECOVERY.md)
-- [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+ - [Authentication](docs/AUTHENTICATION.md)
+ - [Examples](examples)
+ - [Recovery and networking](docs/RECOVERY.md)
+ - [Automation boundary](docs/AUTOMATION.md)
+ - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 

@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Session token, password அல்லது browser login மற்றும் 2FA callback. |
 | `get_assets · get_asset · get_payouts` | Asset பட்டியல், துல்லியமான symbol தேடல், கிடைக்கும் நிலை மற்றும் payout தகவல். |
-| `get_candles · get_historical_candles` | UTC timestamp உடன் சமீபத்திய மற்றும் பக்கங்களாகப் பெறப்படும் historical OHLCV candles. |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC timestamp உடன் சமீபத்திய மற்றும் பக்கங்களாகப் பெறப்படும் historical OHLCV candles. |
 | `subscribe_ticks · stream_candles · get_tick` | Live tick, உருவாகும் மற்றும் முடிந்த candle; தானியங்கி REST polling மாற்றுப் பாதை. |
-| `place_order · wait_order_result · close_trade_early` | வெளிப்படையான demo, real மற்றும் funded order, settlement மற்றும் early close. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | வெளிப்படையான demo, real மற்றும் funded order, settlement மற்றும் early close. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | நிலையான order journal, restart recovery மற்றும் duplicate reference பாதுகாப்பு. |
 | `ClientPool · account_events · get_balance_breakdown` | தனித்த பெயரிட்ட client-கள், account event மற்றும் விரிவான balance. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy, custom DNS மற்றும் நம்பகமான domain fallback. |
@@ -124,10 +124,11 @@ pybynix domains
 Signature, return value, இயக்கக்கூடிய எடுத்துக்காட்டு மற்றும் recovery behavior கீழே விளக்கப்பட்டுள்ளன. Asset catalog-இல் உள்ள துல்லியமான trade_symbol-ஐப் பயன்படுத்தவும்.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

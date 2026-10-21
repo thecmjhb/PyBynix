@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Session token, password, browser login ও 2FA callback। |
 | `get_assets · get_asset · get_payouts` | Asset তালিকা, সঠিক symbol, availability ও payout তথ্য। |
-| `get_candles · get_historical_candles` | UTC timestamp-সহ সাম্প্রতিক ও paginated historical OHLCV candles। |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC timestamp-সহ সাম্প্রতিক ও paginated historical OHLCV candles। |
 | `subscribe_ticks · stream_candles · get_tick` | Live tick, চলমান ও closed candle; প্রয়োজন হলে REST polling fallback। |
-| `place_order · wait_order_result · close_trade_early` | Demo, real ও funded order, settlement result এবং early close। |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Demo, real ও funded order, settlement result এবং early close। |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | স্থায়ী order journal, restart recovery ও duplicate reference প্রতিরোধ। |
 | `ClientPool · account_events · get_balance_breakdown` | স্বাধীন named client, account event ও বিস্তারিত balance। |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy, custom DNS ও trusted domain fallback। |
@@ -124,10 +124,11 @@ pybynix domains
 Method signature, return value, runnable example ও recovery behavior নিচের documentation-এ আছে। Asset catalog-এর exact trade_symbol ব্যবহার করো।
 
 - [API reference](docs/API.md)
-- [Authentication](docs/AUTHENTICATION.md)
-- [Examples](examples)
-- [Recovery and networking](docs/RECOVERY.md)
-- [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+ - [Authentication](docs/AUTHENTICATION.md)
+ - [Examples](examples)
+ - [Recovery and networking](docs/RECOVERY.md)
+ - [Automation boundary](docs/AUTOMATION.md)
+ - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 

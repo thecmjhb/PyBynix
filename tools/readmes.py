@@ -64,9 +64,9 @@ NETWORK = """client = Bynix.from_token(token, proxy="socks5://user:password@prox
 METHODS = [
     "connect · PasswordAuth · BrowserAuth",
     "get_assets · get_asset · get_payouts",
-    "get_candles · get_historical_candles",
+    "get_candles · get_historical_candles · get_candles_batch",
     "subscribe_ticks · stream_candles · get_tick",
-    "place_order · wait_order_result · close_trade_early",
+    "place_order · wait_order_result · close_trade_early · ExecutionOrchestrator",
     "SQLiteJournal · reconcile_order · unresolved_orders",
     "ClientPool · account_events · get_balance_breakdown",
     "proxy · dns_servers · connect_any",
@@ -201,10 +201,11 @@ pybynix domains
 {t["docs_text"]}
 
 - [API reference]({rel("docs/API.md")})
-- [Authentication]({rel("docs/AUTHENTICATION.md")})
-- [Examples]({rel("examples")})
-- [Recovery and networking]({rel("docs/RECOVERY.md")})
-- [Feature and fallback matrix]({rel("docs/FEATURE_MATRIX.md")})
+ - [Authentication]({rel("docs/AUTHENTICATION.md")})
+ - [Examples]({rel("examples")})
+ - [Recovery and networking]({rel("docs/RECOVERY.md")})
+ - [Automation boundary]({rel("docs/AUTOMATION.md")})
+ - [Feature and fallback matrix]({rel("docs/FEATURE_MATRIX.md")})
 - [Repository map]({rel("docs/REPOSITORY_MAP.md")})
 - [Troubleshooting]({rel("docs/TROUBLESHOOTING.md")})
 

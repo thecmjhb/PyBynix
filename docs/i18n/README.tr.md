@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Oturum tokenı, parola ve tarayıcı girişi ile 2FA geri çağrıları. |
 | `get_assets · get_asset · get_payouts` | Varlık kataloğu, kesin sembol araması, kullanılabilirlik ve ödeme oranları. |
-| `get_candles · get_historical_candles` | UTC zaman damgalı güncel ve sayfalı geçmiş OHLCV mumları. |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC zaman damgalı güncel ve sayfalı geçmiş OHLCV mumları. |
 | `subscribe_ticks · stream_candles · get_tick` | Canlı tikler, devam eden ve kapanmış mumlar, otomatik REST yedek sorgulaması. |
-| `place_order · wait_order_result · close_trade_early` | Açıkça verilen demo, gerçek ve fonlu emirler, sonuç takibi ve erken kapatma. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Açıkça verilen demo, gerçek ve fonlu emirler, sonuç takibi ve erken kapatma. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Kalıcı emir günlüğü, yeniden başlatma sonrası kurtarma ve yinelenen referans koruması. |
 | `ClientPool · account_events · get_balance_breakdown` | Bağımsız adlandırılmış istemciler, hesap olayları ve ayrıntılı bakiyeler. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy, özel DNS ve güvenilir alan adları üzerinden bağlantı yedeği. |
@@ -124,10 +124,11 @@ pybynix domains
 İmzalar, dönüş değerleri, çalıştırılabilir örnekler ve kurtarma davranışı aşağıda açıklanmıştır. Varlık kataloğundaki tam trade_symbol değerlerini kullanın.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

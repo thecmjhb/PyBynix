@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | セッショントークン、パスワード・ブラウザログイン、2FA コールバック。 |
 | `get_assets · get_asset · get_payouts` | 資産一覧、正確なシンボル検索、利用可否とペイアウト情報。 |
-| `get_candles · get_historical_candles` | UTC タイムスタンプ付きの直近・ページ分割された過去 OHLCV ローソク足。 |
+| `get_candles · get_historical_candles · get_candles_batch` | UTC タイムスタンプ付きの直近・ページ分割された過去 OHLCV ローソク足。 |
 | `subscribe_ticks · stream_candles · get_tick` | リアルタイムティック、形成中・確定足、自動 REST ポーリングへの切り替え。 |
-| `place_order · wait_order_result · close_trade_early` | 明示的なデモ・実口座・資金提供口座の注文、決済確認と早期終了。 |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | 明示的なデモ・実口座・資金提供口座の注文、決済確認と早期終了。 |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | 永続注文ジャーナル、再起動後の復旧と重複参照の防止。 |
 | `ClientPool · account_events · get_balance_breakdown` | 独立した名前付きクライアント、口座イベントと詳細残高。 |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 プロキシ、カスタム DNS、信頼済みドメインへの接続切り替え。 |
@@ -124,10 +124,11 @@ pybynix domains
 シグネチャ、戻り値、実行例、復旧動作は次の資料をご覧ください。資産一覧の正確な trade_symbol を使ってください。
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

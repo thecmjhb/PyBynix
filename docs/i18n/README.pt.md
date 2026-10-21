@@ -19,9 +19,9 @@
 | --- | --- |
 | `connect · PasswordAuth · BrowserAuth` | Tokens de sessão, login por senha ou navegador e callbacks de 2FA. |
 | `get_assets · get_asset · get_payouts` | Catálogo de ativos, busca exata de símbolos, disponibilidade e pagamentos. |
-| `get_candles · get_historical_candles` | Candles OHLCV recentes e históricos paginados com timestamps UTC. |
+| `get_candles · get_historical_candles · get_candles_batch` | Candles OHLCV recentes e históricos paginados com timestamps UTC. |
 | `subscribe_ticks · stream_candles · get_tick` | Ticks ao vivo, candles em formação e fechados, com fallback REST automático. |
-| `place_order · wait_order_result · close_trade_early` | Ordens demo, reais e financiadas explícitas, liquidação e fechamento antecipado. |
+| `place_order · wait_order_result · close_trade_early · ExecutionOrchestrator` | Ordens demo, reais e financiadas explícitas, liquidação e fechamento antecipado. |
 | `SQLiteJournal · reconcile_order · unresolved_orders` | Registro persistente de ordens, recuperação após reinício e proteção contra referências duplicadas. |
 | `ClientPool · account_events · get_balance_breakdown` | Clientes independentes identificados por nome, eventos de conta e saldos detalhados. |
 | `proxy · dns_servers · connect_any` | Proxies HTTP/SOCKS5, DNS personalizado e conexão alternativa por domínios confiáveis. |
@@ -124,10 +124,11 @@ pybynix domains
 Assinaturas, retornos, exemplos executáveis e comportamento de recuperação estão documentados abaixo. Use os valores trade_symbol exatos do catálogo.
 
 - [API reference](../API.md)
-- [Authentication](../AUTHENTICATION.md)
-- [Examples](../../examples)
-- [Recovery and networking](../RECOVERY.md)
-- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+ - [Authentication](../AUTHENTICATION.md)
+ - [Examples](../../examples)
+ - [Recovery and networking](../RECOVERY.md)
+ - [Automation boundary](../AUTOMATION.md)
+ - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
