@@ -76,3 +76,12 @@ The inspected frontend computes a weighted candle-return component for its senti
 display, rather than exposing a verified trader-positioning event. The SDK's
 get_candle_sentiment labels its output derived_candle_momentum. No claim is made that
 this equals every component of the UI sentiment bar or actual customer positions.
+
+## SDK supervision notes (21 October 2026)
+
+Market supervision and authenticated profile health refresh run in separate tasks. A
+profile check uses a bounded timeout of at most five seconds and no read-retry budget;
+market REST fallback uses the same short bound and no read retries. Therefore a slow
+`GET /api/auth/me` does not deliberately hold the market fallback/reconnect loop. This
+is an SDK scheduling guarantee covered by offline regression tests, not a claim about
+upstream server latency.

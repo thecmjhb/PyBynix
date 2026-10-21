@@ -16,7 +16,7 @@ from pybynix.stream import Subscription
 
 
 async def mocked_client(handler, **kwargs):
-    client = Bynix(session=Session("test-secret"), **kwargs)
+    client = Bynix(session=Session("test-secret"), validate_orders=False, **kwargs)
     await client._http.aclose()
     client._http = httpx.AsyncClient(
         base_url="https://bynixbrokers.com/api/", transport=httpx.MockTransport(handler)
@@ -211,5 +211,77 @@ async def test_error_does_not_echo_body():
         with pytest.raises(APIError) as error:
             await client.get_balance()
         assert "do-not-expose" not in str(error.value)
+    finally:
+        await client.close()
+
+
+async def test_slow_profile_health_refresh_does_not_block_market_polling():
+    profile_started = asyncio.Event()
+    profile_release = asyncio.Event()
+    profile_calls = 0
+    tick = {
+        "symbol": "EUR/USD OTC",
+        "interval": "1m",
+        "price": 1.2,
+        "timestamp": 100000,
+        "server_time": 100000,
+        "candle": None,
+        "closed": None,
+    }
+
+    async def handler(request):
+        nonlocal profile_calls
+        if request.url.path.endswith("/auth/me"):
+            profile_calls += 1
+            if profile_calls > 1:
+                profile_started.set()
+                await profile_release.wait()
+            return httpx.Response(200, json={"user_id": "owner"})
+        return httpx.Response(200, json=tick)
+
+    client = await mocked_client(
+        handler,
+        stream_transport="polling",
+        poll_interval=0.5,
+        max_requests_per_second=None,
+    )
+    client.profile_refresh_interval = 0.01
+    client._profile_poll_timeout = 0.05
+    client._market_poll_timeout = 0.05
+    try:
+        await client.connect()
+        async with await client.subscribe_ticks("EUR/USD OTC") as sub:
+            await asyncio.wait_for(profile_started.wait(), 1)
+            received = await asyncio.wait_for(anext(sub), 1.5)
+            assert received.price == Decimal("1.2")
+            assert client.metrics["poll_fallbacks"] >= 1
+            assert profile_calls >= 2
+    finally:
+        profile_release.set()
+        await client.close()
+
+
+async def test_supervision_polling_uses_zero_retry_budget():
+    calls = []
+
+    def handler(request):
+        calls.append(request.url.path)
+        return httpx.Response(503)
+
+    client = await mocked_client(handler, max_requests_per_second=None)
+    client._profile_poll_timeout = 0.05
+    client._last_profile_refresh = 0
+    try:
+        await client._poll_one(("EUR/USD OTC", "1m"))
+        assert len(calls) == 1
+        assert client.metrics["read_retries"] == 0
+
+        profile_task = asyncio.create_task(client._supervise_profile())
+        await asyncio.sleep(0)
+        await asyncio.sleep(0.05)
+        profile_task.cancel()
+        await profile_task
+        assert len(calls) == 2
+        assert client.metrics["read_retries"] == 0
     finally:
         await client.close()

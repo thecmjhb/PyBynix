@@ -7,6 +7,13 @@ from typing import Any
 class AccountType(StrEnum):
     DEMO = "demo"
     REAL = "real"
+    FUNDED = "funded"
+
+
+@dataclass(frozen=True)
+class LoginChallenge:
+    challenge_id: str = field(repr=False)
+    method: str = "unknown"
 
 
 @dataclass(frozen=True)
@@ -17,6 +24,8 @@ class Session:
     def __post_init__(self):
         if not isinstance(self.token, str) or not self.token.strip():
             raise ValueError("A nonempty Bynix access token is required")
+        if any(c in self.token for c in "\r\n"):
+            raise ValueError("Invalid session token")
 
 
 @dataclass(frozen=True)
@@ -30,11 +39,19 @@ class Candle:
 
     @classmethod
     def from_wire(cls, value: dict[str, Any]):
-        return cls(
+        result = cls(
             int(value["timestamp"]),
             *(Decimal(str(value[k])) for k in ("open", "high", "low", "close")),
             Decimal(str(value.get("volume", 0))),
         )
+        if result.timestamp < 0 or any(
+            not v.is_finite()
+            for v in (result.open, result.high, result.low, result.close, result.volume)
+        ):
+            raise ValueError("Malformed candle values")
+        if result.high < result.low or result.volume < 0:
+            raise ValueError("Invalid candle range or volume")
+        return result
 
 
 @dataclass(frozen=True)
@@ -50,7 +67,9 @@ class Tick:
 
     @classmethod
     def from_wire(cls, value):
-        return cls(
+        if not isinstance(value, dict):
+            raise TypeError("Tick must be an object")
+        result = cls(
             value["symbol"],
             value["interval"],
             Decimal(str(value["price"])),
@@ -60,6 +79,16 @@ class Tick:
             Candle.from_wire(value["closed"]) if value.get("closed") else None,
             Decimal(str(value["payout"])) if value.get("payout") is not None else None,
         )
+        if (
+            not isinstance(result.symbol, str)
+            or not isinstance(result.interval, str)
+            or not result.price.is_finite()
+            or result.price <= 0
+            or result.timestamp < 0
+            or result.server_time < 0
+        ):
+            raise ValueError("Malformed tick values")
+        return result
 
 
 @dataclass(frozen=True)

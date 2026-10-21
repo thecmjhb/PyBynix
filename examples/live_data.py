@@ -10,9 +10,10 @@ async def main():
     token = os.getenv("BYNIX_TOKEN")
     async with Bynix(
         session=Session(token) if token else None,
-        provider=None
-        if token
-        else PasswordAuth(os.environ["BYNIX_EMAIL"], os.environ["BYNIX_PASSWORD"]),
+        provider=PasswordAuth(os.environ["BYNIX_EMAIL"], os.environ["BYNIX_PASSWORD"])
+        if not token and os.getenv("BYNIX_EMAIL") and os.getenv("BYNIX_PASSWORD")
+        else None,
+        anonymous=not token and not (os.getenv("BYNIX_EMAIL") and os.getenv("BYNIX_PASSWORD")),
     ) as client:
         print("Assets:", len(await client.get_assets()))
         print("Candles:", await client.get_candles("EUR/USD OTC", count=5))

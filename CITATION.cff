@@ -2,8 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, cite the version and its repository when published."
 type: software
 title: PyBynix
-version: 0.1.0a1
-date-released: 2026-10-20
+version: 1.0.0
 authors:
   - family-names: Hossain Bappy
     given-names: C. M. Jubayer

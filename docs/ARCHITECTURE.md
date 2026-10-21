@@ -19,6 +19,16 @@ Each facade instance owns its token, HTTP pool, Socket.IO connection, refresh lo
 subscription registry, account default and bounded acknowledged-order lookup. Account
 state is not stored in module globals. External code owns trading decisions.
 
+## Supervision and fallback
+
+After connection, the client maintains independent market and profile supervisors. The
+market supervisor owns REST polling fallback and Socket.IO reconnect attempts; the
+profile supervisor periodically refreshes authenticated account health. Profile checks
+are bounded to at most five seconds with zero read retries, and market fallback polls
+use the same bound with zero retries. A slow profile response therefore cannot stall a
+market fallback tick. This separation does not guarantee upstream availability or fill
+every reconnect gap.
+
 ## Authentication
 
 The account token is a secret, distinct from the Engine.IO and Socket.IO session IDs.

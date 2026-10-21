@@ -48,3 +48,27 @@ class OrderOutcomeUnknown(BynixError):
     def __init__(self, client_ref):
         self.client_ref = client_ref
         super().__init__(f"Order outcome unknown; reconcile client_ref={client_ref}")
+
+
+class DuplicateOrderReference(BynixError):
+    def __init__(self, client_ref):
+        self.client_ref = client_ref
+        super().__init__(f"Order reference already recorded; reconcile client_ref={client_ref}")
+
+
+class OrderJournalError(BynixError):
+    """The order was accepted, but local persistence failed. Never resubmit it."""
+
+    def __init__(self, order):
+        self.order = order
+        super().__init__(
+            "Order accepted but journal persistence failed; preserve the receipt and do not resubmit"
+        )
+
+
+class SessionExpired(AuthenticationError):
+    """A supplied session is invalid; credentials may still be valid."""
+
+
+class ClientClosed(BynixError):
+    pass

@@ -11,4 +11,12 @@ dist/
 session*.json
 *.har
 browser-profile/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-wal
+*.db-shm
+.pybynix-session-*
 private/

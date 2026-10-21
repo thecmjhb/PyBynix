@@ -1,10 +1,11 @@
-# Validation record - 20 October 2026
+# Validation record - 21 October 2026
 
-Code version: 0.1.0a1. Local environment: Windows, Python 3.13.2. This is an early alpha,
-not a claim of complete premium parity or production certification. No real funds were
-used. No controlled result comparing PyBynix speed with PyQuotex has been obtained.
+Code version: 1.0.0. Local environment: Windows, Python 3.13.2. This is a
+release-preparation validation record, not a claim of complete premium parity or production
+certification. No real funds were used. No controlled result comparing PyBynix speed with
+PyQuotex has been obtained.
 
-## Live checks completed on the owner's PC
+## Live checks completed on the owner's PC (20 October 2026)
 
 | Capability | Observed result |
 | --- | --- |
@@ -35,13 +36,30 @@ observations, not a sample supporting any profitability conclusion. The early-cl
 refund was server-determined. No deposits, withdrawals or account-profile changes were
 performed. Private identifiers and session values are excluded from the public record.
 
+## Final source-fingerprinted demo soak (21 October 2026)
+
+The frozen Windows checkout ran the read-only multi-stream soak to completion for
+**600.801864 seconds** (10 minutes). It subscribed to three demo-account market streams:
+`EUR/USD OTC` at 15 seconds, `GBP/USD OTC` at 1 minute, and `BTC/USD OTC` at 5 seconds.
+The run received 3,597 ticks (1,199 per stream), observed 170 closed candles in total,
+and crossed one scheduled five-minute reconnect boundary. The source SHA-256 map captured
+at start and end was identical (`source_unchanged: true`).
+
+Observed soak metrics were: two total Socket.IO connections, zero malformed ticks, zero
+duplicate ticks, zero read retries, zero REST fallback polls, and a maximum measured tick
+arrival gap of 1.388343 seconds. Tracemalloc reported a peak Python heap of 3,549,450
+bytes. This is one completed Windows run against one demo account and three symbols; it
+does not establish multi-hour stability, all-market coverage, Linux support, or guaranteed
+recovery. The raw report remains private and is not a release input.
+
 ## Offline checks
 
-24 automated tests passed at this stage. They cover unsafe host/session configuration,
-token-safe repr/errors, queue closure and overflow, concurrent refresh, no blind retry
-of uncertain orders or rejected POSTs, amount/real-trading guards, candle normalization,
-client isolation, challenge-only auth fallback, recorded tick dispatch, reconnect gap
-notification and unsupported upstream sentiment.
+77 automated tests passed on Python 3.13.2 and 77 passed on Python 3.11. They cover unsafe
+host/session configuration, token-safe repr/errors, queue closure and overflow, concurrent
+refresh, no blind retry of uncertain orders or rejected POSTs, amount/real-trading guards,
+candle normalization, client isolation, challenge-only auth fallback, recorded tick dispatch,
+reconnect gap notification, documentation completeness, release exclusions, and the
+regression where a slow profile health refresh must not stall market fallback. Ruff passed.
 
 These tests simulate fault conditions and do not establish all corresponding server
 behaviors. CI is configured for Windows/Linux and Python 3.11/3.13; remote CI has not run.
@@ -54,7 +72,7 @@ This includes network and server work, and is not order execution latency.
 
 The offline replay benchmark processed one recorded public-market tick, with JSON
 decoding and Decimal model construction. After 1,000 warmups, ten batches of 10,000
-iterations produced a median batch-average cost of 8.847 microseconds per event.
+iterations produced a median batch-average cost of 9.714 microseconds per event.
 The metric is not a per-event tail-latency percentile and excludes socket delivery,
 dispatch queues and trading. Raw results are in benchmarks/results/.
 
@@ -70,4 +88,5 @@ dispatch queues and trading. Raw results are in benchmarks/results/.
   platform updates after this observation date.
 - Linux and other Python versions, verified by an actual run rather than configuration.
 
-Release status: local alpha; not uploaded to GitHub or PyPI, and no paper deposit made.
+Release status: version 1.0.0 source checkout; not uploaded to GitHub or PyPI, and no paper
+deposit made.

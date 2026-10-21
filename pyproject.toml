@@ -4,17 +4,19 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pybynix"
-version = "0.1.0a1"
+version = "1.0.0"
 description = "Unofficial asynchronous Bynix market data and execution client"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 authors = [{name = "C. M. Jubayer Hossain Bappy"}]
 dependencies = ["httpx>=0.28,<1", "httpcore>=1,<2", "aiohttp>=3.12,<4", "python-socketio[asyncio_client]>=5.13,<6"]
-classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+classifiers = ["Programming Language :: Python :: 3", "Programming Language :: Python :: 3.11", "Programming Language :: Python :: 3.13", "Operating System :: OS Independent"]
 
 [project.optional-dependencies]
 browser = ["playwright>=1.49,<2"]
+network = ["httpx[socks]>=0.28,<1", "aiohttp-socks>=0.10,<1", "dnspython>=2.6,<3"]
+dataframe = ["pandas>=2.2,<4"]
 dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.9", "build>=1.2"]
 
 [project.scripts]
@@ -26,6 +28,10 @@ testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pybynix"]
