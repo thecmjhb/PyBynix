@@ -127,6 +127,8 @@ pybynix domains
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## آزمون و کارایی
@@ -135,7 +137,9 @@ pybynix domains
 
 ## پژوهش
 
-دست‌نوشته همراه نیاز یکپارچه‌سازی، معماری، دستاوردهای مهندسی و ارزیابی را توضیح می‌دهد. نویسنده منبع LaTeX آماده Overleaf را جداگانه نگه می‌دارد؛ مقاله نهایی پس از اعتبارسنجی محصول تهیه می‌شود.
+دست‌نوشته اعتبارسنجی‌شده نیاز یکپارچه‌سازی، معماری، دستاوردهای مهندسی و ارزیابی را توضیح می‌دهد. نویسنده منبع LaTeX آماده Overleaf را جداگانه نگه می‌دارد؛ هیچ PDF توزیع نمی‌شود.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## جامعه و مجوز
 

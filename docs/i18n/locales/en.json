@@ -32,7 +32,7 @@
   "validation_title": "Testing and performance",
   "validation_text": "The validation record lists tested Python versions, asset/timeframe coverage, demo execution, interrupted connections and measured performance. Reproducible tests and benchmark inputs accompany the source.",
   "paper_title": "Research",
-  "paper_text": "The companion manuscript explains the integration need, architecture, engineering contributions and evaluation. Overleaf-ready LaTeX is maintained separately by the author; the final paper will be prepared after product validation.",
+  "paper_text": "The validated manuscript explains the integration need, architecture, engineering contributions and evaluation. Its Overleaf-ready LaTeX source is maintained separately by the author; no PDF is distributed.",
   "contribute_title": "Community and license",
   "contribute_text": "Contributions, reproducible bug reports and documentation improvements are welcome. PyBynix is independently maintained; platform and language trademarks remain with their owners."
 }

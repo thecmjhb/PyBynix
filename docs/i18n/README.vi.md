@@ -127,6 +127,8 @@ Chữ ký hàm, giá trị trả về, ví dụ chạy được và cơ chế kh
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Kiểm thử và hiệu năng
@@ -135,7 +137,9 @@ Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khun
 
 ## Nghiên cứu
 
-Bản thảo giải thích nhu cầu tích hợp, kiến trúc, đóng góp kỹ thuật và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; bài báo cuối cùng được chuẩn bị sau khi xác minh sản phẩm.
+Bản thảo đã được xác minh giải thích nhu cầu tích hợp, kiến trúc, đóng góp kỹ thuật và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Cộng đồng và giấy phép
 

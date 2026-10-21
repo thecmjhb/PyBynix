@@ -32,7 +32,7 @@
   "validation_title": "சோதனையும் செயல்திறனும்",
   "validation_text": "Validation record-இல் சோதிக்கப்பட்ட Python version, asset/timeframe coverage, demo execution, connection interruption மற்றும் performance measurement உள்ளன. மீண்டும் இயக்கக்கூடிய test மற்றும் benchmark input source-உடன் வழங்கப்பட்டுள்ளன.",
   "paper_title": "ஆராய்ச்சி",
-  "paper_text": "துணை ஆய்வுக்கட்டுரை integration தேவை, architecture, engineering contribution மற்றும் evaluation-ஐ விளக்குகிறது. ஆசிரியர் Overleaf-ready LaTeX source-ஐத் தனியாகப் பராமரிக்கிறார்; product validation முடிந்த பின் final paper தயாராகும்.",
+  "paper_text": "சரிபார்க்கப்பட்ட ஆய்வுக்கட்டுரை integration தேவை, architecture, engineering contribution மற்றும் evaluation-ஐ விளக்குகிறது. ஆசிரியர் Overleaf-ready LaTeX source-ஐத் தனியாகப் பராமரிக்கிறார்; PDF விநியோகிக்கப்படாது.",
   "contribute_title": "சமூகமும் உரிமமும்",
   "contribute_text": "Contribution, மீண்டும் உறுதிப்படுத்தக்கூடிய bug report மற்றும் documentation மேம்பாடு வரவேற்கப்படுகின்றன. PyBynix தனித்துப் பராமரிக்கப்படுகிறது; trademark-கள் அவற்றின் உரிமையாளர்களுக்குச் சொந்தமானவை."
 }

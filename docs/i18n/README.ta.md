@@ -127,6 +127,8 @@ Signature, return value, இயக்கக்கூடிய எடுத்த
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## சோதனையும் செயல்திறனும்
@@ -135,7 +137,9 @@ Validation record-இல் சோதிக்கப்பட்ட Python versi
 
 ## ஆராய்ச்சி
 
-துணை ஆய்வுக்கட்டுரை integration தேவை, architecture, engineering contribution மற்றும் evaluation-ஐ விளக்குகிறது. ஆசிரியர் Overleaf-ready LaTeX source-ஐத் தனியாகப் பராமரிக்கிறார்; product validation முடிந்த பின் final paper தயாராகும்.
+சரிபார்க்கப்பட்ட ஆய்வுக்கட்டுரை integration தேவை, architecture, engineering contribution மற்றும் evaluation-ஐ விளக்குகிறது. ஆசிரியர் Overleaf-ready LaTeX source-ஐத் தனியாகப் பராமரிக்கிறார்; PDF விநியோகிக்கப்படாது.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## சமூகமும் உரிமமும்
 

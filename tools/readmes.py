@@ -204,6 +204,8 @@ pybynix domains
 - [Authentication]({rel("docs/AUTHENTICATION.md")})
 - [Examples]({rel("examples")})
 - [Recovery and networking]({rel("docs/RECOVERY.md")})
+- [Feature and fallback matrix]({rel("docs/FEATURE_MATRIX.md")})
+- [Repository map]({rel("docs/REPOSITORY_MAP.md")})
 - [Troubleshooting]({rel("docs/TROUBLESHOOTING.md")})
 
 ## {t["validation_title"]}
@@ -213,6 +215,8 @@ pybynix domains
 ## {t["paper_title"]}
 
 {t["paper_text"]}
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## {t["contribute_title"]}
 

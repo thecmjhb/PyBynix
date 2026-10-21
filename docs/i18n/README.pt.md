@@ -127,6 +127,8 @@ Assinaturas, retornos, exemplos executáveis e comportamento de recuperação es
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Testes e desempenho
@@ -135,7 +137,9 @@ O registro de validação apresenta versões de Python testadas, cobertura de at
 
 ## Pesquisa
 
-O manuscrito descreve a necessidade da integração, a arquitetura, as contribuições de engenharia e a avaliação. O autor mantém separadamente o código LaTeX pronto para Overleaf; o artigo final será preparado após validar o produto.
+O manuscrito validado descreve a necessidade da integração, a arquitetura, as contribuições de engenharia e a avaliação. O autor mantém separadamente o código LaTeX pronto para Overleaf; nenhum PDF é distribuído.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Comunidade e licença
 

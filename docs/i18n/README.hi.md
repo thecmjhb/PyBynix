@@ -127,6 +127,8 @@ pybynix domains
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## परीक्षण और performance
@@ -135,7 +137,9 @@ Validation record में tested Python versions, asset/timeframe coverage, de
 
 ## शोध
 
-संबंधित manuscript integration की आवश्यकता, architecture, engineering contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; product validation के बाद final paper तैयार होगा।
+Validated manuscript integration की आवश्यकता, architecture, engineering contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## समुदाय और लाइसेंस
 

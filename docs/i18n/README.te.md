@@ -127,6 +127,8 @@ Signatures, return values, నడిపించగల ఉదాహరణలు,
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## పరీక్షలు మరియు పనితీరు
@@ -135,7 +137,9 @@ Validation record‌లో పరీక్షించిన Python versions, as
 
 ## పరిశోధన
 
-సహాయక పరిశోధనా పత్రం integration అవసరం, architecture, engineering contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; product validation తర్వాత final paper సిద్ధమవుతుంది.
+ధృవీకరించిన పరిశోధనా పత్రం integration అవసరం, architecture, engineering contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; PDF పంపిణీ చేయబడదు.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## సంఘం మరియు లైసెన్స్
 

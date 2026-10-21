@@ -127,6 +127,8 @@ pybynix domains
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Тестирование и производительность
@@ -135,7 +137,9 @@ pybynix domains
 
 ## Исследование
 
-Рукопись объясняет необходимость интеграции, архитектуру, инженерный вклад и оценку. Автор отдельно поддерживает LaTeX-исходники для Overleaf; итоговая статья будет подготовлена после проверки продукта.
+Проверенная рукопись объясняет необходимость интеграции, архитектуру, инженерный вклад и оценку. Автор отдельно поддерживает LaTeX-исходники для Overleaf; PDF не распространяется.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Сообщество и лицензия
 

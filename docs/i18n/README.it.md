@@ -127,6 +127,8 @@ Firme, valori restituiti, esempi eseguibili e comportamento di recupero sono des
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Test e prestazioni
@@ -135,7 +137,9 @@ Il registro di validazione elenca versioni Python provate, copertura di asset e 
 
 ## Ricerca
 
-Il manoscritto spiega l’esigenza dell’integrazione, l’architettura, i contributi ingegneristici e la valutazione. L’autore mantiene separatamente i sorgenti LaTeX pronti per Overleaf; l’articolo finale seguirà la validazione del prodotto.
+Il manoscritto validato spiega l’esigenza dell’integrazione, l’architettura, i contributi ingegneristici e la valutazione. L’autore mantiene separatamente i sorgenti LaTeX pronti per Overleaf; non viene distribuito alcun PDF.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Comunità e licenza
 

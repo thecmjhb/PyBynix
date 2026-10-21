@@ -127,6 +127,8 @@ Signature, nilai kembalian, contoh siap dijalankan, dan perilaku pemulihan dijel
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Pengujian dan performa
@@ -135,7 +137,9 @@ Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eks
 
 ## Riset
 
-Naskah pendamping menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; makalah final disiapkan setelah validasi produk.
+Naskah tervalidasi menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Komunitas dan lisensi
 

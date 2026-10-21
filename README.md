@@ -127,6 +127,8 @@ Detailed signatures, return values, runnable examples and recovery behavior are 
 - [Authentication](docs/AUTHENTICATION.md)
 - [Examples](examples)
 - [Recovery and networking](docs/RECOVERY.md)
+- [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+- [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
 ## Testing and performance
@@ -135,7 +137,9 @@ The validation record lists tested Python versions, asset/timeframe coverage, de
 
 ## Research
 
-The companion manuscript explains the integration need, architecture, engineering contributions and evaluation. Overleaf-ready LaTeX is maintained separately by the author; the final paper will be prepared after product validation.
+The validated manuscript explains the integration need, architecture, engineering contributions and evaluation. Its Overleaf-ready LaTeX source is maintained separately by the author; no PDF is distributed.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Community and license
 

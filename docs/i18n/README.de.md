@@ -127,6 +127,8 @@ Signaturen, Rückgabewerte, ausführbare Beispiele und Wiederherstellung sind un
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Tests und Leistung
@@ -135,7 +137,9 @@ Der Prüfbericht enthält getestete Python-Versionen, Asset- und Zeitrahmenabdec
 
 ## Forschung
 
-Das Manuskript erläutert Integrationsbedarf, Architektur, technische Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; die endgültige Arbeit folgt nach der Produktprüfung.
+Das validierte Manuskript erläutert Integrationsbedarf, Architektur, technische Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Community und Lizenz
 

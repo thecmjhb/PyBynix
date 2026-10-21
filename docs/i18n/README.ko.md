@@ -127,6 +127,8 @@ pybynix domains
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## 테스트 및 성능
@@ -135,7 +137,9 @@ pybynix domains
 
 ## 연구
 
-관련 원고는 통합의 필요성, 구조, 엔지니어링 기여와 평가를 설명합니다. 저자는 Overleaf용 LaTeX 소스를 별도로 관리하며 최종 논문은 제품 검증 후 준비합니다.
+검증된 원고는 통합의 필요성, 구조, 엔지니어링 기여와 평가를 설명합니다. 저자는 Overleaf용 LaTeX 소스를 별도로 관리하며 PDF는 배포하지 않습니다.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## 커뮤니티 및 라이선스
 

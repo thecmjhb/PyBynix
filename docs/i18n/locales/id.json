@@ -32,7 +32,7 @@
   "validation_title": "Pengujian dan performa",
   "validation_text": "Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eksekusi demo, gangguan koneksi, dan pengukuran performa. Sumber menyertakan pengujian serta input benchmark yang dapat direproduksi.",
   "paper_title": "Riset",
-  "paper_text": "Naskah pendamping menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; makalah final disiapkan setelah validasi produk.",
+  "paper_text": "Naskah tervalidasi menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.",
   "contribute_title": "Komunitas dan lisensi",
   "contribute_text": "Kontribusi, laporan bug yang dapat direproduksi, dan perbaikan dokumentasi dipersilakan. PyBynix dikelola independen; merek dagang tetap milik pemiliknya."
 }

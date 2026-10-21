@@ -127,6 +127,8 @@ pybynix domains
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## الاختبارات والأداء
@@ -135,7 +137,9 @@ pybynix domains
 
 ## البحث
 
-تشرح المخطوطة المصاحبة الحاجة إلى التكامل والبنية والمساهمات الهندسية والتقييم. يحتفظ المؤلف بمصدر LaTeX جاهز لـ Overleaf بشكل منفصل؛ ويُعد البحث النهائي بعد التحقق من المنتج.
+تشرح المخطوطة التي تم التحقق منها الحاجة إلى التكامل والبنية والمساهمات الهندسية والتقييم. يحتفظ المؤلف بمصدر LaTeX جاهز لـ Overleaf بشكل منفصل؛ ولا يتم توزيع أي PDF.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## المجتمع والترخيص
 

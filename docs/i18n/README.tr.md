@@ -127,6 +127,8 @@ pybynix domains
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Test ve performans
@@ -135,7 +137,9 @@ Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı 
 
 ## Araştırma
 
-Eşlik eden makale bütünleştirme gereksinimini, mimariyi, mühendislik katkılarını ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; nihai makale ürün doğrulamasından sonra hazırlanır.
+Doğrulanmış makale bütünleştirme gereksinimini, mimariyi, mühendislik katkılarını ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Topluluk ve lisans
 

@@ -127,6 +127,8 @@ Method signature, return value, runnable example ও recovery behavior নিচ
 - [Authentication](docs/AUTHENTICATION.md)
 - [Examples](examples)
 - [Recovery and networking](docs/RECOVERY.md)
+- [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+- [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
 ## পরীক্ষা ও performance
@@ -135,7 +137,9 @@ Validation record-এ পরীক্ষিত Python version, asset/timeframe c
 
 ## গবেষণা
 
-Companion manuscript-এ library-এর প্রয়োজন, architecture, engineering contribution ও evaluation ব্যাখ্যা করা হবে। লেখকের আলাদা Overleaf-ready LaTeX source থাকবে; product validation শেষে final paper প্রস্তুত হবে।
+Validated manuscript-এ library-এর প্রয়োজন, architecture, engineering contribution ও evaluation ব্যাখ্যা করা হয়েছে। লেখকের আলাদা Overleaf-ready LaTeX source সম্পূর্ণ; কোনো PDF বিতরণ করা হয় না।
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## কমিউনিটি ও লাইসেন্স
 

@@ -32,7 +32,7 @@
   "validation_title": "ٹیسٹ اور کارکردگی",
   "validation_text": "Validation record میں آزمودہ Python versions، assets اور timeframes، demo execution، connection interruptions اور performance measurements موجود ہیں۔ Reproducible tests اور benchmark inputs source کے ساتھ ہیں۔",
   "paper_title": "تحقیق",
-  "paper_text": "متعلقہ manuscript integration کی ضرورت، architecture، engineering contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ product validation کے بعد final paper تیار ہوگا۔",
+  "paper_text": "Validated manuscript integration کی ضرورت، architecture، engineering contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ کوئی PDF تقسیم نہیں کی جاتی۔",
   "contribute_title": "کمیونٹی اور لائسنس",
   "contribute_text": "Contributions، دوبارہ جانچے جا سکنے والے bug reports اور documentation improvements خوش آمدید ہیں۔ PyBynix آزادانہ طور پر maintained ہے؛ trademarks متعلقہ مالکان کے ہیں۔"
 }

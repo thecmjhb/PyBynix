@@ -127,6 +127,8 @@ Signatures، return values، چلنے والی مثالیں اور recovery beha
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## ٹیسٹ اور کارکردگی
@@ -135,7 +137,9 @@ Validation record میں آزمودہ Python versions، assets اور timeframes
 
 ## تحقیق
 
-متعلقہ manuscript integration کی ضرورت، architecture، engineering contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ product validation کے بعد final paper تیار ہوگا۔
+Validated manuscript integration کی ضرورت، architecture، engineering contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ کوئی PDF تقسیم نہیں کی جاتی۔
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## کمیونٹی اور لائسنس
 

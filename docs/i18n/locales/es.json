@@ -32,7 +32,7 @@
   "validation_title": "Pruebas y rendimiento",
   "validation_text": "El registro de validación enumera versiones de Python probadas, cobertura de activos y períodos, operaciones demo, interrupciones y mediciones. El código incluye pruebas e inputs de benchmark reproducibles.",
   "paper_title": "Investigación",
-  "paper_text": "El manuscrito explica la necesidad de integración, la arquitectura, las contribuciones de ingeniería y la evaluación. El autor mantiene por separado el código LaTeX preparado para Overleaf; el artículo final se preparará tras validar el producto.",
+  "paper_text": "El manuscrito validado explica la necesidad de integración, la arquitectura, las contribuciones de ingeniería y la evaluación. El autor mantiene por separado el código LaTeX preparado para Overleaf; no se distribuye ningún PDF.",
   "contribute_title": "Comunidad y licencia",
   "contribute_text": "Se agradecen contribuciones, informes de errores reproducibles y mejoras de documentación. PyBynix se mantiene de forma independiente; las marcas pertenecen a sus respectivos titulares."
 }

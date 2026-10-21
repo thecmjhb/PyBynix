@@ -127,6 +127,8 @@ Retrouvez les signatures, résultats, exemples exécutables et règles de repris
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
 ## Tests et performances
@@ -135,7 +137,9 @@ Le rapport de validation détaille les versions de Python testées, les actifs e
 
 ## Recherche
 
-Le manuscrit explique le besoin d’intégration, l’architecture, les apports d’ingénierie et l’évaluation. L’auteur maintient séparément les sources LaTeX pour Overleaf ; l’article final suivra la validation du produit.
+Le manuscrit validé explique le besoin d’intégration, l’architecture, les apports d’ingénierie et l’évaluation. L’auteur maintient séparément les sources LaTeX pour Overleaf ; aucun PDF n’est distribué.
+
+The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Communauté et licence
 
