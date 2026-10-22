@@ -30,6 +30,7 @@ LANGUAGES = [
     "te",
 ]
 SECTION_KEYS = (
+    "capabilities_title",
     "features_title",
     "install",
     "quickstart",
@@ -58,11 +59,16 @@ def test_readme_is_complete_has_valid_examples_and_local_links(language):
         (ROOT / f"docs/i18n/locales/{language}.json").read_text(encoding="utf-8")
     )
     assert translation["tagline"] in text
+    assert len(translation["capabilities"]) == 7
+    assert all(
+        f"**{item['name']}** — {item['text']}" in text
+        for item in translation["capabilities"]
+    )
     assert len(translation["features"]) == 10
     assert all(feature in text for feature in translation["features"])
     headings = [translation[key] for key in SECTION_KEYS]
-    assert len(headings) == 11
-    assert len(re.findall(r"^## ", text, re.MULTILINE)) == 11
+    assert len(headings) == 12
+    assert len(re.findall(r"^## ", text, re.MULTILINE)) == 12
     assert all(f"## {heading}" in text for heading in headings)
     assert "0.1.0a1" not in text
     for code in re.findall(r"```python\n(.*?)```", text, re.DOTALL):

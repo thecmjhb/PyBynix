@@ -2,6 +2,18 @@
   "name": "فارسی",
   "tagline": "داده‌های بازار و اجرای معامله در یک کلاینت Python.",
   "intro": "رابط ناهمگام Python برای Bynix، مناسب برنامه‌های معاملاتی، خطوط پردازش داده و ابزارهای توسعه‌دهندگان.",
+  "capabilities_title": "دسته‌های قابلیت",
+  "capabilities": [
+    {"name": "هستهٔ رایگان و متن‌باز", "text": "بستهٔ عمومی با مجوز MIT؛ دادهٔ عمومی بازار بدون حساب در دسترس است و افزونه‌های مرورگر، شبکه و DataFrame اختیاری‌اند."},
+    {"name": "دادهٔ سریع بازار", "text": "تیک‌های stream-first، کندل‌های در حال شکل‌گیری/بسته، صفحات تاریخی محدود و batch همزمان کندل با fallback از REST."},
+    {"name": "ورود چندگانه و client pool", "text": "ارائه‌دهنده‌های token، password، browser و OTP، همراه با کلاینت‌های نام‌گذاری‌شدهٔ مستقل و رویدادهای حساب."},
+    {"name": "خودکارسازی امنِ متعلق به فراخوان", "text": "ExecutionOrchestrator/AutoExecutor فقط intent صریح برنامه را می‌پذیرد؛ dry-run، پیش‌فرض demo، cooldown، محدودیت همزمانی و بدون retry سفارش نامطمئن."},
+    {"name": "شاخص‌های خالص", "text": "اندازه‌گیری‌های Decimal برای SMA، EMA، RSI، MACD، Bollinger، ATR و stochastic روی دادهٔ فراخوان؛ بدون signal یا strategy."},
+    {"name": "سهولت‌های اجرا", "text": "`buy_and_wait`، `sell`/بستن زودهنگام، انتظار settlement، journal و reconciliation برای فراخوان صریح یک سفارش."},
+    {"name": "محدودهٔ تأییدشدهٔ Bynix", "text": "برای رفتار implemented، offline-tested و live-demo-observed ماتریس را ببینید؛ برابری تأییدنشده ادعا نمی‌شود."}
+  ],
+  "matrix_link_text": "محدودهٔ کامل تأییدشده را در",
+  "matrix_link_label": "ماتریس قابلیت و fallback ببینید",
   "features_title": "امکانات",
   "features": [
     "توکن نشست، ورود با گذرواژه یا مرورگر و callback احراز هویت دومرحله‌ای.",

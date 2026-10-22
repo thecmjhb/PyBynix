@@ -163,6 +163,30 @@ await client.get_historical_candles(
 The observed chart intervals are `5s`, `10s`, `15s`, `30s`, `1m`, `5m`, `15m`, `30m`, `1h`.
 Resampling to larger integer multiples is available explicitly through `resample_candles`.
 
+### Pure technical indicators
+
+The package exports `sma`, `ema`, `rsi`, `macd`, `bollinger_bands`, `atr` and
+`stochastic`, plus descriptive aliases such as `simple_moving_average` and
+`average_true_range`. These are synchronous, pure helpers over caller-owned
+`Candle` or Decimal-like data. They preserve input order, return lists aligned to
+the input length, and use `None` for warm-up positions without enough observations.
+They never fetch data, place orders, emit signals, choose a direction or implement
+a strategy/Martingale policy.
+
+| Helper | Exact semantics |
+| --- | --- |
+| `sma(values, period=14, field="close")` | Arithmetic mean over each trailing window; Candle inputs use the selected OHLCV field. |
+| `ema(values, period=14, field="close")` | SMA-seeded EMA with smoothing factor `2 / (period + 1)`. |
+| `rsi(values, period=14, field="close")` | Wilder-smoothed RSI from close changes; flat/lossless/gainless windows are 50/100/0. |
+| `macd(values, fast_period=12, slow_period=26, signal_period=9, field="close")` | `MACDResult(macd, signal, histogram)` using SMA-seeded EMAs; fast period must be less than slow period. |
+| `bollinger_bands(values, period=20, multiplier=2, field="close")` | `BollingerBandsResult` using population standard deviation (`divide by period`) around the SMA. |
+| `atr(candles, period=14)` | Wilder ATR from Candle true ranges; the first range is high-low, then previous-close gaps are considered. |
+| `stochastic(candles, period=14, smooth_period=3)` | `StochasticResult` with 0..100 %K and an SMA-smoothed %D; flat ranges are 50. |
+
+All calculations retain `Decimal` arithmetic. Inputs must be finite; periods must
+be positive integers. These helpers describe measurements only: any interpretation,
+signal, risk control or execution remains the caller's responsibility.
+
 ## Streaming
 
 ```python
@@ -216,6 +240,15 @@ challenge_id=None)` takes call/put, a positive amount with at most two decimal p
 and integer duration seconds (at least 5). `buy(amount, asset, direction, duration,
 **kwargs)` is a convenience wrapper with familiar argument ordering.
 
+`buy_and_wait(amount, asset, direction, duration, account_type=None, client_ref=None,
+challenge_id=None, timeout=120, poll_interval=2)` composes exactly one `place_order`
+call with `wait_order_result`. It returns `{"order": accepted_receipt, "result":
+terminal_history_row}` and never retries the order POST. `sell(trade_id)` is an explicit
+early-close alias that delegates only to `close_trade_early`; it is not a separate
+sell-direction endpoint and does not promise a refund. If settlement times out after
+acceptance, no second POST is attempted; use `reconcile_order` or `unresolved_orders`
+for caller-owned follow-up.
+
 The SDK validates known availability flags and live trading rules, obtains an entry
 quote from Bynix, reserves the journal reference and sends exactly one POST. An accepted
 response includes a platform `trade_id` and caller `client_ref`. It is not a settled result.
@@ -230,6 +263,8 @@ challenge. No real-money order is placed by installation, login, diagnostics or 
 | `reconcile_order(trade_id=None, client_ref=None, account_type=None, max_pages=5)` | Matching pending/history row or None |
 | `wait_order_result(trade_id, account_type=None, timeout=120, poll_interval=2)` | Terminal history row; bounded by timeout |
 | `close_trade_early(trade_id)` | Verified owned order; sends one early-close request; server decides eligibility/refund |
+| `buy_and_wait(...)` | One order placement followed by bounded settlement lookup; returns receipt and terminal row |
+| `sell(trade_id)` | Alias to `close_trade_early`; verifies and early-closes an existing trade |
 | `unresolved_orders()` | Local journal records needing follow-up |
 
 Terminal statuses handled are won, lost, draw, refunded and closed. Early close does not

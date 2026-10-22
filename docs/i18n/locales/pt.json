@@ -2,6 +2,18 @@
   "name": "Português",
   "tagline": "Dados de mercado e execução em um único cliente Python.",
   "intro": "Uma interface Python assíncrona para Bynix, desenvolvida para aplicações de trading, pipelines de dados e ferramentas de desenvolvimento.",
+  "capabilities_title": "Categorias de capacidade",
+  "capabilities": [
+    {"name": "Núcleo gratuito e aberto", "text": "Pacote público sob licença MIT; dados públicos funcionam sem conta, com extras opcionais de navegador, rede e DataFrame."},
+    {"name": "Dados de mercado rápidos", "text": "Ticks por stream, candles em formação/fechados, páginas históricas limitadas e lotes concorrentes com fallback REST."},
+    {"name": "Múltiplos logins e pool de clientes", "text": "Provedores por token, senha, navegador e OTP, além de clientes independentes nomeados e eventos de conta."},
+    {"name": "Automação segura do chamador", "text": "ExecutionOrchestrator/AutoExecutor aceita intenções explícitas da aplicação, com dry-run, demo padrão, cooldown, limites de concorrência e sem repetir ordens incertas."},
+    {"name": "Indicadores puros", "text": "Medições Decimal de SMA, EMA, RSI, MACD, Bandas de Bollinger, ATR e estocástico sobre dados do chamador; sem sinais ou estratégia."},
+    {"name": "Facilidades de execução", "text": "`buy_and_wait`, `sell`/fechamento antecipado, espera de liquidação, journal e reconciliação em chamadas explícitas de uma ordem."},
+    {"name": "Escopo Bynix verificado", "text": "Veja na matriz o comportamento implementado, testado offline e observado em demo; não há paridade não verificada implícita."}
+  ],
+  "matrix_link_text": "Veja o escopo verificado completo na",
+  "matrix_link_label": "matriz de recursos e fallback",
   "features_title": "Recursos",
   "features": [
     "Tokens de sessão, login por senha ou navegador e callbacks de 2FA.",

@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## Kategori kemampuan
+
+- **Inti gratis dan terbuka** — Paket publik berlisensi MIT; data pasar publik berjalan tanpa akun, dengan tambahan browser, jaringan, dan DataFrame opsional.
+- **Data pasar cepat** — Tick berbasis stream, candle yang sedang/selesai, halaman historis terbatas, dan batch candle konkuren dengan fallback REST.
+- **Login multi-akun dan client pool** — Provider token, kata sandi, browser, dan OTP, serta klien bernama independen dan event akun.
+- **Otomasi aman milik pemanggil** — ExecutionOrchestrator/AutoExecutor menerima intent eksplisit aplikasi dengan dry-run, default demo, cooldown, batas konkurensi, dan tanpa retry order yang tidak pasti.
+- **Indikator murni** — Pengukuran Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR, dan stochastic atas data milik pemanggil; tanpa sinyal atau strategi.
+- **Kemudahan eksekusi** — `buy_and_wait`, `sell`/early close, tunggu settlement, journal, dan rekonsiliasi untuk panggilan satu-order yang eksplisit.
+- **Cakupan Bynix terverifikasi** — Lihat matriks untuk perilaku yang diimplementasikan, diuji offline, dan diamati live-demo; parity yang belum diverifikasi tidak dijanjikan.
+
+Lihat cakupan terverifikasi lengkap di [matriks fitur dan fallback](../FEATURE_MATRIX.md).
+
 ## Fitur
 
 | API | Fitur |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | Klien bernama yang independen, peristiwa akun, dan rincian saldo. |
 | `proxy · dns_servers · connect_any` | Proxy HTTP/SOCKS5, DNS khusus, dan fallback koneksi ke domain tepercaya. |
 | `get_realtime_sentiment · stream_sentiment` | Sentimen streaming yang dihitung dari model candle dan tick bergaya platform. |
-| `export_candles · candles_to_dataframe · resample_candles` | Ekspor CSV/JSON dengan presisi Decimal, pandas opsional, dan resampling candle. |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Ekspor CSV/JSON dengan presisi Decimal, pandas opsional, dan resampling candle. |
 
 ## Instalasi
 
@@ -124,11 +136,12 @@ pybynix domains
 Signature, nilai kembalian, contoh siap dijalankan, dan perilaku pemulihan dijelaskan di bawah. Gunakan trade_symbol yang persis dari katalog aset.
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eks
 ## Riset
 
 Naskah tervalidasi menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Komunitas dan lisensi
 

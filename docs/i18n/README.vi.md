@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## Nhóm năng lực
+
+- **Lõi miễn phí/mở** — Gói công khai theo giấy phép MIT; dữ liệu thị trường công khai dùng được không cần tài khoản, có thêm tùy chọn cho trình duyệt, mạng và DataFrame.
+- **Dữ liệu thị trường nhanh** — Tick ưu tiên stream, nến đang hình thành/đã đóng, trang lịch sử giới hạn và batch nến đồng thời với fallback REST.
+- **Đăng nhập nhiều tài khoản và client pool** — Provider token, mật khẩu, trình duyệt và OTP, cùng client độc lập có tên và sự kiện tài khoản.
+- **Tự động hóa an toàn do caller sở hữu** — ExecutionOrchestrator/AutoExecutor nhận intent rõ ràng từ ứng dụng, có dry-run, mặc định demo, cooldown, giới hạn đồng thời và không retry lệnh không chắc chắn.
+- **Chỉ báo thuần** — Các phép đo Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR và stochastic trên dữ liệu của caller; không có tín hiệu hay chiến lược.
+- **Tiện ích thực thi** — `buy_and_wait`, `sell`/đóng sớm, chờ thanh toán, journal và reconciliation cho lời gọi một lệnh rõ ràng.
+- **Phạm vi Bynix đã xác minh** — Xem ma trận để biết hành vi đã triển khai, kiểm thử offline và quan sát trong live demo; không hàm ý parity chưa xác minh.
+
+Xem phạm vi đã xác minh đầy đủ trong [ma trận tính năng và fallback](../FEATURE_MATRIX.md).
+
 ## Tính năng
 
 | API | Tính năng |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | Client độc lập có tên, sự kiện tài khoản và số dư chi tiết. |
 | `proxy · dns_servers · connect_any` | Proxy HTTP/SOCKS5, DNS tùy chỉnh và chuyển sang tên miền đáng tin cậy. |
 | `get_realtime_sentiment · stream_sentiment` | Cảm tính thị trường liên tục được tính từ mô hình nến và tick theo nền tảng. |
-| `export_candles · candles_to_dataframe · resample_candles` | Xuất CSV/JSON giữ độ chính xác Decimal, pandas tùy chọn và tổng hợp lại nến. |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Xuất CSV/JSON giữ độ chính xác Decimal, pandas tùy chọn và tổng hợp lại nến. |
 
 ## Cài đặt
 
@@ -124,11 +136,12 @@ pybynix domains
 Chữ ký hàm, giá trị trả về, ví dụ chạy được và cơ chế khôi phục được ghi bên dưới. Dùng đúng giá trị trade_symbol từ danh mục.
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khun
 ## Nghiên cứu
 
 Bản thảo đã được xác minh giải thích nhu cầu tích hợp, kiến trúc, đóng góp kỹ thuật và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Cộng đồng và giấy phép
 

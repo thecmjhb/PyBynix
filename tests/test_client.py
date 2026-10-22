@@ -169,6 +169,58 @@ async def test_candles_sorted_deduplicated_and_exclusive_before():
         await client.close()
 
 
+async def test_buy_and_wait_places_once_and_waits_for_settlement():
+    client = Bynix(session=Session("test-secret"), validate_orders=False)
+    calls = []
+
+    async def place(*args, **kwargs):
+        calls.append(("place", args, kwargs))
+        return {"trade_id": "trade-1", "client_ref": "ref-1"}
+
+    async def wait(*args, **kwargs):
+        calls.append(("wait", args, kwargs))
+        return {"trade_id": "trade-1", "status": "won"}
+
+    client.place_order = place
+    client.wait_order_result = wait
+    try:
+        result = await client.buy_and_wait(
+            "1.00",
+            "EUR/USD OTC",
+            "call",
+            5,
+            account_type="demo",
+            client_ref="ref-1",
+            timeout=30,
+            poll_interval=1,
+        )
+        assert result == {
+            "order": {"trade_id": "trade-1", "client_ref": "ref-1"},
+            "result": {"trade_id": "trade-1", "status": "won"},
+        }
+        assert [call[0] for call in calls] == ["place", "wait"]
+        assert calls[0][1] == ("EUR/USD OTC", "call", "1.00", 5)
+        assert calls[1][1] == ("trade-1",)
+    finally:
+        await client.close()
+
+
+async def test_sell_delegates_to_existing_early_close():
+    client = Bynix(session=Session("test-secret"), validate_orders=False)
+    calls = []
+
+    async def close(trade_id):
+        calls.append(trade_id)
+        return {"trade_id": trade_id, "status": "closed"}
+
+    client.close_trade_early = close
+    try:
+        assert await client.sell("trade-2") == {"trade_id": "trade-2", "status": "closed"}
+        assert calls == ["trade-2"]
+    finally:
+        await client.close()
+
+
 async def test_candle_batch_preserves_order_and_bounds_concurrency():
     active = peak = 0
 

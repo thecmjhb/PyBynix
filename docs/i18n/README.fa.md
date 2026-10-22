@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## دسته‌های قابلیت
+
+- **هستهٔ رایگان و متن‌باز** — بستهٔ عمومی با مجوز MIT؛ دادهٔ عمومی بازار بدون حساب در دسترس است و افزونه‌های مرورگر، شبکه و DataFrame اختیاری‌اند.
+- **دادهٔ سریع بازار** — تیک‌های stream-first، کندل‌های در حال شکل‌گیری/بسته، صفحات تاریخی محدود و batch همزمان کندل با fallback از REST.
+- **ورود چندگانه و client pool** — ارائه‌دهنده‌های token، password، browser و OTP، همراه با کلاینت‌های نام‌گذاری‌شدهٔ مستقل و رویدادهای حساب.
+- **خودکارسازی امنِ متعلق به فراخوان** — ExecutionOrchestrator/AutoExecutor فقط intent صریح برنامه را می‌پذیرد؛ dry-run، پیش‌فرض demo، cooldown، محدودیت همزمانی و بدون retry سفارش نامطمئن.
+- **شاخص‌های خالص** — اندازه‌گیری‌های Decimal برای SMA، EMA، RSI، MACD، Bollinger، ATR و stochastic روی دادهٔ فراخوان؛ بدون signal یا strategy.
+- **سهولت‌های اجرا** — `buy_and_wait`، `sell`/بستن زودهنگام، انتظار settlement، journal و reconciliation برای فراخوان صریح یک سفارش.
+- **محدودهٔ تأییدشدهٔ Bynix** — برای رفتار implemented، offline-tested و live-demo-observed ماتریس را ببینید؛ برابری تأییدنشده ادعا نمی‌شود.
+
+محدودهٔ کامل تأییدشده را در [ماتریس قابلیت و fallback ببینید](../FEATURE_MATRIX.md).
+
 ## امکانات
 
 | API | امکانات |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | کلاینت‌های نام‌گذاری‌شده مستقل، رویداد حساب و جزئیات موجودی. |
 | `proxy · dns_servers · connect_any` | پروکسی HTTP/SOCKS5، DNS سفارشی و اتصال جایگزین به دامنه‌های معتبر. |
 | `get_realtime_sentiment · stream_sentiment` | احساس بازار پیوسته بر اساس مدل کندل و تیک مشابه پلتفرم. |
-| `export_candles · candles_to_dataframe · resample_candles` | خروجی CSV/JSON با دقت Decimal، pandas اختیاری و تجمیع دوباره کندل‌ها. |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | خروجی CSV/JSON با دقت Decimal، pandas اختیاری و تجمیع دوباره کندل‌ها. |
 
 ## نصب
 
@@ -124,11 +136,12 @@ pybynix domains
 امضاها، مقدار بازگشتی، مثال‌های قابل اجرا و رفتار بازیابی در ادامه آمده‌اند. از مقدار دقیق trade_symbol در فهرست دارایی‌ها استفاده کنید.
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ pybynix domains
 ## پژوهش
 
 دست‌نوشته اعتبارسنجی‌شده نیاز یکپارچه‌سازی، معماری، دستاوردهای مهندسی و ارزیابی را توضیح می‌دهد. نویسنده منبع LaTeX آماده Overleaf را جداگانه نگه می‌دارد؛ هیچ PDF توزیع نمی‌شود.
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## جامعه و مجوز
 

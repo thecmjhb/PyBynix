@@ -2,6 +2,18 @@
   "name": "English",
   "tagline": "Market data. Trade execution. One Python client.",
   "intro": "An asynchronous Python interface for Bynix, built for trading applications, data pipelines and developer tools.",
+  "capabilities_title": "Capability categories",
+  "capabilities": [
+    {"name": "Free/open core", "text": "MIT-licensed public package; public market data works without an account, with optional browser, network, and DataFrame extras."},
+    {"name": "Fast market data", "text": "Stream-first ticks, forming/closed candles, bounded historical pages, and concurrent candle batches with REST fallback."},
+    {"name": "Multi-login and client pool", "text": "Token, password, browser, and OTP-capable providers plus independent named clients and account events."},
+    {"name": "Safe caller-owned automation", "text": "ExecutionOrchestrator/AutoExecutor accepts explicit application intents with dry-run, demo-only defaults, cooldown, concurrency limits, and no uncertain-order retry."},
+    {"name": "Pure indicators", "text": "Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR, and stochastic measurements over caller-owned data; no signals or strategy."},
+    {"name": "Execution conveniences", "text": "`buy_and_wait`, `sell`/early close, settlement wait, journaling, and reconciliation around explicit one-order-at-a-time calls."},
+    {"name": "Verified Bynix scope", "text": "Read the matrix for implemented, offline-tested, and live-demo-observed behavior; unsupported parity is not implied."}
+  ],
+  "matrix_link_text": "See the full verified scope in the",
+  "matrix_link_label": "feature and fallback matrix",
   "features_title": "Features",
   "features": [
     "Session tokens, password login, browser-assisted login and 2FA callbacks.",

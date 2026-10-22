@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="README.md" title="English"><img src="assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="README.bn.md" title="বাংলা"><img src="assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="docs/i18n/README.zh-CN.md" title="中文"><img src="assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="docs/i18n/README.hi.md" title="हिन्दी"><img src="assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="docs/i18n/README.es.md" title="Español"><img src="assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="docs/i18n/README.ar.md" title="العربية"><img src="assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="docs/i18n/README.fr.md" title="Français"><img src="assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="docs/i18n/README.pt.md" title="Português"><img src="assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="docs/i18n/README.id.md" title="Bahasa Indonesia"><img src="assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="docs/i18n/README.ur.md" title="اردو"><img src="assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="docs/i18n/README.ru.md" title="Русский"><img src="assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="docs/i18n/README.ko.md" title="한국어"><img src="assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="docs/i18n/README.ja.md" title="日本語"><img src="assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="docs/i18n/README.de.md" title="Deutsch"><img src="assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="docs/i18n/README.tr.md" title="Türkçe"><img src="assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="docs/i18n/README.it.md" title="Italiano"><img src="assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="docs/i18n/README.fa.md" title="فارسی"><img src="assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="docs/i18n/README.vi.md" title="Tiếng Việt"><img src="assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="docs/i18n/README.ta.md" title="தமிழ்"><img src="assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="docs/i18n/README.te.md" title="తెలుగు"><img src="assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## Capability categories
+
+- **Free/open core** — MIT-licensed public package; public market data works without an account, with optional browser, network, and DataFrame extras.
+- **Fast market data** — Stream-first ticks, forming/closed candles, bounded historical pages, and concurrent candle batches with REST fallback.
+- **Multi-login and client pool** — Token, password, browser, and OTP-capable providers plus independent named clients and account events.
+- **Safe caller-owned automation** — ExecutionOrchestrator/AutoExecutor accepts explicit application intents with dry-run, demo-only defaults, cooldown, concurrency limits, and no uncertain-order retry.
+- **Pure indicators** — Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR, and stochastic measurements over caller-owned data; no signals or strategy.
+- **Execution conveniences** — `buy_and_wait`, `sell`/early close, settlement wait, journaling, and reconciliation around explicit one-order-at-a-time calls.
+- **Verified Bynix scope** — Read the matrix for implemented, offline-tested, and live-demo-observed behavior; unsupported parity is not implied.
+
+See the full verified scope in the [feature and fallback matrix](docs/FEATURE_MATRIX.md).
+
 ## Features
 
 | API | Features |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | Independent named clients, account events and detailed balances. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxies, custom DNS and trusted-domain connection fallback. |
 | `get_realtime_sentiment · stream_sentiment` | Streaming market sentiment using the platform-style candle and tick model. |
-| `export_candles · candles_to_dataframe · resample_candles` | Decimal-preserving CSV/JSON export, optional pandas and candle resampling. |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Decimal-preserving CSV/JSON export, optional pandas and candle resampling. |
 
 ## Installation
 
@@ -124,11 +136,12 @@ pybynix domains
 Detailed signatures, return values, runnable examples and recovery behavior are documented below. Use exact trade_symbol values from the asset catalog.
 
 - [API reference](docs/API.md)
- - [Authentication](docs/AUTHENTICATION.md)
- - [Examples](examples)
- - [Recovery and networking](docs/RECOVERY.md)
- - [Automation boundary](docs/AUTOMATION.md)
- - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+- [Authentication](docs/AUTHENTICATION.md)
+- [Examples](examples)
+- [Recovery and networking](docs/RECOVERY.md)
+- [Automation boundary](docs/AUTOMATION.md)
+- [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+- [Launch checklist](docs/LAUNCH_CHECKLIST.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ The validation record lists tested Python versions, asset/timeframe coverage, de
 ## Research
 
 The validated manuscript explains the integration need, architecture, engineering contributions and evaluation. Its Overleaf-ready LaTeX source is maintained separately by the author; no PDF is distributed.
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Community and license
 

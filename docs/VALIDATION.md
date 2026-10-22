@@ -1,4 +1,4 @@
-# Validation record - 21 October 2026
+# Validation record - 22 October 2026
 
 Code version: 1.0.0. Local environment: Windows, Python 3.13.2. This is a
 release-preparation validation record, not a claim of complete premium parity or production
@@ -54,12 +54,23 @@ recovery. The raw report remains private and is not a release input.
 
 ## Offline checks
 
-77 automated tests passed on Python 3.13.2 and 77 passed on Python 3.11. They cover unsafe
+100 automated tests passed on Python 3.13.2 in the dedicated project environment and 100
+passed on Python 3.11.17 in the local private/env311 environment. They cover unsafe
 host/session configuration, token-safe repr/errors, queue closure and overflow, concurrent
 refresh, no blind retry of uncertain orders or rejected POSTs, amount/real-trading guards,
 candle normalization, client isolation, challenge-only auth fallback, recorded tick dispatch,
 reconnect gap notification, documentation completeness, release exclusions, and the
-regression where a slow profile health refresh must not stall market fallback. Ruff passed.
+regression where a slow profile health refresh must not stall market fallback. The additive
+indicator suite covers Decimal SMA/EMA/RSI/MACD/Bollinger/ATR/stochastic semantics, and
+client convenience tests cover one-place/one-wait composition plus `sell` delegation. The
+automation suite covers dry-run/demo guards, cooldown/concurrency limits, fail-closed pause
+states, idle-source shutdown, in-flight submission draining, and bounded record retention.
+Ruff passed with `ruff check .`.
+
+The focused indicator/client run passed 29 tests on the same Python 3.11.17 environment.
+These are offline tests only: they use no credentials, saved sessions or real-money orders,
+and do not establish live endpoint behavior for the new indicators, convenience wrappers, or
+automation layer.
 
 These tests simulate fault conditions and do not establish all corresponding server
 behaviors. CI is configured for Windows/Linux and Python 3.11/3.13; remote CI has not run.

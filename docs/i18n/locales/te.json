@@ -2,6 +2,18 @@
   "name": "తెలుగు",
   "tagline": "మార్కెట్ డేటా, ట్రేడ్ అమలు—ఒకే Python క్లయింట్‌లో.",
   "intro": "Bynix కోసం asynchronous Python interface; trading applications, data pipelines, developer tools కోసం రూపొందించబడింది.",
+  "capabilities_title": "సామర్థ్య విభాగాలు",
+  "capabilities": [
+    {"name": "ఉచిత/ఓపెన్ core", "text": "MIT లైసెన్స్ పొందిన public package; account లేకుండా public market data, optional browser, network మరియు DataFrame extras తో."},
+    {"name": "వేగవంతమైన market data", "text": "Stream-first ticks, forming/closed candles, bounded historical pages మరియు REST fallback తో concurrent candle batches."},
+    {"name": "బహుళ login మరియు client pool", "text": "Token, password, browser మరియు OTP-capable providers, అలాగే independent named clients మరియు account events."},
+    {"name": "సురక్షిత caller-owned automation", "text": "ExecutionOrchestrator/AutoExecutor application యొక్క explicit intents మాత్రమే స్వీకరిస్తుంది; dry-run, demo-only default, cooldown, concurrency limits మరియు uncertain-order retry లేదు."},
+    {"name": "Pure indicators", "text": "Caller-owned data పై Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR మరియు stochastic measurements; signals లేదా strategy లేదు."},
+    {"name": "Execution సౌకర్యాలు", "text": "`buy_and_wait`, `sell`/early close, settlement wait, journaling మరియు reconciliation కోసం explicit one-order-at-a-time calls."},
+    {"name": "ధృవీకరించిన Bynix scope", "text": "Implemented, offline-tested మరియు live-demo-observed behavior కోసం matrix చూడండి; ధృవీకరించని parity హామీ ఇవ్వబడదు."}
+  ],
+  "matrix_link_text": "పూర్తి ధృవీకరించిన scope ను చూడండి",
+  "matrix_link_label": "feature మరియు fallback matrix లో",
   "features_title": "సదుపాయాలు",
   "features": [
     "Session token, password లేదా browser login, అలాగే 2FA callbacks.",

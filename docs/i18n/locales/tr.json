@@ -2,6 +2,18 @@
   "name": "Türkçe",
   "tagline": "Piyasa verileri ve işlem yürütme, tek bir Python istemcisinde.",
   "intro": "Bynix için alım satım uygulamaları, veri hatları ve geliştirici araçlarına yönelik asenkron Python arayüzü.",
+  "capabilities_title": "Yetenek kategorileri",
+  "capabilities": [
+    {"name": "Ücretsiz/açık çekirdek", "text": "MIT lisanslı herkese açık paket; herkese açık piyasa verileri hesap olmadan çalışır, tarayıcı, ağ ve DataFrame eklentileri isteğe bağlıdır."},
+    {"name": "Hızlı piyasa verileri", "text": "Akış öncelikli tikler, oluşan/kapanmış mumlar, sınırlı geçmiş sayfaları ve REST yedekli eşzamanlı mum paketleri."},
+    {"name": "Çoklu giriş ve istemci havuzu", "text": "Token, parola, tarayıcı ve OTP sağlayıcıları ile bağımsız adlandırılmış istemciler ve hesap olayları."},
+    {"name": "Güvenli çağıran-sahipli otomasyon", "text": "ExecutionOrchestrator/AutoExecutor açık uygulama niyetlerini kabul eder; dry-run, demo varsayılanı, cooldown, eşzamanlılık sınırı ve belirsiz emri yeniden denememe sağlar."},
+    {"name": "Saf göstergeler", "text": "Çağıranın verisi üzerinde Decimal SMA, EMA, RSI, MACD, Bollinger Bantları, ATR ve stochastic ölçümleri; sinyal veya strateji yoktur."},
+    {"name": "İşlem kolaylıkları", "text": "Açık tek-emir çağrıları çevresinde `buy_and_wait`, `sell`/erken kapatma, sonuç bekleme, günlük ve mutabakat."},
+    {"name": "Doğrulanmış Bynix kapsamı", "text": "Uygulanan, çevrimdışı test edilen ve canlı demoda gözlenen davranış için matrise bakın; doğrulanmamış eşdeğerlik iddia edilmez."}
+  ],
+  "matrix_link_text": "Tam doğrulanmış kapsamı şu belgede görün:",
+  "matrix_link_label": "özellik ve yedek yol matrisi",
   "features_title": "Özellikler",
   "features": [
     "Oturum tokenı, parola ve tarayıcı girişi ile 2FA geri çağrıları.",

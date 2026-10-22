@@ -8,7 +8,7 @@ PyBynix/
 ├── src/pybynix/          Public SDK package
 ├── tests/                Offline regression and release-boundary tests
 ├── examples/             Small runnable usage examples; no order is run implicitly
-├── docs/                 API, authentication, recovery, protocol, validation, and matrices
+├── docs/                 API, authentication, recovery, protocol, validation, launch checklist, and matrices
 ├── assets/               Logo concept 07 and localized language badges
 ├── benchmarks/           Reproducible benchmark code and sanitized result metadata
 ├── tools/                README generator, live lab, soak runner, and release builder
@@ -29,6 +29,7 @@ PyBynix/
 | Caller-owned auto-execution boundary | `docs/AUTOMATION.md` |
 | Protocol evidence | `docs/PROTOCOL.md` |
 | Feature and fallback coverage | `docs/FEATURE_MATRIX.md` |
+| Launch presentation and publication gate | `docs/LAUNCH_CHECKLIST.md` |
 | Validation scope and measured limits | `docs/VALIDATION.md` |
 | Contribution and safety rules | `CONTRIBUTING.md`, `SECURITY.md`, `NOTICE.md` |
 

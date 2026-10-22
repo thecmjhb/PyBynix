@@ -2,6 +2,18 @@
   "name": "Bahasa Indonesia",
   "tagline": "Data pasar dan eksekusi transaksi dalam satu klien Python.",
   "intro": "Antarmuka Python asinkron untuk Bynix, dirancang bagi aplikasi trading, alur data, dan alat pengembang.",
+  "capabilities_title": "Kategori kemampuan",
+  "capabilities": [
+    {"name": "Inti gratis dan terbuka", "text": "Paket publik berlisensi MIT; data pasar publik berjalan tanpa akun, dengan tambahan browser, jaringan, dan DataFrame opsional."},
+    {"name": "Data pasar cepat", "text": "Tick berbasis stream, candle yang sedang/selesai, halaman historis terbatas, dan batch candle konkuren dengan fallback REST."},
+    {"name": "Login multi-akun dan client pool", "text": "Provider token, kata sandi, browser, dan OTP, serta klien bernama independen dan event akun."},
+    {"name": "Otomasi aman milik pemanggil", "text": "ExecutionOrchestrator/AutoExecutor menerima intent eksplisit aplikasi dengan dry-run, default demo, cooldown, batas konkurensi, dan tanpa retry order yang tidak pasti."},
+    {"name": "Indikator murni", "text": "Pengukuran Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR, dan stochastic atas data milik pemanggil; tanpa sinyal atau strategi."},
+    {"name": "Kemudahan eksekusi", "text": "`buy_and_wait`, `sell`/early close, tunggu settlement, journal, dan rekonsiliasi untuk panggilan satu-order yang eksplisit."},
+    {"name": "Cakupan Bynix terverifikasi", "text": "Lihat matriks untuk perilaku yang diimplementasikan, diuji offline, dan diamati live-demo; parity yang belum diverifikasi tidak dijanjikan."}
+  ],
+  "matrix_link_text": "Lihat cakupan terverifikasi lengkap di",
+  "matrix_link_label": "matriks fitur dan fallback",
   "features_title": "Fitur",
   "features": [
     "Token sesi, login kata sandi atau browser, serta callback 2FA.",

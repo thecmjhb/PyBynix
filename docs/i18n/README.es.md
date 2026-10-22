@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## Categorías de capacidad
+
+- **Núcleo gratuito y abierto** — Paquete público con licencia MIT; los datos públicos funcionan sin cuenta, con extras opcionales de navegador, red y DataFrame.
+- **Datos de mercado rápidos** — Ticks primero por stream, velas abiertas/cerradas, páginas históricas acotadas y lotes concurrentes con respaldo REST.
+- **Múltiples inicios y grupo de clientes** — Proveedores de token, contraseña, navegador y OTP, además de clientes independientes con nombre y eventos de cuenta.
+- **Automatización segura del llamador** — ExecutionOrchestrator/AutoExecutor acepta intenciones explícitas de la aplicación, con dry-run, demo por defecto, enfriamiento, límites de concurrencia y sin reintento de órdenes inciertas.
+- **Indicadores puros** — Mediciones Decimal de SMA, EMA, RSI, MACD, Bandas de Bollinger, ATR y estocástico sobre datos del llamador; sin señales ni estrategia.
+- **Comodidades de ejecución** — `buy_and_wait`, `sell`/cierre anticipado, espera de liquidación, journal y reconciliación para llamadas explícitas de una orden.
+- **Alcance Bynix verificado** — Consulta la matriz para el comportamiento implementado, probado offline y observado en demo; no se implica paridad no verificada.
+
+Consulta el alcance verificado completo en la [matriz de funciones y fallback](../FEATURE_MATRIX.md).
+
 ## Funciones
 
 | API | Funciones |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | Clientes independientes con nombre, eventos de cuenta y saldos desglosados. |
 | `proxy · dns_servers · connect_any` | Proxies HTTP/SOCKS5, DNS personalizado y conexión alternativa a dominios de confianza. |
 | `get_realtime_sentiment · stream_sentiment` | Sentimiento en vivo calculado con el modelo de velas y ticks de la plataforma. |
-| `export_candles · candles_to_dataframe · resample_candles` | Exportación CSV/JSON con precisión Decimal, pandas opcional y remuestreo de velas. |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Exportación CSV/JSON con precisión Decimal, pandas opcional y remuestreo de velas. |
 
 ## Instalación
 
@@ -124,11 +136,12 @@ pybynix domains
 Consulta las firmas, valores devueltos, ejemplos ejecutables y recuperación en la documentación siguiente. Usa los valores trade_symbol exactos del catálogo.
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ El registro de validación enumera versiones de Python probadas, cobertura de ac
 ## Investigación
 
 El manuscrito validado explica la necesidad de integración, la arquitectura, las contribuciones de ingeniería y la evaluación. El autor mantiene por separado el código LaTeX preparado para Overleaf; no se distribuye ningún PDF.
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Comunidad y licencia
 

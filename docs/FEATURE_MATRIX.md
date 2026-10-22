@@ -4,6 +4,18 @@ PyBynix is the Bynix Broker integration client. It is intentionally modeled afte
 useful *integration categories* of libraries such as PyQuotex, but it is not a drop-in
 Quotex clone and does not invent an endpoint when Bynix behavior has not been observed.
 
+## Free and open feature availability
+
+Every capability listed here is included in the MIT-licensed public package: there is
+no paid SDK tier or feature unlock. Browser, network, and DataFrame extras install optional
+dependencies, not premium features. Account-specific operations still require an
+authenticated Bynix account and applicable platform eligibility; the package license
+does not change broker charges or account rules.
+
+“Fast data” describes stream-first consumption, bounded concurrent candle batches, and
+optional historical-page caching. It is not a claim of lower latency than PyQuotex;
+measurements and their limits are recorded in [Validation](VALIDATION.md).
+
 ## Capability coverage
 
 | Domain | PyBynix capability | Alternative/fallback path | Evidence boundary |
@@ -14,10 +26,12 @@ Quotex clone and does not invent an endpoint when Bynix behavior has not been ob
 | Market history | Recent candles, bounded paginated history, ordered bounded-concurrency candle batch, exact asset lookup, payouts | Page-boundary deduplication, exclusive time bounds, opt-in bounded cache for explicit historical boundaries | Offline-tested; catalog/history live-observed |
 | Live streams | Ticks, forming/closed candles, account events, connection events | Bounded per-consumer queues; explicit overflow and reconnect-gap events | Offline-tested; live ticks and reconnect observed |
 | Explicit execution | Demo-default order, real/funded guards, settlement wait, early close | One POST only; journal + pending/history reconciliation after uncertainty | Offline-tested; demo execution and early close observed |
+| Execution conveniences | `buy_and_wait` places once and waits; `sell` delegates to early close | A timeout never causes another order POST; the server decides early-close eligibility | Offline-tested wrappers; no separate live verification of these wrappers is claimed |
+| Multi-login / client pool | `ClientPool` manages independent named clients with their own providers and session state | Closing one client does not close the others; authentication remains host-bound | Offline-tested; independent streams observed with one owner account, not multiple owners |
 | Callback automation | `ExecutionOrchestrator` / `AutoExecutor` for caller-owned explicit intents | Dry-run default, demo-only default, cooldown, concurrency cap, settlement tracking; never retries uncertain orders | Offline-tested only; no automatic strategy or signal is supplied |
 | Account state | Profile, balances, balance breakdown, local account default, funded/tournament metadata | Profile health runs independently from market supervision | Offline-tested; profile/balance paths live-observed |
 | Network routing | HTTP CONNECT, SOCKS5/SOCKS5h, static DNS, explicit DNS servers | TLS hostname verification remains enabled; proxy and custom DNS are mutually exclusive | Offline-tested; local authenticated proxy/DNS lab observed |
-| Derived data | Platform-style derived sentiment, candle sentiment, export, pandas conversion, resampling | No claim that sentiment equals customer positioning | Offline-tested; sentiment is a derived display helper |
+| Derived data | Platform-style derived sentiment, candle sentiment, export, pandas conversion, resampling, pure Decimal SMA/EMA/RSI/MACD/Bollinger/ATR/stochastic helpers | No claim that sentiment equals customer positioning; indicators emit measurements only, not signals or strategies | Offline-tested; indicator helpers are local calculations |
 | CLI | Login, diagnostics, balances, assets, candles, stream, sentiment, domains | Public data commands work without an account | Offline-tested |
 | Support surface | API docs, examples, contribution/security guidance, localized READMEs | No paid support channel or SLA is implied by the open-source package | Documentation is public; support commitments are not claimed |
 
@@ -47,7 +61,7 @@ The following table distinguishes comparable categories from exact parity:
 | Account management | Covered for observed profile, balances, account selection, funded/tournament metadata |
 | WebSocket | Covered through Socket.IO with REST fallback |
 | Utilities and helpers | Covered through CLI, exports, pandas conversion, journals, pooling, and network options |
-| Technical indicators | **Not bundled as a strategy or signal layer**; callers may use exported candles with their own analysis tools |
+| Technical indicators | Covered as pure Decimal measurement helpers over caller-owned Candle/Decimal data; no strategy, signal or Martingale behavior |
 | Broker-specific operations | Only implemented when the Bynix endpoint and behavior were observed and validated |
 | Demo balance refill / bulk random orders / automatic strategy | Intentionally not included |
 

@@ -115,6 +115,8 @@ class ExecutionOrchestrator:
         settle: bool = True,
         settlement_timeout: float = 120.0,
         settlement_poll_interval: float = 2.0,
+        max_records: int = 1000,
+        max_errors: int = 1000,
     ):
         if not callable(decision_callback):
             raise TypeError("decision_callback must be callable")
@@ -132,6 +134,10 @@ class ExecutionOrchestrator:
             raise ValueError("settlement_timeout must be finite and positive")
         if not isinstance(settlement_poll_interval, (int, float)) or not math.isfinite(settlement_poll_interval) or settlement_poll_interval <= 0:
             raise ValueError("settlement_poll_interval must be finite and positive")
+        if not isinstance(max_records, int) or isinstance(max_records, bool) or max_records < 1:
+            raise ValueError("max_records must be a positive integer")
+        if not isinstance(max_errors, int) or isinstance(max_errors, bool) or max_errors < 1:
+            raise ValueError("max_errors must be a positive integer")
         self.client = client
         self.symbol = symbol
         self.interval = interval
@@ -143,28 +149,55 @@ class ExecutionOrchestrator:
         self.settle = settle
         self.settlement_timeout = float(settlement_timeout)
         self.settlement_poll_interval = float(settlement_poll_interval)
+        self.max_records = max_records
+        self.max_errors = max_errors
         self.records: list[ExecutionRecord] = []
         self.errors: list[Exception] = []
         self._settlement_tasks: set[asyncio.Task] = set()
+        self._submission_tasks: set[asyncio.Task] = set()
         self._state_lock = asyncio.Lock()
         self._run_task: asyncio.Task | None = None
         self._run_ready = asyncio.Event()
         self._subscription = None
+        self._source = None
         self._stop_event = asyncio.Event()
         self._running = False
         self._stopped = False
         self._active_orders = 0
         self._last_submission_at: float | None = None
+        self._safety_pause_reason: str | None = None
 
     @property
     def active_orders(self) -> int:
-        """Number of accepted orders whose settlement task is still active."""
+        """Number of execution slots that remain reserved for reconciliation."""
 
         return self._active_orders
 
     @property
     def running(self) -> bool:
         return self._running
+
+    @property
+    def safety_paused(self) -> bool:
+        """Whether new submissions are blocked by an unresolved safety failure."""
+
+        return self._safety_pause_reason is not None
+
+    @property
+    def pause_reason(self) -> str | None:
+        """The first explicit reason that caused the safety pause, if any."""
+
+        return self._safety_pause_reason
+
+    @property
+    def state(self) -> str:
+        """Return ``idle``, ``running``, ``paused`` or ``stopped``."""
+
+        if self._stopped:
+            return "stopped"
+        if self.safety_paused:
+            return "paused"
+        return "running" if self._running else "idle"
 
     async def start(self, events: AsyncIterable[Any] | None = None):
         """Start background consumption and return this orchestrator."""
@@ -187,22 +220,33 @@ class ExecutionOrchestrator:
 
         if self._running:
             raise RuntimeError("ExecutionOrchestrator is already running")
+        current = asyncio.current_task()
+        if self._run_task is None or self._run_task.done():
+            self._run_task = current
         self._running = True
         self._run_ready.set()
         try:
+            if self._stop_event.is_set():
+                return
             if events is None:
                 self._subscription = await self.client.subscribe_ticks(self.symbol, interval=self.interval)
                 if self._stop_event.is_set():
                     await self._subscription.aclose()
                     return
                 async with self._subscription as source:
+                    self._source = source
                     await self._consume(source)
             else:
                 await self._consume(events)
+        except asyncio.CancelledError:
+            if not self._stop_event.is_set():
+                raise
         finally:
+            self._source = None
             self._subscription = None
             self._running = False
-            await self._wait_settlements()
+            await asyncio.shield(self._wait_submissions())
+            await asyncio.shield(self._wait_settlements())
 
     async def stop(self):
         """Stop intake, close the stream, and drain settlement tracking."""
@@ -215,9 +259,26 @@ class ExecutionOrchestrator:
             await self._run_ready.wait()
         if self._subscription is not None:
             await self._subscription.aclose()
+        source = self._source
+        if source is not None and source is not self._subscription:
+            close = getattr(source, "aclose", None)
+            if close is not None:
+                try:
+                    await close()
+                except Exception as error:
+                    self._record_error(error)
         current = asyncio.current_task()
-        if self._run_task is not None and self._run_task is not current:
-            await self._run_task
+        run_task = self._run_task
+        if run_task is not None and not run_task.done() and run_task is not current:
+            # The intake task may be blocked in an external async iterator.  It
+            # is safe to cancel intake because order submissions are shielded
+            # and drained separately; an in-flight POST is never canceled here.
+            run_task.cancel()
+            try:
+                await run_task
+            except asyncio.CancelledError:
+                pass
+        await self._wait_submissions()
         await self._wait_settlements()
 
     async def submit(self, intent: OrderIntent) -> ExecutionRecord:
@@ -231,19 +292,25 @@ class ExecutionOrchestrator:
             raise ValueError("demo_only=True accepts only demo OrderIntent values")
         now = time.monotonic()
         async with self._state_lock:
+            if self._stopped or self._stop_event.is_set():
+                raise RuntimeError("ExecutionOrchestrator has been stopped")
+            if self._safety_pause_reason is not None:
+                record = ExecutionRecord(intent, "skipped_safety_pause", completed_at=time.time())
+                self._append_record(record)
+                return record
             if self._last_submission_at is not None and now - self._last_submission_at < self.cooldown:
                 record = ExecutionRecord(intent, "skipped_cooldown", completed_at=time.time())
-                self.records.append(record)
+                self._append_record(record)
                 return record
             if not self.dry_run and self._active_orders >= self.max_concurrent_orders:
                 record = ExecutionRecord(intent, "skipped_concurrency", completed_at=time.time())
-                self.records.append(record)
+                self._append_record(record)
                 return record
             self._last_submission_at = now
             if not self.dry_run:
                 self._active_orders += 1
             record = ExecutionRecord(intent, "dry_run" if self.dry_run else "submitting")
-            self.records.append(record)
+            self._append_record(record)
 
         if self.dry_run:
             record.completed_at = time.time()
@@ -255,18 +322,17 @@ class ExecutionOrchestrator:
             record.status = "unknown"
             record.error = error
             record.completed_at = time.time()
-            await self._release_active()
+            await self._pause("unknown_order_outcome")
             return record
         except OrderJournalError as error:
             record.status = "accepted_journal_error"
             record.error = error
             record.receipt = error.order
             record.completed_at = time.time()
+            await self._pause("order_journal_error")
             trade_id = record.receipt.get("trade_id") if isinstance(record.receipt, dict) else None
             if trade_id and self.settle:
                 self._track_settlement(record, trade_id)
-            else:
-                await self._release_active()
             return record
         except Exception as error:
             record.status = "rejected"
@@ -279,6 +345,12 @@ class ExecutionOrchestrator:
         record.status = "accepted"
         record.completed_at = time.time()
         trade_id = receipt.get("trade_id") if isinstance(receipt, dict) else None
+        if not trade_id:
+            error = OrderOutcomeUnknown(intent.client_ref)
+            record.status = "unknown"
+            record.error = error
+            await self._pause("accepted_receipt_missing_trade_id")
+            return record
         if trade_id and self.settle:
             self._track_settlement(record, trade_id)
         else:
@@ -286,25 +358,48 @@ class ExecutionOrchestrator:
         return record
 
     async def _consume(self, events):
-        async for event in events:
-            if self._stop_event.is_set():
-                break
-            try:
-                decision = self.decision_callback(event)
-                if inspect.isawaitable(decision):
-                    decision = await decision
-                if decision is None:
-                    continue
-                if isinstance(decision, OrderIntent):
-                    decisions = (decision,)
-                else:
-                    if isinstance(decision, (str, bytes, dict)):
-                        raise TypeError("decision_callback must return OrderIntent, iterable of intents, or None")
-                    decisions = decision
-                for intent in decisions:
-                    await self.submit(intent)
-            except Exception as error:
-                self.errors.append(error)
+        source = events.__aiter__()
+        self._source = source
+        try:
+            async for event in source:
+                if self._stop_event.is_set():
+                    break
+                try:
+                    decision = self.decision_callback(event)
+                    if inspect.isawaitable(decision):
+                        decision = await decision
+                    if decision is None:
+                        continue
+                    if isinstance(decision, OrderIntent):
+                        decisions = (decision,)
+                    else:
+                        if isinstance(decision, (str, bytes, dict)):
+                            raise TypeError("decision_callback must return OrderIntent, iterable of intents, or None")
+                        decisions = decision
+                    for intent in decisions:
+                        if self._stop_event.is_set():
+                            break
+                        await self._submit_from_consumer(intent)
+                except RuntimeError:
+                    if not self._stop_event.is_set():
+                        raise
+                    break
+                except Exception as error:
+                    self._record_error(error)
+        finally:
+            if self._source is source:
+                self._source = None
+
+    async def _submit_from_consumer(self, intent: OrderIntent):
+        task = asyncio.create_task(self.submit(intent))
+        self._submission_tasks.add(task)
+        try:
+            return await asyncio.shield(task)
+        except asyncio.CancelledError:
+            await asyncio.shield(task)
+            raise
+        finally:
+            self._submission_tasks.discard(task)
 
     def _track_settlement(self, record: ExecutionRecord, trade_id: str):
         task = asyncio.create_task(self._settle(record, trade_id))
@@ -312,6 +407,7 @@ class ExecutionOrchestrator:
         task.add_done_callback(self._settlement_tasks.discard)
 
     async def _settle(self, record: ExecutionRecord, trade_id: str):
+        release = False
         try:
             record.settlement = await self.client.wait_order_result(
                 trade_id,
@@ -320,12 +416,38 @@ class ExecutionOrchestrator:
                 poll_interval=self.settlement_poll_interval,
             )
             record.status = "settled"
+            release = True
+        except asyncio.CancelledError:
+            record.status = "settlement_unknown"
+            record.error = asyncio.TimeoutError("Settlement task was canceled before reconciliation completed")
+            await self._pause("settlement_canceled")
+            raise
         except Exception as error:
             record.error = error
             record.status = "settlement_unknown" if isinstance(error, asyncio.TimeoutError) else "settlement_error"
+            self._record_error(error)
+            await self._pause("settlement_timeout" if isinstance(error, asyncio.TimeoutError) else "settlement_error")
         finally:
             record.completed_at = time.time()
-            await self._release_active()
+            if release:
+                await self._release_active()
+
+    async def _pause(self, reason: str):
+        async with self._state_lock:
+            if self._safety_pause_reason is None:
+                self._safety_pause_reason = reason
+
+    def _append_record(self, record: ExecutionRecord):
+        self.records.append(record)
+        overflow = len(self.records) - self.max_records
+        if overflow > 0:
+            del self.records[:overflow]
+
+    def _record_error(self, error: Exception):
+        self.errors.append(error)
+        overflow = len(self.errors) - self.max_errors
+        if overflow > 0:
+            del self.errors[:overflow]
 
     async def _release_active(self):
         async with self._state_lock:
@@ -338,6 +460,12 @@ class ExecutionOrchestrator:
             self._settlement_tasks.difference_update(done)
             if pending:
                 await asyncio.gather(*pending, return_exceptions=True)
+
+    async def _wait_submissions(self):
+        while self._submission_tasks:
+            tasks = tuple(self._submission_tasks)
+            await asyncio.gather(*tasks, return_exceptions=True)
+            self._submission_tasks.difference_update(tasks)
 
     async def __aenter__(self):
         return await self.start()

@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## 能力分类
+
+- **免费/开放核心** — MIT 许可的公开软件包；无需账户即可使用公开市场数据，并可选浏览器、网络和 DataFrame 扩展。
+- **快速市场数据** — 以流为先的行情、形成中/已收盘蜡烛、有限历史分页和并发蜡烛批量读取，并带 REST 回退。
+- **多登录与客户端池** — 支持令牌、密码、浏览器和 OTP 提供器，以及独立命名客户端和账户事件。
+- **安全的调用方自动化** — ExecutionOrchestrator/AutoExecutor 只接受应用明确意图，提供 dry-run、默认仅模拟、冷却、并发限制，并且不会重试不确定订单。
+- **纯指标** — 对调用方拥有的数据计算 Decimal SMA、EMA、RSI、MACD、布林带、ATR 和随机指标；不产生信号或策略。
+- **执行便利功能** — 提供 `buy_and_wait`、`sell`/提前平仓、等待结算、日志和对账，围绕明确的单次下单调用工作。
+- **已验证的 Bynix 范围** — 请查看矩阵中的已实现、离线测试和现场演示观察行为；不暗示未经验证的兼容性。
+
+在完整的已验证范围中查看 [功能与回退矩阵](../FEATURE_MATRIX.md).
+
 ## 功能
 
 | API | 功能 |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | 独立命名客户端、账户事件与详细余额。 |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 代理、自定义 DNS 与可信域名连接回退。 |
 | `get_realtime_sentiment · stream_sentiment` | 依据平台风格的蜡烛与行情模型输出实时市场情绪。 |
-| `export_candles · candles_to_dataframe · resample_candles` | 保留 Decimal 精度的 CSV/JSON 导出、可选 pandas 和蜡烛重采样。 |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | 保留 Decimal 精度的 CSV/JSON 导出、可选 pandas 和蜡烛重采样。 |
 
 ## 安装
 
@@ -124,11 +136,12 @@ pybynix domains
 以下文档提供方法签名、返回值、可运行示例和恢复行为。请使用资产目录中的精确 trade_symbol。
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ pybynix domains
 ## 研究
 
 经验证的论文介绍集成需求、架构、工程贡献和评估。作者单独维护可用于 Overleaf 的 LaTeX 源码；不分发 PDF。
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## 社区与许可证
 

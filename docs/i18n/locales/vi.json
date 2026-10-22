@@ -2,6 +2,18 @@
   "name": "Tiếng Việt",
   "tagline": "Dữ liệu thị trường và thực thi giao dịch trong một ứng dụng khách Python.",
   "intro": "Giao diện Python bất đồng bộ cho Bynix, dành cho ứng dụng giao dịch, quy trình dữ liệu và công cụ phát triển.",
+  "capabilities_title": "Nhóm năng lực",
+  "capabilities": [
+    {"name": "Lõi miễn phí/mở", "text": "Gói công khai theo giấy phép MIT; dữ liệu thị trường công khai dùng được không cần tài khoản, có thêm tùy chọn cho trình duyệt, mạng và DataFrame."},
+    {"name": "Dữ liệu thị trường nhanh", "text": "Tick ưu tiên stream, nến đang hình thành/đã đóng, trang lịch sử giới hạn và batch nến đồng thời với fallback REST."},
+    {"name": "Đăng nhập nhiều tài khoản và client pool", "text": "Provider token, mật khẩu, trình duyệt và OTP, cùng client độc lập có tên và sự kiện tài khoản."},
+    {"name": "Tự động hóa an toàn do caller sở hữu", "text": "ExecutionOrchestrator/AutoExecutor nhận intent rõ ràng từ ứng dụng, có dry-run, mặc định demo, cooldown, giới hạn đồng thời và không retry lệnh không chắc chắn."},
+    {"name": "Chỉ báo thuần", "text": "Các phép đo Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR và stochastic trên dữ liệu của caller; không có tín hiệu hay chiến lược."},
+    {"name": "Tiện ích thực thi", "text": "`buy_and_wait`, `sell`/đóng sớm, chờ thanh toán, journal và reconciliation cho lời gọi một lệnh rõ ràng."},
+    {"name": "Phạm vi Bynix đã xác minh", "text": "Xem ma trận để biết hành vi đã triển khai, kiểm thử offline và quan sát trong live demo; không hàm ý parity chưa xác minh."}
+  ],
+  "matrix_link_text": "Xem phạm vi đã xác minh đầy đủ trong",
+  "matrix_link_label": "ma trận tính năng và fallback",
   "features_title": "Tính năng",
   "features": [
     "Token phiên, đăng nhập bằng mật khẩu hoặc trình duyệt và callback 2FA.",

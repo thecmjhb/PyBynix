@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="README.md" title="English"><img src="assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="README.bn.md" title="বাংলা"><img src="assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="docs/i18n/README.zh-CN.md" title="中文"><img src="assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="docs/i18n/README.hi.md" title="हिन्दी"><img src="assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="docs/i18n/README.es.md" title="Español"><img src="assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="docs/i18n/README.ar.md" title="العربية"><img src="assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="docs/i18n/README.fr.md" title="Français"><img src="assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="docs/i18n/README.pt.md" title="Português"><img src="assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="docs/i18n/README.id.md" title="Bahasa Indonesia"><img src="assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="docs/i18n/README.ur.md" title="اردو"><img src="assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="docs/i18n/README.ru.md" title="Русский"><img src="assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="docs/i18n/README.ko.md" title="한국어"><img src="assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="docs/i18n/README.ja.md" title="日本語"><img src="assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="docs/i18n/README.de.md" title="Deutsch"><img src="assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="docs/i18n/README.tr.md" title="Türkçe"><img src="assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="docs/i18n/README.it.md" title="Italiano"><img src="assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="docs/i18n/README.fa.md" title="فارسی"><img src="assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="docs/i18n/README.vi.md" title="Tiếng Việt"><img src="assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="docs/i18n/README.ta.md" title="தமிழ்"><img src="assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="docs/i18n/README.te.md" title="తెలుగు"><img src="assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## সক্ষমতার বিভাগ
+
+- **ফ্রি/ওপেন কোর** — MIT-লাইসেন্সযুক্ত public package; account ছাড়াই public market data, সঙ্গে optional browser, network ও DataFrame extras।
+- **দ্রুত market data** — Stream-first tick, forming/closed candle, সীমাবদ্ধ historical page এবং REST fallback-সহ concurrent candle batch।
+- **একাধিক login ও client pool** — Token, password, browser ও OTP-capable provider; independent named client এবং account event।
+- **নিরাপদ caller-owned automation** — ExecutionOrchestrator/AutoExecutor শুধু application-এর explicit intent নেয়; dry-run, demo-only default, cooldown, concurrency limit এবং uncertain order retry নেই।
+- **Pure indicator** — Caller-owned data-র উপর Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR ও stochastic measurement; signal বা strategy নয়।
+- **Execution convenience** — `buy_and_wait`, `sell`/early close, settlement wait, journal ও reconciliation—explicit এক-order-at-a-time call-এর চারপাশে।
+- **যাচাইকৃত Bynix scope** — Implemented, offline-tested ও live-demo-observed আচরণের জন্য matrix দেখুন; অযাচাইকৃত parity বোঝানো হয় না।
+
+যাচাইকৃত সম্পূর্ণ scope দেখুন [feature ও fallback matrix-এ](docs/FEATURE_MATRIX.md).
+
 ## সুবিধাসমূহ
 
 | API | সুবিধাসমূহ |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | স্বাধীন named client, account event ও বিস্তারিত balance। |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy, custom DNS ও trusted domain fallback। |
 | `get_realtime_sentiment · stream_sentiment` | Platform-style candle ও tick model থেকে streaming market sentiment। |
-| `export_candles · candles_to_dataframe · resample_candles` | Decimal অক্ষুণ্ণ রেখে CSV/JSON export, pandas ও candle resampling। |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Decimal অক্ষুণ্ণ রেখে CSV/JSON export, pandas ও candle resampling। |
 
 ## ইনস্টলেশন
 
@@ -124,11 +136,12 @@ pybynix domains
 Method signature, return value, runnable example ও recovery behavior নিচের documentation-এ আছে। Asset catalog-এর exact trade_symbol ব্যবহার করো।
 
 - [API reference](docs/API.md)
- - [Authentication](docs/AUTHENTICATION.md)
- - [Examples](examples)
- - [Recovery and networking](docs/RECOVERY.md)
- - [Automation boundary](docs/AUTOMATION.md)
- - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+- [Authentication](docs/AUTHENTICATION.md)
+- [Examples](examples)
+- [Recovery and networking](docs/RECOVERY.md)
+- [Automation boundary](docs/AUTOMATION.md)
+- [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
+- [Launch checklist](docs/LAUNCH_CHECKLIST.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ Validation record-এ পরীক্ষিত Python version, asset/timeframe c
 ## গবেষণা
 
 Validated manuscript-এ library-এর প্রয়োজন, architecture, engineering contribution ও evaluation ব্যাখ্যা করা হয়েছে। লেখকের আলাদা Overleaf-ready LaTeX source সম্পূর্ণ; কোনো PDF বিতরণ করা হয় না।
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## কমিউনিটি ও লাইসেন্স
 

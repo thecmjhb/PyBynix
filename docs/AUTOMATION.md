@@ -45,7 +45,25 @@ and `ExecutionOrchestrator` tracks accepted trade IDs through
 recorded without retrying or submitting a replacement. A missing
 reconciliation match is never treated as permission to resend.
 
+An unknown submission outcome, accepted-order journal failure, missing trade ID,
+or settlement timeout/error puts the orchestrator into a fail-closed safety
+pause. `runner.safety_paused`, `runner.pause_reason`, and `runner.state` expose
+this state; later intents receive `skipped_safety_pause` and no order call is
+made. The unresolved execution slot remains reserved, so a safety failure
+cannot silently free concurrency for another exposure. A journal error still
+preserves its accepted receipt in the execution record. The pause is not
+automatically cleared after settlement; reconcile the situation explicitly
+before constructing a new runner.
+
+`stop()` closes sources that support `aclose()` and cancels only the intake task
+when an external source is idle. In-flight order submissions are shielded and
+drained rather than canceled blindly, and no new submission is admitted once
+stop begins. A runner cannot be restarted after `stop()`.
+
 Records are available through `runner.records`; statuses include `dry_run`,
 `accepted`, `settled`, `unknown`, `accepted_journal_error`,
-`skipped_cooldown`, and `skipped_concurrency`. Callback and non-uncertain
-execution errors are collected in `runner.errors` for application handling.
+`settlement_unknown`, `settlement_error`, `skipped_cooldown`,
+`skipped_concurrency`, and `skipped_safety_pause`. Callback and settlement
+errors are collected in `runner.errors` for application handling. Records and
+errors are bounded to 1,000 entries by default; applications with long-lived
+consumers can set `max_records` and `max_errors` in the constructor.

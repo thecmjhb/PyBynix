@@ -2,6 +2,18 @@
   "name": "한국어",
   "tagline": "시장 데이터와 거래 실행을 하나의 Python 클라이언트로.",
   "intro": "거래 애플리케이션, 데이터 파이프라인 및 개발 도구를 위한 Bynix 비동기 Python 인터페이스입니다.",
+  "capabilities_title": "기능 범주",
+  "capabilities": [
+    {"name": "무료/오픈 코어", "text": "MIT 라이선스 공개 패키지이며 계정 없이 공개 시장 데이터를 사용할 수 있고 브라우저·네트워크·DataFrame 확장을 선택할 수 있습니다."},
+    {"name": "빠른 시장 데이터", "text": "스트림 우선 틱, 형성 중/종료 캔들, 제한된 과거 페이지 및 REST 대체 경로를 갖춘 동시 캔들 배치입니다."},
+    {"name": "다중 로그인과 클라이언트 풀", "text": "토큰·비밀번호·브라우저·OTP 제공자와 독립적인 이름 있는 클라이언트 및 계정 이벤트를 지원합니다."},
+    {"name": "안전한 호출자 소유 자동화", "text": "ExecutionOrchestrator/AutoExecutor는 명시적 애플리케이션 의도만 받고 dry-run, 데모 기본값, cooldown, 동시성 제한과 불확실한 주문 재시도 금지를 제공합니다."},
+    {"name": "순수 지표", "text": "호출자가 소유한 데이터에 대해 Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR 및 stochastic을 계산하며 신호나 전략은 만들지 않습니다."},
+    {"name": "실행 편의 기능", "text": "명시적인 단일 주문 호출을 위해 `buy_and_wait`, `sell`/조기 종료, settlement 대기, journal 및 reconciliation을 제공합니다."},
+    {"name": "검증된 Bynix 범위", "text": "구현됨·오프라인 테스트됨·라이브 데모 관찰됨 범위는 매트릭스를 확인하세요. 검증되지 않은 동등성은 약속하지 않습니다."}
+  ],
+  "matrix_link_text": "전체 검증 범위는 다음에서 확인하세요:",
+  "matrix_link_label": "기능 및 대체 경로 매트릭스",
   "features_title": "기능",
   "features": [
     "세션 토큰, 비밀번호 및 브라우저 로그인, 2FA 콜백을 지원합니다.",

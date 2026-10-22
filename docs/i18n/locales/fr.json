@@ -2,6 +2,18 @@
   "name": "Français",
   "tagline": "Données de marché et exécution, dans un seul client Python.",
   "intro": "Une interface Python asynchrone pour Bynix, conçue pour les applications de trading, les pipelines de données et les outils de développement.",
+  "capabilities_title": "Catégories de capacités",
+  "capabilities": [
+    {"name": "Noyau libre et ouvert", "text": "Paquet public sous licence MIT ; les données de marché publiques fonctionnent sans compte, avec extensions navigateur, réseau et DataFrame facultatives."},
+    {"name": "Données de marché rapides", "text": "Ticks orientés flux, bougies en formation/clôturées, pages historiques bornées et lots de bougies concurrents avec secours REST."},
+    {"name": "Connexions multiples et pool de clients", "text": "Fournisseurs par jeton, mot de passe, navigateur et OTP, plus des clients nommés indépendants et des événements de compte."},
+    {"name": "Automatisation sûre pilotée par l’appelant", "text": "ExecutionOrchestrator/AutoExecutor accepte les intentions explicites de l’application avec dry-run, démo par défaut, refroidissement, limites de concurrence et sans nouvelle tentative d’ordre incertain."},
+    {"name": "Indicateurs purs", "text": "Mesures Decimal SMA, EMA, RSI, MACD, bandes de Bollinger, ATR et stochastique sur les données de l’appelant ; sans signaux ni stratégie."},
+    {"name": "Facilités d’exécution", "text": "`buy_and_wait`, `sell`/clôture anticipée, attente du règlement, journal et rapprochement autour d’appels explicites à une seule commande."},
+    {"name": "Périmètre Bynix vérifié", "text": "Consultez la matrice pour les comportements implémentés, testés hors ligne et observés en démo ; aucune parité non vérifiée n’est suggérée."}
+  ],
+  "matrix_link_text": "Consultez le périmètre vérifié complet dans la",
+  "matrix_link_label": "matrice des fonctionnalités et replis",
   "features_title": "Fonctionnalités",
   "features": [
     "Jetons de session, connexion par mot de passe ou navigateur et callbacks 2FA.",

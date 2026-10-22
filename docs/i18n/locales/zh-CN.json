@@ -2,6 +2,18 @@
   "name": "中文",
   "tagline": "市场数据与交易执行，一个 Python 客户端。",
   "intro": "面向 Bynix 的异步 Python 接口，适用于交易应用、数据管道和开发者工具。",
+  "capabilities_title": "能力分类",
+  "capabilities": [
+    {"name": "免费/开放核心", "text": "MIT 许可的公开软件包；无需账户即可使用公开市场数据，并可选浏览器、网络和 DataFrame 扩展。"},
+    {"name": "快速市场数据", "text": "以流为先的行情、形成中/已收盘蜡烛、有限历史分页和并发蜡烛批量读取，并带 REST 回退。"},
+    {"name": "多登录与客户端池", "text": "支持令牌、密码、浏览器和 OTP 提供器，以及独立命名客户端和账户事件。"},
+    {"name": "安全的调用方自动化", "text": "ExecutionOrchestrator/AutoExecutor 只接受应用明确意图，提供 dry-run、默认仅模拟、冷却、并发限制，并且不会重试不确定订单。"},
+    {"name": "纯指标", "text": "对调用方拥有的数据计算 Decimal SMA、EMA、RSI、MACD、布林带、ATR 和随机指标；不产生信号或策略。"},
+    {"name": "执行便利功能", "text": "提供 `buy_and_wait`、`sell`/提前平仓、等待结算、日志和对账，围绕明确的单次下单调用工作。"},
+    {"name": "已验证的 Bynix 范围", "text": "请查看矩阵中的已实现、离线测试和现场演示观察行为；不暗示未经验证的兼容性。"}
+  ],
+  "matrix_link_text": "在完整的已验证范围中查看",
+  "matrix_link_label": "功能与回退矩阵",
   "features_title": "功能",
   "features": [
     "会话令牌、密码登录、浏览器辅助登录与双重验证回调。",

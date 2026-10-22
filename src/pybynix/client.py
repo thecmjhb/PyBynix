@@ -1112,6 +1112,49 @@ class Bynix:
     async def buy(self, amount, asset, direction, duration, **kwargs):
         return await self.place_order(asset, direction, amount, duration, **kwargs)
 
+    async def buy_and_wait(
+        self,
+        amount,
+        asset,
+        direction,
+        duration,
+        *,
+        account_type=None,
+        client_ref=None,
+        challenge_id=None,
+        timeout=120,
+        poll_interval=2,
+    ):
+        """Place one order, then wait for and return its terminal result.
+
+        This is a convenience composition of :meth:`place_order` and
+        :meth:`wait_order_result`. The accepted receipt and terminal history row
+        are returned as ``{"order": ..., "result": ...}``; the order POST is
+        still issued exactly once and settlement uses read-only reconciliation.
+        """
+
+        receipt = await self.place_order(
+            asset,
+            direction,
+            amount,
+            duration,
+            account_type=account_type,
+            client_ref=client_ref,
+            challenge_id=challenge_id,
+        )
+        trade_id = receipt.get("trade_id")
+        if not trade_id and isinstance(receipt.get("trade"), dict):
+            trade_id = receipt["trade"].get("trade_id")
+        if not trade_id:
+            raise ProtocolError("Accepted order response lacks trade_id")
+        result = await self.wait_order_result(
+            trade_id,
+            account_type=account_type,
+            timeout=timeout,
+            poll_interval=poll_interval,
+        )
+        return {"order": receipt, "result": result}
+
     async def reconcile_order(
         self, *, trade_id=None, client_ref=None, account_type=None, max_pages=5
     ):
@@ -1194,6 +1237,16 @@ class Bynix:
             if error.status >= 500:
                 raise OrderOutcomeUnknown(str(trade_id)) from None
             raise
+
+    async def sell(self, trade_id):
+        """Explicit early-close alias for an already verified trade.
+
+        Bynix has no separate sell-direction endpoint for these trades. This
+        method delegates to :meth:`close_trade_early` and therefore preserves
+        its ownership verification, eligibility checks and one-POST behavior.
+        """
+
+        return await self.close_trade_early(trade_id)
 
     async def get_server_clock(self, symbol="EUR/USD OTC"):
         start = time.monotonic()

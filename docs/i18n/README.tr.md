@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## Yetenek kategorileri
+
+- **Ücretsiz/açık çekirdek** — MIT lisanslı herkese açık paket; herkese açık piyasa verileri hesap olmadan çalışır, tarayıcı, ağ ve DataFrame eklentileri isteğe bağlıdır.
+- **Hızlı piyasa verileri** — Akış öncelikli tikler, oluşan/kapanmış mumlar, sınırlı geçmiş sayfaları ve REST yedekli eşzamanlı mum paketleri.
+- **Çoklu giriş ve istemci havuzu** — Token, parola, tarayıcı ve OTP sağlayıcıları ile bağımsız adlandırılmış istemciler ve hesap olayları.
+- **Güvenli çağıran-sahipli otomasyon** — ExecutionOrchestrator/AutoExecutor açık uygulama niyetlerini kabul eder; dry-run, demo varsayılanı, cooldown, eşzamanlılık sınırı ve belirsiz emri yeniden denememe sağlar.
+- **Saf göstergeler** — Çağıranın verisi üzerinde Decimal SMA, EMA, RSI, MACD, Bollinger Bantları, ATR ve stochastic ölçümleri; sinyal veya strateji yoktur.
+- **İşlem kolaylıkları** — Açık tek-emir çağrıları çevresinde `buy_and_wait`, `sell`/erken kapatma, sonuç bekleme, günlük ve mutabakat.
+- **Doğrulanmış Bynix kapsamı** — Uygulanan, çevrimdışı test edilen ve canlı demoda gözlenen davranış için matrise bakın; doğrulanmamış eşdeğerlik iddia edilmez.
+
+Tam doğrulanmış kapsamı şu belgede görün: [özellik ve yedek yol matrisi](../FEATURE_MATRIX.md).
+
 ## Özellikler
 
 | API | Özellikler |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | Bağımsız adlandırılmış istemciler, hesap olayları ve ayrıntılı bakiyeler. |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy, özel DNS ve güvenilir alan adları üzerinden bağlantı yedeği. |
 | `get_realtime_sentiment · stream_sentiment` | Platform tarzı mum ve tik modeliyle hesaplanan akış halinde piyasa duyarlılığı. |
-| `export_candles · candles_to_dataframe · resample_candles` | Decimal hassasiyetini koruyan CSV/JSON, isteğe bağlı pandas ve mum yeniden örnekleme. |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Decimal hassasiyetini koruyan CSV/JSON, isteğe bağlı pandas ve mum yeniden örnekleme. |
 
 ## Kurulum
 
@@ -124,11 +136,12 @@ pybynix domains
 İmzalar, dönüş değerleri, çalıştırılabilir örnekler ve kurtarma davranışı aşağıda açıklanmıştır. Varlık kataloğundaki tam trade_symbol değerlerini kullanın.
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı 
 ## Araştırma
 
 Doğrulanmış makale bütünleştirme gereksinimini, mimariyi, mühendislik katkılarını ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## Topluluk ve lisans
 

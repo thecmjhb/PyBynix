@@ -13,6 +13,18 @@
 
 <p align="center" dir="ltr"><a href="../../README.md" title="English"><img src="../../assets/languages/en.svg" width="58" height="28" alt="English"></a><a href="../../README.bn.md" title="বাংলা"><img src="../../assets/languages/bn.svg" width="58" height="28" alt="বাংলা"></a><a href="README.zh-CN.md" title="中文"><img src="../../assets/languages/zh-CN.svg" width="58" height="28" alt="中文"></a><a href="README.hi.md" title="हिन्दी"><img src="../../assets/languages/hi.svg" width="58" height="28" alt="हिन्दी"></a><a href="README.es.md" title="Español"><img src="../../assets/languages/es.svg" width="58" height="28" alt="Español"></a><a href="README.ar.md" title="العربية"><img src="../../assets/languages/ar.svg" width="58" height="28" alt="العربية"></a><a href="README.fr.md" title="Français"><img src="../../assets/languages/fr.svg" width="58" height="28" alt="Français"></a><a href="README.pt.md" title="Português"><img src="../../assets/languages/pt.svg" width="58" height="28" alt="Português"></a><a href="README.id.md" title="Bahasa Indonesia"><img src="../../assets/languages/id.svg" width="58" height="28" alt="Bahasa Indonesia"></a><a href="README.ur.md" title="اردو"><img src="../../assets/languages/ur.svg" width="58" height="28" alt="اردو"></a><a href="README.ru.md" title="Русский"><img src="../../assets/languages/ru.svg" width="58" height="28" alt="Русский"></a><a href="README.ko.md" title="한국어"><img src="../../assets/languages/ko.svg" width="58" height="28" alt="한국어"></a><a href="README.ja.md" title="日本語"><img src="../../assets/languages/ja.svg" width="58" height="28" alt="日本語"></a><a href="README.de.md" title="Deutsch"><img src="../../assets/languages/de.svg" width="58" height="28" alt="Deutsch"></a><a href="README.tr.md" title="Türkçe"><img src="../../assets/languages/tr.svg" width="58" height="28" alt="Türkçe"></a><a href="README.it.md" title="Italiano"><img src="../../assets/languages/it.svg" width="58" height="28" alt="Italiano"></a><a href="README.fa.md" title="فارسی"><img src="../../assets/languages/fa.svg" width="58" height="28" alt="فارسی"></a><a href="README.vi.md" title="Tiếng Việt"><img src="../../assets/languages/vi.svg" width="58" height="28" alt="Tiếng Việt"></a><a href="README.ta.md" title="தமிழ்"><img src="../../assets/languages/ta.svg" width="58" height="28" alt="தமிழ்"></a><a href="README.te.md" title="తెలుగు"><img src="../../assets/languages/te.svg" width="58" height="28" alt="తెలుగు"></a></p>
 
+## صلاحیت کی اقسام
+
+- **مفت/اوپن کور** — MIT-licensed public package؛ account کے بغیر public market data، اور اختیاری browser، network اور DataFrame extras۔
+- **تیز market data** — Stream-first ticks، forming/closed candles، bounded historical pages اور REST fallback کے ساتھ concurrent candle batches۔
+- **Multi-login اور client pool** — Token، password، browser اور OTP-capable providers، ساتھ independent named clients اور account events۔
+- **محفوظ caller-owned automation** — ExecutionOrchestrator/AutoExecutor application کے explicit intents لیتا ہے؛ dry-run، demo-only default، cooldown، concurrency limits اور uncertain-order retry نہیں۔
+- **Pure indicators** — Caller-owned data پر Decimal SMA، EMA، RSI، MACD، Bollinger Bands، ATR اور stochastic measurements؛ signals یا strategy نہیں۔
+- **Execution سہولتیں** — `buy_and_wait`، `sell`/early close، settlement wait، journaling اور reconciliation، explicit one-order-at-a-time calls کے لیے۔
+- **Verified Bynix scope** — Implemented، offline-tested اور live-demo-observed behavior کے لیے matrix دیکھیں؛ غیرمصدقہ parity کا دعویٰ نہیں۔
+
+مکمل verified scope دیکھیں [feature اور fallback matrix میں](../FEATURE_MATRIX.md).
+
 ## خصوصیات
 
 | API | خصوصیات |
@@ -26,7 +38,7 @@
 | `ClientPool · account_events · get_balance_breakdown` | آزاد named clients، account events اور تفصیلی balances۔ |
 | `proxy · dns_servers · connect_any` | HTTP/SOCKS5 proxy، custom DNS اور trusted domain fallback۔ |
 | `get_realtime_sentiment · stream_sentiment` | Platform-style candle اور tick model سے streaming market sentiment۔ |
-| `export_candles · candles_to_dataframe · resample_candles` | Decimal کی درستگی کے ساتھ CSV/JSON export، اختیاری pandas اور candle resampling۔ |
+| `export_candles · candles_to_dataframe · resample_candles · sma · ema · rsi · macd · bollinger_bands · atr · stochastic` | Decimal کی درستگی کے ساتھ CSV/JSON export، اختیاری pandas اور candle resampling۔ |
 
 ## تنصیب
 
@@ -124,11 +136,12 @@ pybynix domains
 Signatures، return values، چلنے والی مثالیں اور recovery behavior نیچے کی documentation میں ہیں۔ Asset catalog کے درست trade_symbol استعمال کریں۔
 
 - [API reference](../API.md)
- - [Authentication](../AUTHENTICATION.md)
- - [Examples](../../examples)
- - [Recovery and networking](../RECOVERY.md)
- - [Automation boundary](../AUTOMATION.md)
- - [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Authentication](../AUTHENTICATION.md)
+- [Examples](../../examples)
+- [Recovery and networking](../RECOVERY.md)
+- [Automation boundary](../AUTOMATION.md)
+- [Feature and fallback matrix](../FEATURE_MATRIX.md)
+- [Launch checklist](../LAUNCH_CHECKLIST.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -139,8 +152,6 @@ Validation record میں آزمودہ Python versions، assets اور timeframes
 ## تحقیق
 
 Validated manuscript integration کی ضرورت، architecture، engineering contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ کوئی PDF تقسیم نہیں کی جاتی۔
-
-The validated manuscript is maintained as Overleaf-ready source outside this public package; no PDF is distributed.
 
 ## کمیونٹی اور لائسنس
 
