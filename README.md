@@ -42,14 +42,16 @@ See the full verified scope in the [feature and fallback matrix](docs/FEATURE_MA
 
 ## Installation
 
-Install the published package from PyPI. Add optional browser, networking and DataFrame integrations as needed.
+PyPI publication is pending. Install the current release directly from this repository; clone it locally when you need optional browser, networking or DataFrame integrations.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Detailed signatures, return values, runnable examples and recovery behavior are 
 - [Automation boundary](docs/AUTOMATION.md)
 - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
 - [Launch checklist](docs/LAUNCH_CHECKLIST.md)
-- [PyPI publishing](docs/PYPI_PUBLISHING.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ The validation record lists tested Python versions, asset/timeframe coverage, de
 
 ## Research
 
-The validated manuscript explains the integration need, architecture, engineering contributions and evaluation. Its Overleaf-ready LaTeX source is maintained separately by the author; no PDF is distributed.
+The engineering manuscript explains the integration need, architecture, contributions and evaluation. The author maintains its Overleaf-ready LaTeX source separately; no PDF is distributed.
 
 ## Community and license
 

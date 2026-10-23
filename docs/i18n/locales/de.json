@@ -28,7 +28,7 @@
     "CSV/JSON-Export mit Decimal-Genauigkeit, optionales pandas und Kerzenaggregation."
   ],
   "install": "Installation",
-  "install_text": "Installiere das veröffentlichte Paket von PyPI. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.",
+  "install_text": "Die PyPI-Veröffentlichung steht noch aus. Installiere die aktuelle Version direkt aus diesem Repository; für optionale Integrationen klone das Repository lokal und installiere die Extras.",
   "quickstart": "Dein erster Marktstream",
   "quickstart_text": "Öffentliche Marktdaten funktionieren ohne Konto. Dieses vollständige Beispiel lädt Kerzen und liest drei eingehende Ticks.",
   "auth_title": "Anmeldung und Sitzungen",
@@ -44,7 +44,7 @@
   "validation_title": "Tests und Leistung",
   "validation_text": "Der Prüfbericht enthält getestete Python-Versionen, Asset- und Zeitrahmenabdeckung, Demo-Ausführung, Verbindungsunterbrechungen und Messungen. Reproduzierbare Tests und Benchmark-Eingaben liegen dem Quellcode bei.",
   "paper_title": "Forschung",
-  "paper_text": "Das validierte Manuskript erläutert Integrationsbedarf, Architektur, technische Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.",
+  "paper_text": "Das technische Manuskript erläutert Integrationsbedarf, Architektur, Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.",
   "contribute_title": "Community und Lizenz",
   "contribute_text": "Beiträge, reproduzierbare Fehlerberichte und Dokumentationsverbesserungen sind willkommen. PyBynix wird unabhängig gepflegt; Marken verbleiben bei ihren jeweiligen Eigentümern."
 }

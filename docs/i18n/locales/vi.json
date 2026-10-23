@@ -28,7 +28,7 @@
     "Xuất CSV/JSON giữ độ chính xác Decimal, pandas tùy chọn và tổng hợp lại nến."
   ],
   "install": "Cài đặt",
-  "install_text": "Cài đặt gói đã phát hành từ PyPI. Thêm các tích hợp trình duyệt, mạng và DataFrame tùy chọn khi cần.",
+  "install_text": "Việc phát hành trên PyPI vẫn đang chờ. Hãy cài bản hiện tại trực tiếp từ kho này; với tích hợp tùy chọn, clone kho rồi cài extras tại máy.",
   "quickstart": "Luồng thị trường đầu tiên",
   "quickstart_text": "Dữ liệu công khai hoạt động không cần tài khoản. Ví dụ đầy đủ này lấy nến và đọc ba tick mới.",
   "auth_title": "Xác thực và phiên",
@@ -44,7 +44,7 @@
   "validation_title": "Kiểm thử và hiệu năng",
   "validation_text": "Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khung thời gian, lệnh demo, gián đoạn và phép đo. Mã nguồn có kiểm thử và đầu vào benchmark tái lập được.",
   "paper_title": "Nghiên cứu",
-  "paper_text": "Bản thảo đã được xác minh giải thích nhu cầu tích hợp, kiến trúc, đóng góp kỹ thuật và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.",
+  "paper_text": "Bản thảo kỹ thuật giải thích nhu cầu tích hợp, kiến trúc, đóng góp và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.",
   "contribute_title": "Cộng đồng và giấy phép",
   "contribute_text": "Chào đón đóng góp, báo lỗi tái lập được và cải tiến tài liệu. PyBynix được duy trì độc lập; nhãn hiệu thuộc chủ sở hữu tương ứng."
 }

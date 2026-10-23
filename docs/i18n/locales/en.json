@@ -28,7 +28,7 @@
     "Decimal-preserving CSV/JSON export, optional pandas and candle resampling."
   ],
   "install": "Installation",
-  "install_text": "Install the published package from PyPI. Add optional browser, networking and DataFrame integrations as needed.",
+  "install_text": "PyPI publication is pending. Install the current release directly from this repository; clone it locally when you need optional browser, networking or DataFrame integrations.",
   "quickstart": "Stream your first market",
   "quickstart_text": "Public market data works without an account. This complete example retrieves candles and reads three incoming ticks.",
   "auth_title": "Authentication and sessions",
@@ -44,7 +44,7 @@
   "validation_title": "Testing and performance",
   "validation_text": "The validation record lists tested Python versions, asset/timeframe coverage, demo execution, interrupted connections and measured performance. Reproducible tests and benchmark inputs accompany the source.",
   "paper_title": "Research",
-  "paper_text": "The validated manuscript explains the integration need, architecture, engineering contributions and evaluation. Its Overleaf-ready LaTeX source is maintained separately by the author; no PDF is distributed.",
+  "paper_text": "The engineering manuscript explains the integration need, architecture, contributions and evaluation. The author maintains its Overleaf-ready LaTeX source separately; no PDF is distributed.",
   "contribute_title": "Community and license",
   "contribute_text": "Contributions, reproducible bug reports and documentation improvements are welcome. PyBynix is independently maintained; platform and language trademarks remain with their owners."
 }

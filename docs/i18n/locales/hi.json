@@ -28,7 +28,7 @@
     "Decimal सुरक्षित CSV/JSON export, वैकल्पिक pandas और candle resampling।"
   ],
   "install": "इंस्टॉलेशन",
-  "install_text": "PyPI से प्रकाशित package install करें। आवश्यकता के अनुसार browser, networking और DataFrame integrations जोड़ें।",
+  "install_text": "PyPI प्रकाशन अभी बाकी है। वर्तमान संस्करण इस repository से सीधे install करें; वैकल्पिक integrations के लिए repository clone करके extras install करें।",
   "quickstart": "पहला market stream",
   "quickstart_text": "Public market data के लिए account आवश्यक नहीं है। यह पूरा उदाहरण candles प्राप्त करता है और तीन live ticks पढ़ता है।",
   "auth_title": "लॉगिन और sessions",
@@ -44,7 +44,7 @@
   "validation_title": "परीक्षण और performance",
   "validation_text": "Validation record में tested Python versions, asset/timeframe coverage, demo execution, connection interruptions और performance measurements हैं। Reproducible tests और benchmark inputs source के साथ हैं।",
   "paper_title": "शोध",
-  "paper_text": "Validated manuscript integration की आवश्यकता, architecture, engineering contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।",
+  "paper_text": "Engineering manuscript integration की आवश्यकता, architecture, contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।",
   "contribute_title": "समुदाय और लाइसेंस",
   "contribute_text": "Contributions, reproducible bug reports और documentation improvements का स्वागत है। PyBynix स्वतंत्र रूप से maintained है; platform और language trademarks उनके मालिकों के हैं।"
 }

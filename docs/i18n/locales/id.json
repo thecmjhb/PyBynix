@@ -28,7 +28,7 @@
     "Ekspor CSV/JSON dengan presisi Decimal, pandas opsional, dan resampling candle."
   ],
   "install": "Instalasi",
-  "install_text": "Instal paket yang dipublikasikan dari PyPI. Tambahkan integrasi browser, jaringan, dan DataFrame opsional sesuai kebutuhan.",
+  "install_text": "Publikasi PyPI masih menunggu. Instal rilis saat ini langsung dari repositori ini; untuk integrasi opsional, clone repositori lalu instal extras secara lokal.",
   "quickstart": "Stream pasar pertama",
   "quickstart_text": "Data pasar publik dapat diakses tanpa akun. Contoh lengkap ini mengambil candle dan membaca tiga tick masuk.",
   "auth_title": "Autentikasi dan sesi",
@@ -44,7 +44,7 @@
   "validation_title": "Pengujian dan performa",
   "validation_text": "Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eksekusi demo, gangguan koneksi, dan pengukuran performa. Sumber menyertakan pengujian serta input benchmark yang dapat direproduksi.",
   "paper_title": "Riset",
-  "paper_text": "Naskah tervalidasi menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.",
+  "paper_text": "Naskah rekayasa menjelaskan kebutuhan integrasi, arsitektur, kontribusi, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.",
   "contribute_title": "Komunitas dan lisensi",
   "contribute_text": "Kontribusi, laporan bug yang dapat direproduksi, dan perbaikan dokumentasi dipersilakan. PyBynix dikelola independen; merek dagang tetap milik pemiliknya."
 }

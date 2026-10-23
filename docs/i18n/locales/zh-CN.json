@@ -28,7 +28,7 @@
     "保留 Decimal 精度的 CSV/JSON 导出、可选 pandas 和蜡烛重采样。"
   ],
   "install": "安装",
-  "install_text": "从 PyPI 安装已发布的软件包。按需添加浏览器、网络和 DataFrame 集成。",
+  "install_text": "PyPI 发布仍在等待中。请直接从此仓库安装当前版本；如需可选集成，请克隆仓库后在本地安装 extras。",
   "quickstart": "订阅第一个市场",
   "quickstart_text": "公开市场数据无需账户。以下完整示例获取蜡烛数据，并读取三个实时行情更新。",
   "auth_title": "身份验证与会话",
@@ -44,7 +44,7 @@
   "validation_title": "测试与性能",
   "validation_text": "验证记录列出已测试的 Python 版本、资产及周期覆盖、模拟交易、连接中断和性能测量。源码包含可复现测试与基准输入。",
   "paper_title": "研究",
-  "paper_text": "经验证的论文介绍集成需求、架构、工程贡献和评估。作者单独维护可用于 Overleaf 的 LaTeX 源码；不分发 PDF。",
+  "paper_text": "工程论文介绍集成需求、架构、贡献和评估。作者单独维护可用于 Overleaf 的 LaTeX 源码；不分发 PDF。",
   "contribute_title": "社区与许可证",
   "contribute_text": "欢迎贡献代码、可复现的问题报告和文档改进。PyBynix 独立维护，平台与语言商标属于各自所有者。"
 }

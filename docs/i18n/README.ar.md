@@ -42,14 +42,16 @@
 
 ## التثبيت
 
-ثبّت الحزمة المنشورة من PyPI. أضف تكاملات المتصفح والشبكة وDataFrame الاختيارية حسب الحاجة.
+النشر على PyPI ما زال قيد الانتظار. ثبّت الإصدار الحالي مباشرةً من هذا المستودع؛ وللتكاملات الاختيارية انسخ المستودع محلياً ثم ثبّت extras.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ pybynix domains
 
 ## البحث
 
-تشرح المخطوطة التي تم التحقق منها الحاجة إلى التكامل والبنية والمساهمات الهندسية والتقييم. يحتفظ المؤلف بمصدر LaTeX جاهز لـ Overleaf بشكل منفصل؛ ولا يتم توزيع أي PDF.
+تشرح المخطوطة الهندسية الحاجة إلى التكامل والبنية والمساهمات والتقييم. يحتفظ المؤلف بمصدر LaTeX جاهز لـ Overleaf بشكل منفصل؛ ولا يتم توزيع أي PDF.
 
 ## المجتمع والترخيص
 

@@ -42,14 +42,16 @@
 
 ## ఇన్‌స్టాలేషన్
 
-PyPI నుంచి ప్రచురించిన package‌ను install చేయండి. అవసరాన్ని బట్టి browser, network, DataFrame integrations జోడించండి.
+PyPI ప్రచురణ ఇంకా పెండింగ్‌లో ఉంది. ప్రస్తుత release‌ను ఈ repository నుంచి నేరుగా install చేయండి; optional integrations కోసం repositoryని clone చేసి extrasను localగా install చేయండి.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Signatures, return values, నడిపించగల ఉదాహరణలు,
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Validation record‌లో పరీక్షించిన Python versions, as
 
 ## పరిశోధన
 
-ధృవీకరించిన పరిశోధనా పత్రం integration అవసరం, architecture, engineering contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; PDF పంపిణీ చేయబడదు.
+Engineering manuscript integration అవసరం, architecture, contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; PDF పంపిణీ చేయబడదు.
 
 ## సంఘం మరియు లైసెన్స్
 

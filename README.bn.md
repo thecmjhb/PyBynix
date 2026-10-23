@@ -42,14 +42,16 @@
 
 ## ইনস্টলেশন
 
-PyPI থেকে published package install করো। প্রয়োজন হলে browser, network ও DataFrame integration যোগ করো।
+PyPI প্রকাশ এখনো বাকি। এই repository থেকে বর্তমান release সরাসরি install করো; browser, network বা DataFrame integration লাগলে repository clone করে optional extras install করো।
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Method signature, return value, runnable example ও recovery behavior নিচ
 - [Automation boundary](docs/AUTOMATION.md)
 - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
 - [Launch checklist](docs/LAUNCH_CHECKLIST.md)
-- [PyPI publishing](docs/PYPI_PUBLISHING.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Validation record-এ পরীক্ষিত Python version, asset/timeframe c
 
 ## গবেষণা
 
-Validated manuscript-এ library-এর প্রয়োজন, architecture, engineering contribution ও evaluation ব্যাখ্যা করা হয়েছে। লেখকের আলাদা Overleaf-ready LaTeX source সম্পূর্ণ; কোনো PDF বিতরণ করা হয় না।
+Engineering manuscript-এ library-এর প্রয়োজন, architecture, contribution ও evaluation ব্যাখ্যা করা হয়েছে। লেখক আলাদাভাবে Overleaf-ready LaTeX source সংরক্ষণ করেন; কোনো PDF বিতরণ করা হয় না।
 
 ## কমিউনিটি ও লাইসেন্স
 

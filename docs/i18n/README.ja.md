@@ -42,14 +42,16 @@
 
 ## インストール
 
-PyPI から公開済みパッケージをインストールします。必要に応じてブラウザ、ネットワーク、DataFrame 連携を追加してください。
+PyPI 公開はまだ保留中です。現在の版はこのリポジトリから直接インストールし、任意の連携が必要な場合はリポジトリを clone して extras をローカルで導入してください。
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ pybynix domains
 
 ## 研究
 
-検証済みの原稿は統合の必要性、構成、工学的貢献と評価を説明します。著者は Overleaf 用 LaTeX ソースを別に管理し、PDF は配布しません。
+工学的な原稿は統合の必要性、構成、貢献と評価を説明します。著者は Overleaf 用 LaTeX ソースを別に管理し、PDF は配布しません。
 
 ## コミュニティとライセンス
 

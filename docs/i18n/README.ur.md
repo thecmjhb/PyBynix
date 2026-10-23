@@ -42,14 +42,16 @@
 
 ## تنصیب
 
-PyPI سے شائع شدہ package install کریں۔ ضرورت کے مطابق browser، network اور DataFrame integration شامل کریں۔
+PyPI پر اشاعت ابھی باقی ہے۔ موجودہ release اسی repository سے براہِ راست install کریں؛ اختیاری integration کے لیے repository clone کر کے extras مقامی طور پر install کریں۔
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Signatures، return values، چلنے والی مثالیں اور recovery beha
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Validation record میں آزمودہ Python versions، assets اور timeframes
 
 ## تحقیق
 
-Validated manuscript integration کی ضرورت، architecture، engineering contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ کوئی PDF تقسیم نہیں کی جاتی۔
+Engineering manuscript integration کی ضرورت، architecture، contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ کوئی PDF تقسیم نہیں کی جاتی۔
 
 ## کمیونٹی اور لائسنس
 

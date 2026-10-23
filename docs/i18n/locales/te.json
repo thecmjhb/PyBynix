@@ -28,7 +28,7 @@
     "Decimal ఖచ్చితత్వంతో CSV/JSON export, ఐచ్ఛిక pandas, candle resampling."
   ],
   "install": "ఇన్‌స్టాలేషన్",
-  "install_text": "PyPI నుంచి ప్రచురించిన package‌ను install చేయండి. అవసరాన్ని బట్టి browser, network, DataFrame integrations జోడించండి.",
+  "install_text": "PyPI ప్రచురణ ఇంకా పెండింగ్‌లో ఉంది. ప్రస్తుత release‌ను ఈ repository నుంచి నేరుగా install చేయండి; optional integrations కోసం repositoryని clone చేసి extrasను localగా install చేయండి.",
   "quickstart": "మొదటి market stream",
   "quickstart_text": "Account లేకుండానే public market data పొందవచ్చు. ఈ పూర్తి ఉదాహరణ candles తెచ్చి మూడు live ticks చదువుతుంది.",
   "auth_title": "లాగిన్ మరియు sessions",
@@ -44,7 +44,7 @@
   "validation_title": "పరీక్షలు మరియు పనితీరు",
   "validation_text": "Validation record‌లో పరీక్షించిన Python versions, asset/timeframe coverage, demo execution, connection interruptions, performance measurements ఉన్నాయి. పునరావృతం చేయగల tests, benchmark inputs source‌తో లభిస్తాయి.",
   "paper_title": "పరిశోధన",
-  "paper_text": "ధృవీకరించిన పరిశోధనా పత్రం integration అవసరం, architecture, engineering contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; PDF పంపిణీ చేయబడదు.",
+  "paper_text": "Engineering manuscript integration అవసరం, architecture, contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; PDF పంపిణీ చేయబడదు.",
   "contribute_title": "సంఘం మరియు లైసెన్స్",
   "contribute_text": "Contributions, తిరిగి నిర్ధారించగల bug reports, documentation improvements స్వాగతం. PyBynix స్వతంత్రంగా నిర్వహించబడుతుంది; trademarks వాటి యజమానులవే."
 }

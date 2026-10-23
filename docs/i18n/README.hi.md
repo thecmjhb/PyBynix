@@ -42,14 +42,16 @@
 
 ## इंस्टॉलेशन
 
-PyPI से प्रकाशित package install करें। आवश्यकता के अनुसार browser, networking और DataFrame integrations जोड़ें।
+PyPI प्रकाशन अभी बाकी है। वर्तमान संस्करण इस repository से सीधे install करें; वैकल्पिक integrations के लिए repository clone करके extras install करें।
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Validation record में tested Python versions, asset/timeframe coverage, de
 
 ## शोध
 
-Validated manuscript integration की आवश्यकता, architecture, engineering contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।
+Engineering manuscript integration की आवश्यकता, architecture, contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।
 
 ## समुदाय और लाइसेंस
 

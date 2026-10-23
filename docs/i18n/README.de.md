@@ -42,14 +42,16 @@ Den vollständigen verifizierten Umfang finden Sie in der [Funktions- und Auswei
 
 ## Installation
 
-Installiere das veröffentlichte Paket von PyPI. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.
+Die PyPI-Veröffentlichung steht noch aus. Installiere die aktuelle Version direkt aus diesem Repository; für optionale Integrationen klone das Repository lokal und installiere die Extras.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Signaturen, Rückgabewerte, ausführbare Beispiele und Wiederherstellung sind un
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Der Prüfbericht enthält getestete Python-Versionen, Asset- und Zeitrahmenabdec
 
 ## Forschung
 
-Das validierte Manuskript erläutert Integrationsbedarf, Architektur, technische Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.
+Das technische Manuskript erläutert Integrationsbedarf, Architektur, Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.
 
 ## Community und Lizenz
 

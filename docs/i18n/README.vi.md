@@ -42,14 +42,16 @@ Xem phạm vi đã xác minh đầy đủ trong [ma trận tính năng và fallb
 
 ## Cài đặt
 
-Cài đặt gói đã phát hành từ PyPI. Thêm các tích hợp trình duyệt, mạng và DataFrame tùy chọn khi cần.
+Việc phát hành trên PyPI vẫn đang chờ. Hãy cài bản hiện tại trực tiếp từ kho này; với tích hợp tùy chọn, clone kho rồi cài extras tại máy.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Chữ ký hàm, giá trị trả về, ví dụ chạy được và cơ chế kh
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khun
 
 ## Nghiên cứu
 
-Bản thảo đã được xác minh giải thích nhu cầu tích hợp, kiến trúc, đóng góp kỹ thuật và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.
+Bản thảo kỹ thuật giải thích nhu cầu tích hợp, kiến trúc, đóng góp và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.
 
 ## Cộng đồng và giấy phép
 

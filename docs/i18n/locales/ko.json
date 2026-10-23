@@ -28,7 +28,7 @@
     "Decimal 정밀도를 유지하는 CSV/JSON 내보내기, 선택적 pandas 및 캔들 리샘플링을 제공합니다."
   ],
   "install": "설치",
-  "install_text": "PyPI에서 게시된 패키지를 설치하세요. 필요에 따라 브라우저, 네트워크 및 DataFrame 통합을 추가할 수 있습니다.",
+  "install_text": "PyPI 배포는 아직 보류 중입니다. 현재 버전은 이 저장소에서 직접 설치하고, 선택적 통합은 저장소를 clone한 뒤 extras를 로컬로 설치하세요.",
   "quickstart": "첫 시장 스트림",
   "quickstart_text": "공개 시장 데이터는 계정 없이 사용할 수 있습니다. 아래 전체 예제는 캔들을 가져오고 실시간 틱 세 개를 읽습니다.",
   "auth_title": "인증 및 세션",
@@ -44,7 +44,7 @@
   "validation_title": "테스트 및 성능",
   "validation_text": "검증 기록에는 테스트한 Python 버전, 자산·시간 간격 범위, 데모 실행, 연결 중단과 성능 측정이 나옵니다. 재현 가능한 테스트와 벤치마크 입력이 소스에 포함되어 있습니다.",
   "paper_title": "연구",
-  "paper_text": "검증된 원고는 통합의 필요성, 구조, 엔지니어링 기여와 평가를 설명합니다. 저자는 Overleaf용 LaTeX 소스를 별도로 관리하며 PDF는 배포하지 않습니다.",
+  "paper_text": "엔지니어링 원고는 통합의 필요성, 구조, 기여와 평가를 설명합니다. 저자는 Overleaf용 LaTeX 소스를 별도로 관리하며 PDF는 배포하지 않습니다.",
   "contribute_title": "커뮤니티 및 라이선스",
   "contribute_text": "기여, 재현 가능한 버그 보고 및 문서 개선을 환영합니다. PyBynix는 독립적으로 관리되며 각 상표는 해당 소유자에게 있습니다."
 }

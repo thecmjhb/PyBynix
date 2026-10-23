@@ -30,7 +30,7 @@ PyBynix/
 | Protocol evidence | `docs/PROTOCOL.md` |
 | Feature and fallback coverage | `docs/FEATURE_MATRIX.md` |
 | Launch presentation and publication gate | `docs/LAUNCH_CHECKLIST.md` |
-| PyPI installation and publishing | `docs/PYPI_PUBLISHING.md` |
+| Current installation | `README.md` (install directly from this repository while PyPI publication is pending) |
 | Validation scope and measured limits | `docs/VALIDATION.md` |
 | Contribution and safety rules | `CONTRIBUTING.md`, `SECURITY.md`, `NOTICE.md` |
 

@@ -42,14 +42,16 @@ Lihat cakupan terverifikasi lengkap di [matriks fitur dan fallback](../FEATURE_M
 
 ## Instalasi
 
-Instal paket yang dipublikasikan dari PyPI. Tambahkan integrasi browser, jaringan, dan DataFrame opsional sesuai kebutuhan.
+Publikasi PyPI masih menunggu. Instal rilis saat ini langsung dari repositori ini; untuk integrasi opsional, clone repositori lalu instal extras secara lokal.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Signature, nilai kembalian, contoh siap dijalankan, dan perilaku pemulihan dijel
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eks
 
 ## Riset
 
-Naskah tervalidasi menjelaskan kebutuhan integrasi, arsitektur, kontribusi rekayasa, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.
+Naskah rekayasa menjelaskan kebutuhan integrasi, arsitektur, kontribusi, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.
 
 ## Komunitas dan lisensi
 

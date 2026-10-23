@@ -28,7 +28,7 @@
     "Decimal hassasiyetini koruyan CSV/JSON, isteğe bağlı pandas ve mum yeniden örnekleme."
   ],
   "install": "Kurulum",
-  "install_text": "Yayınlanan paketi PyPI üzerinden kurun. Gerektikçe isteğe bağlı tarayıcı, ağ ve DataFrame bütünleştirmelerini ekleyin.",
+  "install_text": "PyPI yayını henüz beklemede. Güncel sürümü doğrudan bu depodan kurun; isteğe bağlı bütünleştirmeler için depoyu klonlayıp extras paketlerini yerelde kurun.",
   "quickstart": "İlk piyasa akışı",
   "quickstart_text": "Herkese açık piyasa verileri hesap olmadan çalışır. Bu eksiksiz örnek mumları getirir ve gelen üç tiki okur.",
   "auth_title": "Kimlik doğrulama ve oturumlar",
@@ -44,7 +44,7 @@
   "validation_title": "Test ve performans",
   "validation_text": "Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı kapsamını, demo yürütmeyi, kesintileri ve performans ölçümlerini listeler. Yeniden üretilebilir testler ve benchmark girdileri kaynakla birlikte gelir.",
   "paper_title": "Araştırma",
-  "paper_text": "Doğrulanmış makale bütünleştirme gereksinimini, mimariyi, mühendislik katkılarını ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.",
+  "paper_text": "Mühendislik makalesi bütünleştirme gereksinimini, mimariyi, katkıları ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.",
   "contribute_title": "Topluluk ve lisans",
   "contribute_text": "Katkılar, yeniden üretilebilir hata bildirimleri ve belge iyileştirmeleri memnuniyetle karşılanır. PyBynix bağımsız geliştirilir; ticari markalar ilgili sahiplerine aittir."
 }

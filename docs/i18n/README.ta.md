@@ -42,14 +42,16 @@
 
 ## நிறுவுதல்
 
-PyPI-இலிருந்து வெளியிடப்பட்ட package-ஐ நிறுவவும். தேவைக்கேற்ப browser, network மற்றும் DataFrame integration-களைச் சேர்க்கவும்.
+PyPI வெளியீடு இன்னும் நிலுவையில் உள்ளது. தற்போதைய பதிப்பை இந்த repository-லிருந்து நேரடியாக நிறுவவும்; optional integration-களுக்கு repository-ஐ clone செய்து extras-ஐ local-ஆக நிறுவவும்.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Signature, return value, இயக்கக்கூடிய எடுத்த
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Validation record-இல் சோதிக்கப்பட்ட Python versi
 
 ## ஆராய்ச்சி
 
-சரிபார்க்கப்பட்ட ஆய்வுக்கட்டுரை integration தேவை, architecture, engineering contribution மற்றும் evaluation-ஐ விளக்குகிறது. ஆசிரியர் Overleaf-ready LaTeX source-ஐத் தனியாகப் பராமரிக்கிறார்; PDF விநியோகிக்கப்படாது.
+Engineering manuscript integration தேவை, architecture, contribution மற்றும் evaluation-ஐ விளக்குகிறது. ஆசிரியர் Overleaf-ready LaTeX source-ஐத் தனியாகப் பராமரிக்கிறார்; PDF விநியோகிக்கப்படாது.
 
 ## சமூகமும் உரிமமும்
 

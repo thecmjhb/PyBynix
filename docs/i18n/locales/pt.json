@@ -28,7 +28,7 @@
     "Exportação CSV/JSON com precisão Decimal, pandas opcional e reamostragem de candles."
   ],
   "install": "Instalação",
-  "install_text": "Instale o pacote publicado pelo PyPI. Adicione as integrações opcionais de navegador, rede e DataFrame conforme necessário.",
+  "install_text": "A publicação no PyPI está pendente. Instale a versão atual diretamente deste repositório; para integrações opcionais, clone o repositório e instale os extras localmente.",
   "quickstart": "Seu primeiro fluxo de mercado",
   "quickstart_text": "Dados públicos funcionam sem conta. Este exemplo completo busca candles e lê três ticks recebidos.",
   "auth_title": "Autenticação e sessões",
@@ -44,7 +44,7 @@
   "validation_title": "Testes e desempenho",
   "validation_text": "O registro de validação apresenta versões de Python testadas, cobertura de ativos e períodos, operações demo, interrupções e medições. O código inclui testes e entradas de benchmark reproduzíveis.",
   "paper_title": "Pesquisa",
-  "paper_text": "O manuscrito validado descreve a necessidade da integração, a arquitetura, as contribuições de engenharia e a avaliação. O autor mantém separadamente o código LaTeX pronto para Overleaf; nenhum PDF é distribuído.",
+  "paper_text": "O manuscrito de engenharia descreve a necessidade da integração, a arquitetura, as contribuições e a avaliação. O autor mantém separadamente o código LaTeX pronto para Overleaf; nenhum PDF é distribuído.",
   "contribute_title": "Comunidade e licença",
   "contribute_text": "Contribuições, relatos de erros reproduzíveis e melhorias na documentação são bem-vindos. PyBynix é mantido de forma independente; as marcas pertencem aos respectivos titulares."
 }

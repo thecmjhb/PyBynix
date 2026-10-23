@@ -42,14 +42,16 @@ Tam doğrulanmış kapsamı şu belgede görün: [özellik ve yedek yol matrisi]
 
 ## Kurulum
 
-Yayınlanan paketi PyPI üzerinden kurun. Gerektikçe isteğe bağlı tarayıcı, ağ ve DataFrame bütünleştirmelerini ekleyin.
+PyPI yayını henüz beklemede. Güncel sürümü doğrudan bu depodan kurun; isteğe bağlı bütünleştirmeler için depoyu klonlayıp extras paketlerini yerelde kurun.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı 
 
 ## Araştırma
 
-Doğrulanmış makale bütünleştirme gereksinimini, mimariyi, mühendislik katkılarını ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.
+Mühendislik makalesi bütünleştirme gereksinimini, mimariyi, katkıları ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.
 
 ## Topluluk ve lisans
 

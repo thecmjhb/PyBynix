@@ -42,14 +42,16 @@
 
 ## نصب
 
-بسته منتشرشده را از PyPI نصب کنید. یکپارچه‌سازی‌های اختیاری مرورگر، شبکه و DataFrame را در صورت نیاز اضافه کنید.
+انتشار در PyPI هنوز انجام نشده است. نسخهٔ فعلی را مستقیم از این مخزن نصب کنید؛ برای یکپارچه‌سازی‌های اختیاری، مخزن را محلی clone و extras را نصب کنید.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ pybynix domains
 
 ## پژوهش
 
-دست‌نوشته اعتبارسنجی‌شده نیاز یکپارچه‌سازی، معماری، دستاوردهای مهندسی و ارزیابی را توضیح می‌دهد. نویسنده منبع LaTeX آماده Overleaf را جداگانه نگه می‌دارد؛ هیچ PDF توزیع نمی‌شود.
+دست‌نوشته مهندسی نیاز یکپارچه‌سازی، معماری، دستاوردها و ارزیابی را توضیح می‌دهد. نویسنده منبع LaTeX آماده Overleaf را جداگانه نگه می‌دارد؛ هیچ PDF توزیع نمی‌شود.
 
 ## جامعه و مجوز
 

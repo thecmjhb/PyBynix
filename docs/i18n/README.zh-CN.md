@@ -42,14 +42,16 @@
 
 ## 安装
 
-从 PyPI 安装已发布的软件包。按需添加浏览器、网络和 DataFrame 集成。
+PyPI 发布仍在等待中。请直接从此仓库安装当前版本；如需可选集成，请克隆仓库后在本地安装 extras。
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ pybynix domains
 
 ## 研究
 
-经验证的论文介绍集成需求、架构、工程贡献和评估。作者单独维护可用于 Overleaf 的 LaTeX 源码；不分发 PDF。
+工程论文介绍集成需求、架构、贡献和评估。作者单独维护可用于 Overleaf 的 LaTeX 源码；不分发 PDF。
 
 ## 社区与许可证
 

@@ -42,14 +42,16 @@
 
 ## Установка
 
-Установите опубликованный пакет из PyPI. При необходимости добавьте интеграции браузера, сети и DataFrame.
+Публикация в PyPI пока ожидается. Установите текущую версию напрямую из этого репозитория; для дополнительных интеграций клонируйте репозиторий и установите extras локально.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ pybynix domains
 
 ## Исследование
 
-Проверенная рукопись объясняет необходимость интеграции, архитектуру, инженерный вклад и оценку. Автор отдельно поддерживает LaTeX-исходники для Overleaf; PDF не распространяется.
+Инженерная рукопись объясняет необходимость интеграции, архитектуру, вклад и оценку. Автор отдельно поддерживает LaTeX-исходники для Overleaf; PDF не распространяется.
 
 ## Сообщество и лицензия
 

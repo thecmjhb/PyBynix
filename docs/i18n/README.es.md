@@ -42,14 +42,16 @@ Consulta el alcance verificado completo en la [matriz de funciones y fallback](.
 
 ## Instalación
 
-Instala el paquete publicado desde PyPI. Añade las integraciones opcionales de navegador, red y DataFrame según tus necesidades.
+La publicación en PyPI está pendiente. Instala la versión actual directamente desde este repositorio; para las integraciones opcionales, clónalo e instala los extras localmente.
 
 ```console
-python -m pip install pybynix
+python -m pip install "git+https://github.com/thecmjhb/PyBynix.git"
 ```
 
 ```console
-python -m pip install "pybynix[browser,network,dataframe]"
+git clone https://github.com/thecmjhb/PyBynix.git
+cd PyBynix
+python -m pip install ".[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,7 +144,6 @@ Consulta las firmas, valores devueltos, ejemplos ejecutables y recuperación en 
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
-- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 
@@ -152,7 +153,7 @@ El registro de validación enumera versiones de Python probadas, cobertura de ac
 
 ## Investigación
 
-El manuscrito validado explica la necesidad de integración, la arquitectura, las contribuciones de ingeniería y la evaluación. El autor mantiene por separado el código LaTeX preparado para Overleaf; no se distribuye ningún PDF.
+El manuscrito de ingeniería explica la necesidad de integración, la arquitectura, las contribuciones y la evaluación. El autor mantiene por separado el código LaTeX preparado para Overleaf; no se distribuye ningún PDF.
 
 ## Comunidad y licencia
 

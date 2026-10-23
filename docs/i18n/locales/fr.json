@@ -28,7 +28,7 @@
     "Export CSV/JSON conservant Decimal, pandas facultatif et rééchantillonnage des bougies."
   ],
   "install": "Installation",
-  "install_text": "Installez le paquet publié depuis PyPI. Ajoutez les intégrations facultatives du navigateur, du réseau et des DataFrame selon vos besoins.",
+  "install_text": "La publication sur PyPI est en attente. Installez la version actuelle directement depuis ce dépôt ; pour les intégrations facultatives, clonez-le et installez les extras localement.",
   "quickstart": "Votre premier flux de marché",
   "quickstart_text": "Les données publiques fonctionnent sans compte. Cet exemple complet récupère des bougies et lit trois ticks entrants.",
   "auth_title": "Authentification et sessions",
@@ -44,7 +44,7 @@
   "validation_title": "Tests et performances",
   "validation_text": "Le rapport de validation détaille les versions de Python testées, les actifs et périodes, les opérations démo, les interruptions et les mesures. Le dépôt inclut des tests et entrées de benchmark reproductibles.",
   "paper_title": "Recherche",
-  "paper_text": "Le manuscrit validé explique le besoin d’intégration, l’architecture, les apports d’ingénierie et l’évaluation. L’auteur maintient séparément les sources LaTeX pour Overleaf ; aucun PDF n’est distribué.",
+  "paper_text": "Le manuscrit d’ingénierie explique le besoin d’intégration, l’architecture, les apports et l’évaluation. L’auteur maintient séparément les sources LaTeX pour Overleaf ; aucun PDF n’est distribué.",
   "contribute_title": "Communauté et licence",
   "contribute_text": "Contributions, signalements reproductibles et améliorations documentaires sont les bienvenus. PyBynix est maintenu indépendamment ; les marques appartiennent à leurs propriétaires respectifs."
 }
