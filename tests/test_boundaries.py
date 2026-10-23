@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import sys
+from pathlib import Path
 
 import httpx
 import pytest
@@ -13,17 +14,23 @@ from pybynix.errors import AuthenticationError, DuplicateOrderReference, OrderOu
 
 
 def test_cli_help_version_and_invalid_count_are_offline():
+    env = dict(os.environ)
+    env["PYTHONPATH"] = str(Path(__file__).resolve().parents[1] / "src")
     for args in [["--help"], ["--version"], ["stream", "--count", "0"]]:
         result = subprocess.run(
             [sys.executable, "-c", "from pybynix.cli import main; main()", *args],
             capture_output=True,
             text=True,
             timeout=10,
-            env=dict(os.environ),
+            env=env,
         )
-        assert result.returncode == (2 if "0" in args else 0)
+        assert result.returncode == (
+            2 if "0" in args else 0
+        ), f"Args {args} failed with code {result.returncode}:\nSTDOUT: {result.stdout}\nSTDERR: {result.stderr}"
     assert "1.0.0" in subprocess.check_output(
-        [sys.executable, "-c", "from pybynix.cli import main; main()", "--version"], text=True
+        [sys.executable, "-c", "from pybynix.cli import main; main()", "--version"],
+        text=True,
+        env=env,
     )
 
 

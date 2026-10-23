@@ -99,9 +99,9 @@ def test_readme_is_complete_has_valid_examples_and_local_links(language):
     links = re.findall(r'(?:href|src|srcset)="([^"]+)"', text)
     links += re.findall(r"\]\(([^)]+)\)", text)
     for target in links:
-        if target.startswith(("https://", "http://", "#")):
+        if target.startswith(("https://", "http://", "#", "mailto:")):
             continue
-        assert (path.parent / target.split("#")[0]).resolve().exists(), target
+        assert (path.parent / target.split("#")[0]).resolve().exists(), f"Broken link in {path.name}: {target}"
     badge = ROOT / f"assets/languages/{language}.svg"
     assert ElementTree.parse(badge).getroot().tag.endswith("svg")
 
