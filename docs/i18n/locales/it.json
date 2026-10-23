@@ -4,13 +4,34 @@
   "intro": "Un’interfaccia Python asincrona per Bynix, progettata per applicazioni di trading, pipeline di dati e strumenti per sviluppatori.",
   "capabilities_title": "Categorie di capacità",
   "capabilities": [
-    {"name": "Nucleo gratuito e aperto", "text": "Pacchetto pubblico con licenza MIT; i dati di mercato pubblici funzionano senza account, con integrazioni opzionali per browser, rete e DataFrame."},
-    {"name": "Dati di mercato veloci", "text": "Tick in streaming, candele in formazione/chiuse, pagine storiche limitate e batch concorrenti con fallback REST."},
-    {"name": "Accessi multipli e pool di client", "text": "Provider per token, password, browser e OTP, oltre a client nominati indipendenti ed eventi dell'account."},
-    {"name": "Automazione sicura gestita dal chiamante", "text": "ExecutionOrchestrator/AutoExecutor accetta intenti espliciti dell'applicazione con dry-run, demo predefinita, cooldown, limiti di concorrenza e nessun retry di ordini incerti."},
-    {"name": "Indicatori puri", "text": "Misure Decimal di SMA, EMA, RSI, MACD, Bande di Bollinger, ATR e stochastic sui dati del chiamante; senza segnali o strategie."},
-    {"name": "Comodità di esecuzione", "text": "`buy_and_wait`, `sell`/chiusura anticipata, attesa del settlement, journal e riconciliazione per chiamate esplicite a un ordine."},
-    {"name": "Ambito Bynix verificato", "text": "La matrice descrive il comportamento implementato, testato offline e osservato in demo; non si suggerisce parità non verificata."}
+    {
+      "name": "Nucleo gratuito e aperto",
+      "text": "Pacchetto pubblico con licenza MIT; i dati di mercato pubblici funzionano senza account, con integrazioni opzionali per browser, rete e DataFrame."
+    },
+    {
+      "name": "Dati di mercato veloci",
+      "text": "Tick in streaming, candele in formazione/chiuse, pagine storiche limitate e batch concorrenti con fallback REST."
+    },
+    {
+      "name": "Accessi multipli e pool di client",
+      "text": "Provider per token, password, browser e OTP, oltre a client nominati indipendenti ed eventi dell'account."
+    },
+    {
+      "name": "Automazione sicura gestita dal chiamante",
+      "text": "ExecutionOrchestrator/AutoExecutor accetta intenti espliciti dell'applicazione con dry-run, demo predefinita, cooldown, limiti di concorrenza e nessun retry di ordini incerti."
+    },
+    {
+      "name": "Indicatori puri",
+      "text": "Misure Decimal di SMA, EMA, RSI, MACD, Bande di Bollinger, ATR e stochastic sui dati del chiamante; senza segnali o strategie."
+    },
+    {
+      "name": "Comodità di esecuzione",
+      "text": "`buy_and_wait`, `sell`/chiusura anticipata, attesa del settlement, journal e riconciliazione per chiamate esplicite a un ordine."
+    },
+    {
+      "name": "Ambito Bynix verificato",
+      "text": "La matrice descrive il comportamento implementato, testato offline e osservato in demo; non si suggerisce parità non verificata."
+    }
   ],
   "matrix_link_text": "Consulta l'intero ambito verificato nella",
   "matrix_link_label": "matrice delle funzioni e dei fallback",
@@ -28,7 +49,7 @@
     "Esportazione CSV/JSON con precisione Decimal, pandas opzionale e ricampionamento delle candele."
   ],
   "install": "Installazione",
-  "install_text": "La pubblicazione su PyPI è in attesa. Installa la versione corrente direttamente da questo repository; per le integrazioni opzionali clona il repository e installa gli extras localmente.",
+  "install_text": "Installa il pacchetto pubblicato da PyPI. Aggiungi secondo necessità le integrazioni opzionali per browser, rete e DataFrame.",
   "quickstart": "Il primo flusso di mercato",
   "quickstart_text": "I dati pubblici funzionano senza account. Questo esempio completo recupera le candele e legge tre tick in arrivo.",
   "auth_title": "Autenticazione e sessioni",

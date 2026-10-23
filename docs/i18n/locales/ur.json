@@ -4,13 +4,34 @@
   "intro": "Bynix کے لیے asynchronous Python interface، جو trading applications، data pipelines اور developer tools کے لیے بنایا گیا ہے۔",
   "capabilities_title": "صلاحیت کی اقسام",
   "capabilities": [
-    {"name": "مفت/اوپن کور", "text": "MIT-licensed public package؛ account کے بغیر public market data، اور اختیاری browser، network اور DataFrame extras۔"},
-    {"name": "تیز market data", "text": "Stream-first ticks، forming/closed candles، bounded historical pages اور REST fallback کے ساتھ concurrent candle batches۔"},
-    {"name": "Multi-login اور client pool", "text": "Token، password، browser اور OTP-capable providers، ساتھ independent named clients اور account events۔"},
-    {"name": "محفوظ caller-owned automation", "text": "ExecutionOrchestrator/AutoExecutor application کے explicit intents لیتا ہے؛ dry-run، demo-only default، cooldown، concurrency limits اور uncertain-order retry نہیں۔"},
-    {"name": "Pure indicators", "text": "Caller-owned data پر Decimal SMA، EMA، RSI، MACD، Bollinger Bands، ATR اور stochastic measurements؛ signals یا strategy نہیں۔"},
-    {"name": "Execution سہولتیں", "text": "`buy_and_wait`، `sell`/early close، settlement wait، journaling اور reconciliation، explicit one-order-at-a-time calls کے لیے۔"},
-    {"name": "Verified Bynix scope", "text": "Implemented، offline-tested اور live-demo-observed behavior کے لیے matrix دیکھیں؛ غیرمصدقہ parity کا دعویٰ نہیں۔"}
+    {
+      "name": "مفت/اوپن کور",
+      "text": "MIT-licensed public package؛ account کے بغیر public market data، اور اختیاری browser، network اور DataFrame extras۔"
+    },
+    {
+      "name": "تیز market data",
+      "text": "Stream-first ticks، forming/closed candles، bounded historical pages اور REST fallback کے ساتھ concurrent candle batches۔"
+    },
+    {
+      "name": "Multi-login اور client pool",
+      "text": "Token، password، browser اور OTP-capable providers، ساتھ independent named clients اور account events۔"
+    },
+    {
+      "name": "محفوظ caller-owned automation",
+      "text": "ExecutionOrchestrator/AutoExecutor application کے explicit intents لیتا ہے؛ dry-run، demo-only default، cooldown، concurrency limits اور uncertain-order retry نہیں۔"
+    },
+    {
+      "name": "Pure indicators",
+      "text": "Caller-owned data پر Decimal SMA، EMA، RSI، MACD، Bollinger Bands، ATR اور stochastic measurements؛ signals یا strategy نہیں۔"
+    },
+    {
+      "name": "Execution سہولتیں",
+      "text": "`buy_and_wait`، `sell`/early close، settlement wait، journaling اور reconciliation، explicit one-order-at-a-time calls کے لیے۔"
+    },
+    {
+      "name": "Verified Bynix scope",
+      "text": "Implemented، offline-tested اور live-demo-observed behavior کے لیے matrix دیکھیں؛ غیرمصدقہ parity کا دعویٰ نہیں۔"
+    }
   ],
   "matrix_link_text": "مکمل verified scope دیکھیں",
   "matrix_link_label": "feature اور fallback matrix میں",
@@ -28,7 +49,7 @@
     "Decimal کی درستگی کے ساتھ CSV/JSON export، اختیاری pandas اور candle resampling۔"
   ],
   "install": "تنصیب",
-  "install_text": "PyPI پر اشاعت ابھی باقی ہے۔ موجودہ release اسی repository سے براہِ راست install کریں؛ اختیاری integration کے لیے repository clone کر کے extras مقامی طور پر install کریں۔",
+  "install_text": "PyPI سے شائع شدہ package install کریں۔ ضرورت کے مطابق browser، network اور DataFrame integration شامل کریں۔",
   "quickstart": "پہلا market stream",
   "quickstart_text": "Public market data کے لیے account ضروری نہیں۔ یہ مکمل مثال candles لاتی ہے اور تین live ticks پڑھتی ہے۔",
   "auth_title": "لاگ اِن اور sessions",

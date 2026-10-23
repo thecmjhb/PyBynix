@@ -4,13 +4,34 @@
   "intro": "Eine asynchrone Python-Schnittstelle für Bynix, entwickelt für Handelsanwendungen, Datenpipelines und Entwicklerwerkzeuge.",
   "capabilities_title": "Fähigkeitskategorien",
   "capabilities": [
-    {"name": "Kostenloser/offener Kern", "text": "Öffentliches MIT-lizenziertes Paket; öffentliche Marktdaten funktionieren ohne Konto, mit optionalen Browser-, Netzwerk- und DataFrame-Erweiterungen."},
-    {"name": "Schnelle Marktdaten", "text": "Stream-orientierte Ticks, laufende/abgeschlossene Kerzen, begrenzte historische Seiten und parallele Kerzenpakete mit REST-Ausweichweg."},
-    {"name": "Mehrfach-Login und Client-Pool", "text": "Token-, Passwort-, Browser- und OTP-fähige Provider sowie unabhängige benannte Clients und Kontoereignisse."},
-    {"name": "Sichere, vom Aufrufer gesteuerte Automatisierung", "text": "ExecutionOrchestrator/AutoExecutor akzeptiert explizite Anwendungsintentionen mit Dry-Run, Demo als Standard, Cooldown, Parallelitätsgrenzen und ohne Wiederholung unsicherer Orders."},
-    {"name": "Reine Indikatoren", "text": "Decimal-Messungen für SMA, EMA, RSI, MACD, Bollinger-Bänder, ATR und Stochastic auf eigenen Daten; keine Signale oder Strategie."},
-    {"name": "Ausführungshilfen", "text": "`buy_and_wait`, `sell`/vorzeitiges Schließen, Abrechnungswartezeit, Journal und Abgleich für explizite Einzel-Order-Aufrufe."},
-    {"name": "Verifizierter Bynix-Umfang", "text": "Die Matrix beschreibt implementiertes, offline getestetes und im Demo-Lauf beobachtetes Verhalten; ungeprüfte Parität wird nicht behauptet."}
+    {
+      "name": "Kostenloser/offener Kern",
+      "text": "Öffentliches MIT-lizenziertes Paket; öffentliche Marktdaten funktionieren ohne Konto, mit optionalen Browser-, Netzwerk- und DataFrame-Erweiterungen."
+    },
+    {
+      "name": "Schnelle Marktdaten",
+      "text": "Stream-orientierte Ticks, laufende/abgeschlossene Kerzen, begrenzte historische Seiten und parallele Kerzenpakete mit REST-Ausweichweg."
+    },
+    {
+      "name": "Mehrfach-Login und Client-Pool",
+      "text": "Token-, Passwort-, Browser- und OTP-fähige Provider sowie unabhängige benannte Clients und Kontoereignisse."
+    },
+    {
+      "name": "Sichere, vom Aufrufer gesteuerte Automatisierung",
+      "text": "ExecutionOrchestrator/AutoExecutor akzeptiert explizite Anwendungsintentionen mit Dry-Run, Demo als Standard, Cooldown, Parallelitätsgrenzen und ohne Wiederholung unsicherer Orders."
+    },
+    {
+      "name": "Reine Indikatoren",
+      "text": "Decimal-Messungen für SMA, EMA, RSI, MACD, Bollinger-Bänder, ATR und Stochastic auf eigenen Daten; keine Signale oder Strategie."
+    },
+    {
+      "name": "Ausführungshilfen",
+      "text": "`buy_and_wait`, `sell`/vorzeitiges Schließen, Abrechnungswartezeit, Journal und Abgleich für explizite Einzel-Order-Aufrufe."
+    },
+    {
+      "name": "Verifizierter Bynix-Umfang",
+      "text": "Die Matrix beschreibt implementiertes, offline getestetes und im Demo-Lauf beobachtetes Verhalten; ungeprüfte Parität wird nicht behauptet."
+    }
   ],
   "matrix_link_text": "Den vollständigen verifizierten Umfang finden Sie in der",
   "matrix_link_label": "Funktions- und Ausweichmatrix",
@@ -28,7 +49,7 @@
     "CSV/JSON-Export mit Decimal-Genauigkeit, optionales pandas und Kerzenaggregation."
   ],
   "install": "Installation",
-  "install_text": "Die PyPI-Veröffentlichung steht noch aus. Installiere die aktuelle Version direkt aus diesem Repository; für optionale Integrationen klone das Repository lokal und installiere die Extras.",
+  "install_text": "Installiere das veröffentlichte Paket von PyPI. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.",
   "quickstart": "Dein erster Marktstream",
   "quickstart_text": "Öffentliche Marktdaten funktionieren ohne Konto. Dieses vollständige Beispiel lädt Kerzen und liest drei eingehende Ticks.",
   "auth_title": "Anmeldung und Sitzungen",

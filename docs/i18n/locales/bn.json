@@ -4,13 +4,34 @@
   "intro": "Bynix-এর জন্য asynchronous Python interface; trading application, data pipeline ও developer tool তৈরির জন্য।",
   "capabilities_title": "সক্ষমতার বিভাগ",
   "capabilities": [
-    {"name": "ফ্রি/ওপেন কোর", "text": "MIT-লাইসেন্সযুক্ত public package; account ছাড়াই public market data, সঙ্গে optional browser, network ও DataFrame extras।"},
-    {"name": "দ্রুত market data", "text": "Stream-first tick, forming/closed candle, সীমাবদ্ধ historical page এবং REST fallback-সহ concurrent candle batch।"},
-    {"name": "একাধিক login ও client pool", "text": "Token, password, browser ও OTP-capable provider; independent named client এবং account event।"},
-    {"name": "নিরাপদ caller-owned automation", "text": "ExecutionOrchestrator/AutoExecutor শুধু application-এর explicit intent নেয়; dry-run, demo-only default, cooldown, concurrency limit এবং uncertain order retry নেই।"},
-    {"name": "Pure indicator", "text": "Caller-owned data-র উপর Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR ও stochastic measurement; signal বা strategy নয়।"},
-    {"name": "Execution convenience", "text": "`buy_and_wait`, `sell`/early close, settlement wait, journal ও reconciliation—explicit এক-order-at-a-time call-এর চারপাশে।"},
-    {"name": "যাচাইকৃত Bynix scope", "text": "Implemented, offline-tested ও live-demo-observed আচরণের জন্য matrix দেখুন; অযাচাইকৃত parity বোঝানো হয় না।"}
+    {
+      "name": "ফ্রি/ওপেন কোর",
+      "text": "MIT-লাইসেন্সযুক্ত public package; account ছাড়াই public market data, সঙ্গে optional browser, network ও DataFrame extras।"
+    },
+    {
+      "name": "দ্রুত market data",
+      "text": "Stream-first tick, forming/closed candle, সীমাবদ্ধ historical page এবং REST fallback-সহ concurrent candle batch।"
+    },
+    {
+      "name": "একাধিক login ও client pool",
+      "text": "Token, password, browser ও OTP-capable provider; independent named client এবং account event।"
+    },
+    {
+      "name": "নিরাপদ caller-owned automation",
+      "text": "ExecutionOrchestrator/AutoExecutor শুধু application-এর explicit intent নেয়; dry-run, demo-only default, cooldown, concurrency limit এবং uncertain order retry নেই।"
+    },
+    {
+      "name": "Pure indicator",
+      "text": "Caller-owned data-র উপর Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR ও stochastic measurement; signal বা strategy নয়।"
+    },
+    {
+      "name": "Execution convenience",
+      "text": "`buy_and_wait`, `sell`/early close, settlement wait, journal ও reconciliation—explicit এক-order-at-a-time call-এর চারপাশে।"
+    },
+    {
+      "name": "যাচাইকৃত Bynix scope",
+      "text": "Implemented, offline-tested ও live-demo-observed আচরণের জন্য matrix দেখুন; অযাচাইকৃত parity বোঝানো হয় না।"
+    }
   ],
   "matrix_link_text": "যাচাইকৃত সম্পূর্ণ scope দেখুন",
   "matrix_link_label": "feature ও fallback matrix-এ",
@@ -28,7 +49,7 @@
     "Decimal অক্ষুণ্ণ রেখে CSV/JSON export, pandas ও candle resampling।"
   ],
   "install": "ইনস্টলেশন",
-  "install_text": "PyPI প্রকাশ এখনো বাকি। এই repository থেকে বর্তমান release সরাসরি install করো; browser, network বা DataFrame integration লাগলে repository clone করে optional extras install করো।",
+  "install_text": "PyPI থেকে published package install করো। প্রয়োজন হলে browser, network ও DataFrame integration যোগ করো।",
   "quickstart": "প্রথম live market stream",
   "quickstart_text": "Account ছাড়াই public market data নেওয়া যায়। এই সম্পূর্ণ উদাহরণটি candles আনে এবং তিনটি live tick পড়ে।",
   "auth_title": "লগইন ও session",

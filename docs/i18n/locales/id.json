@@ -4,13 +4,34 @@
   "intro": "Antarmuka Python asinkron untuk Bynix, dirancang bagi aplikasi trading, alur data, dan alat pengembang.",
   "capabilities_title": "Kategori kemampuan",
   "capabilities": [
-    {"name": "Inti gratis dan terbuka", "text": "Paket publik berlisensi MIT; data pasar publik berjalan tanpa akun, dengan tambahan browser, jaringan, dan DataFrame opsional."},
-    {"name": "Data pasar cepat", "text": "Tick berbasis stream, candle yang sedang/selesai, halaman historis terbatas, dan batch candle konkuren dengan fallback REST."},
-    {"name": "Login multi-akun dan client pool", "text": "Provider token, kata sandi, browser, dan OTP, serta klien bernama independen dan event akun."},
-    {"name": "Otomasi aman milik pemanggil", "text": "ExecutionOrchestrator/AutoExecutor menerima intent eksplisit aplikasi dengan dry-run, default demo, cooldown, batas konkurensi, dan tanpa retry order yang tidak pasti."},
-    {"name": "Indikator murni", "text": "Pengukuran Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR, dan stochastic atas data milik pemanggil; tanpa sinyal atau strategi."},
-    {"name": "Kemudahan eksekusi", "text": "`buy_and_wait`, `sell`/early close, tunggu settlement, journal, dan rekonsiliasi untuk panggilan satu-order yang eksplisit."},
-    {"name": "Cakupan Bynix terverifikasi", "text": "Lihat matriks untuk perilaku yang diimplementasikan, diuji offline, dan diamati live-demo; parity yang belum diverifikasi tidak dijanjikan."}
+    {
+      "name": "Inti gratis dan terbuka",
+      "text": "Paket publik berlisensi MIT; data pasar publik berjalan tanpa akun, dengan tambahan browser, jaringan, dan DataFrame opsional."
+    },
+    {
+      "name": "Data pasar cepat",
+      "text": "Tick berbasis stream, candle yang sedang/selesai, halaman historis terbatas, dan batch candle konkuren dengan fallback REST."
+    },
+    {
+      "name": "Login multi-akun dan client pool",
+      "text": "Provider token, kata sandi, browser, dan OTP, serta klien bernama independen dan event akun."
+    },
+    {
+      "name": "Otomasi aman milik pemanggil",
+      "text": "ExecutionOrchestrator/AutoExecutor menerima intent eksplisit aplikasi dengan dry-run, default demo, cooldown, batas konkurensi, dan tanpa retry order yang tidak pasti."
+    },
+    {
+      "name": "Indikator murni",
+      "text": "Pengukuran Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR, dan stochastic atas data milik pemanggil; tanpa sinyal atau strategi."
+    },
+    {
+      "name": "Kemudahan eksekusi",
+      "text": "`buy_and_wait`, `sell`/early close, tunggu settlement, journal, dan rekonsiliasi untuk panggilan satu-order yang eksplisit."
+    },
+    {
+      "name": "Cakupan Bynix terverifikasi",
+      "text": "Lihat matriks untuk perilaku yang diimplementasikan, diuji offline, dan diamati live-demo; parity yang belum diverifikasi tidak dijanjikan."
+    }
   ],
   "matrix_link_text": "Lihat cakupan terverifikasi lengkap di",
   "matrix_link_label": "matriks fitur dan fallback",
@@ -28,7 +49,7 @@
     "Ekspor CSV/JSON dengan presisi Decimal, pandas opsional, dan resampling candle."
   ],
   "install": "Instalasi",
-  "install_text": "Publikasi PyPI masih menunggu. Instal rilis saat ini langsung dari repositori ini; untuk integrasi opsional, clone repositori lalu instal extras secara lokal.",
+  "install_text": "Instal paket yang dipublikasikan dari PyPI. Tambahkan integrasi browser, jaringan, dan DataFrame opsional sesuai kebutuhan.",
   "quickstart": "Stream pasar pertama",
   "quickstart_text": "Data pasar publik dapat diakses tanpa akun. Contoh lengkap ini mengambil candle dan membaca tiga tick masuk.",
   "auth_title": "Autentikasi dan sesi",

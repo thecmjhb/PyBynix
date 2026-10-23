@@ -4,13 +4,34 @@
   "intro": "Bynix-க்கான asynchronous Python இடைமுகம்; trading application, data pipeline மற்றும் developer tool உருவாக்கப் பயன்படுகிறது.",
   "capabilities_title": "திறன் வகைகள்",
   "capabilities": [
-    {"name": "இலவச/திறந்த core", "text": "MIT உரிமம் பெற்ற public package; account இல்லாமல் public market data, விருப்பமான browser, network மற்றும் DataFrame extras உடன்."},
-    {"name": "வேகமான market data", "text": "Stream-first ticks, உருவாகும்/மூடிய candles, வரையறுக்கப்பட்ட historical pages மற்றும் REST fallback உடன் concurrent candle batches."},
-    {"name": "பல login மற்றும் client pool", "text": "Token, password, browser, OTP-capable providers; independent named clients மற்றும் account events."},
-    {"name": "பாதுகாப்பான caller-owned automation", "text": "ExecutionOrchestrator/AutoExecutor application-ன் explicit intents-ஐ மட்டும் ஏற்கிறது; dry-run, demo-only default, cooldown, concurrency limits மற்றும் uncertain-order retry இல்லை."},
-    {"name": "Pure indicators", "text": "Caller-owned data மீது Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR மற்றும் stochastic measurements; signals அல்லது strategy இல்லை."},
-    {"name": "Execution வசதிகள்", "text": "`buy_and_wait`, `sell`/early close, settlement wait, journaling மற்றும் reconciliation ஆகியவை explicit one-order-at-a-time calls-க்கு."},
-    {"name": "சரிபார்க்கப்பட்ட Bynix scope", "text": "Implemented, offline-tested மற்றும் live-demo-observed behavior-க்கு matrix-ஐப் பார்க்கவும்; சரிபார்க்காத parity கூறப்படவில்லை."}
+    {
+      "name": "இலவச/திறந்த core",
+      "text": "MIT உரிமம் பெற்ற public package; account இல்லாமல் public market data, விருப்பமான browser, network மற்றும் DataFrame extras உடன்."
+    },
+    {
+      "name": "வேகமான market data",
+      "text": "Stream-first ticks, உருவாகும்/மூடிய candles, வரையறுக்கப்பட்ட historical pages மற்றும் REST fallback உடன் concurrent candle batches."
+    },
+    {
+      "name": "பல login மற்றும் client pool",
+      "text": "Token, password, browser, OTP-capable providers; independent named clients மற்றும் account events."
+    },
+    {
+      "name": "பாதுகாப்பான caller-owned automation",
+      "text": "ExecutionOrchestrator/AutoExecutor application-ன் explicit intents-ஐ மட்டும் ஏற்கிறது; dry-run, demo-only default, cooldown, concurrency limits மற்றும் uncertain-order retry இல்லை."
+    },
+    {
+      "name": "Pure indicators",
+      "text": "Caller-owned data மீது Decimal SMA, EMA, RSI, MACD, Bollinger Bands, ATR மற்றும் stochastic measurements; signals அல்லது strategy இல்லை."
+    },
+    {
+      "name": "Execution வசதிகள்",
+      "text": "`buy_and_wait`, `sell`/early close, settlement wait, journaling மற்றும் reconciliation ஆகியவை explicit one-order-at-a-time calls-க்கு."
+    },
+    {
+      "name": "சரிபார்க்கப்பட்ட Bynix scope",
+      "text": "Implemented, offline-tested மற்றும் live-demo-observed behavior-க்கு matrix-ஐப் பார்க்கவும்; சரிபார்க்காத parity கூறப்படவில்லை."
+    }
   ],
   "matrix_link_text": "முழு சரிபார்க்கப்பட்ட scope-ஐப் பார்க்கவும்",
   "matrix_link_label": "feature மற்றும் fallback matrix-ல்",
@@ -28,7 +49,7 @@
     "Decimal துல்லியத்துடன் CSV/JSON export, விருப்ப pandas மற்றும் candle resampling."
   ],
   "install": "நிறுவுதல்",
-  "install_text": "PyPI வெளியீடு இன்னும் நிலுவையில் உள்ளது. தற்போதைய பதிப்பை இந்த repository-லிருந்து நேரடியாக நிறுவவும்; optional integration-களுக்கு repository-ஐ clone செய்து extras-ஐ local-ஆக நிறுவவும்.",
+  "install_text": "PyPI-இலிருந்து வெளியிடப்பட்ட package-ஐ நிறுவவும். தேவைக்கேற்ப browser, network மற்றும் DataFrame integration-களைச் சேர்க்கவும்.",
   "quickstart": "முதல் market stream",
   "quickstart_text": "Account இல்லாமல் public market data பெறலாம். இந்த முழுமையான எடுத்துக்காட்டு candles-ஐப் பெற்று மூன்று live tick-களை வாசிக்கிறது.",
   "auth_title": "உள்நுழைவும் session-களும்",

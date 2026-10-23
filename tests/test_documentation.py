@@ -43,6 +43,29 @@ SECTION_KEYS = (
     "paper_title",
     "contribute_title",
 )
+SECTION_EMOJIS = {
+    "capabilities_title": "🚀",
+    "features_title": "🛠️",
+    "install": "📦",
+    "quickstart": "⚡",
+    "auth_title": "🔐",
+    "execution_title": "🎯",
+    "network_title": "🌐",
+    "cli_title": "💻",
+    "docs_title": "📚",
+    "validation_title": "🧪",
+    "paper_title": "🔬",
+    "contribute_title": "🤝",
+}
+CAPABILITY_EMOJIS = [
+    "🛡️",
+    "⚡",
+    "🔑",
+    "🤖",
+    "📊",
+    "🎯",
+    "🔍",
+]
 
 
 @pytest.mark.parametrize("language", LANGUAGES)
@@ -61,19 +84,19 @@ def test_readme_is_complete_has_valid_examples_and_local_links(language):
     assert translation["tagline"] in text
     assert len(translation["capabilities"]) == 7
     assert all(
-        f"**{item['name']}** — {item['text']}" in text
-        for item in translation["capabilities"]
+        f"- {emoji} **{item['name']}** — {item['text']}" in text
+        for emoji, item in zip(CAPABILITY_EMOJIS, translation["capabilities"], strict=True)
     )
     assert len(translation["features"]) == 10
     assert all(feature in text for feature in translation["features"])
-    headings = [translation[key] for key in SECTION_KEYS]
+    headings = [f"{SECTION_EMOJIS[key]} {translation[key]}" for key in SECTION_KEYS]
     assert len(headings) == 12
     assert len(re.findall(r"^## ", text, re.MULTILINE)) == 12
     assert all(f"## {heading}" in text for heading in headings)
     assert "0.1.0a1" not in text
     for code in re.findall(r"```python\n(.*?)```", text, re.DOTALL):
         ast.parse(code)
-    links = re.findall(r'(?:href|src)="([^"]+)"', text)
+    links = re.findall(r'(?:href|src|srcset)="([^"]+)"', text)
     links += re.findall(r"\]\(([^)]+)\)", text)
     for target in links:
         if target.startswith(("https://", "http://", "#")):
