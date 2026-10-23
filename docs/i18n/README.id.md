@@ -155,7 +155,7 @@ Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eks
 
 ## 🔬 Riset
 
-Naskah rekayasa menjelaskan kebutuhan integrasi, arsitektur, kontribusi, dan evaluasi. Penulis memelihara sumber LaTeX siap Overleaf secara terpisah; tidak ada PDF yang didistribusikan.
+Arsitektur, adaptasi protokol, dan evaluasi empiris PyBynix didokumentasikan dalam makalah penelitian kami, mencakup pemulihan stream asinkron dan manajemen siklus hidup order yang aman.
 
 ## 🤝 Komunitas dan lisensi
 

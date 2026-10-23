@@ -155,7 +155,7 @@ Validation record-এ পরীক্ষিত Python version, asset/timeframe c
 
 ## 🔬 গবেষণা
 
-Engineering manuscript-এ library-এর প্রয়োজন, architecture, contribution ও evaluation ব্যাখ্যা করা হয়েছে। লেখক আলাদাভাবে Overleaf-ready LaTeX source সংরক্ষণ করেন; কোনো PDF বিতরণ করা হয় না।
+PyBynix-এর আর্কিটেকচার, প্রোটোকল অ্যাডাপ্টেশন ও এভালুয়েশন রিসার্চ পেপারে বিস্তারিত তুলে ধরা হয়েছে। এতে অ্যাসিঙ্ক্রোনাস স্ট্রিম রিকভারি, নিরাপদ অর্ডার হ্যান্ডলিং ও বেঞ্চমার্কের প্রমাণ অন্তর্ভুক্ত রয়েছে।
 
 ## 🤝 কমিউনিটি ও লাইসেন্স
 

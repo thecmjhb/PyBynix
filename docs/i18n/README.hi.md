@@ -155,7 +155,7 @@ Validation record में tested Python versions, asset/timeframe coverage, de
 
 ## 🔬 शोध
 
-Engineering manuscript integration की आवश्यकता, architecture, contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।
+PyBynix की वास्तुकला, प्रोटोकॉल अनुकूलन और अनुभवजन्य मूल्यांकन हमारे शोध पत्र में प्रलेखित हैं, जिसमें अतुल्यकालिक स्ट्रीम रिकवरी और सुरक्षित ऑर्डर प्रबंधन शामिल हैं।
 
 ## 🤝 समुदाय और लाइसेंस
 

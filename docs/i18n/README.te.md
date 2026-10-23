@@ -155,7 +155,7 @@ Validation record‌లో పరీక్షించిన Python versions, as
 
 ## 🔬 పరిశోధన
 
-Engineering manuscript integration అవసరం, architecture, contributions, evaluation వివరిస్తుంది. రచయిత Overleaf-ready LaTeX source‌ను విడిగా నిర్వహిస్తారు; PDF పంపిణీ చేయబడదు.
+PyBynix నిర్మాణం, ప్రోటోకాల్ అనుసరణ మరియు అనుభవపూర్వక మూల్యాంకనం మా పరిశోధనా పత్రంలో నమోదు చేయబడ్డాయి, ఇందులో అసమకాలిక స్ట్రీమ్ రికవరీ మరియు సురక్షిత ఆర్డర్ నిర్వహణ ఉన్నాయి.
 
 ## 🤝 సంఘం మరియు లైసెన్స్
 

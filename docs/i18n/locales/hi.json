@@ -65,7 +65,7 @@
   "validation_title": "परीक्षण और performance",
   "validation_text": "Validation record में tested Python versions, asset/timeframe coverage, demo execution, connection interruptions और performance measurements हैं। Reproducible tests और benchmark inputs source के साथ हैं।",
   "paper_title": "शोध",
-  "paper_text": "Engineering manuscript integration की आवश्यकता, architecture, contributions और evaluation बताता है। लेखक Overleaf-ready LaTeX source अलग रखते हैं; कोई PDF वितरित नहीं किया जाता।",
+  "paper_text": "PyBynix की वास्तुकला, प्रोटोकॉल अनुकूलन और अनुभवजन्य मूल्यांकन हमारे शोध पत्र में प्रलेखित हैं, जिसमें अतुल्यकालिक स्ट्रीम रिकवरी और सुरक्षित ऑर्डर प्रबंधन शामिल हैं।",
   "contribute_title": "समुदाय और लाइसेंस",
   "contribute_text": "Contributions, reproducible bug reports और documentation improvements का स्वागत है। PyBynix स्वतंत्र रूप से maintained है; platform और language trademarks उनके मालिकों के हैं।"
 }

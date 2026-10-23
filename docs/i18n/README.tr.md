@@ -155,7 +155,7 @@ Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı 
 
 ## 🔬 Araştırma
 
-Mühendislik makalesi bütünleştirme gereksinimini, mimariyi, katkıları ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.
+PyBynix'in mimarisi, protokol uyarlaması ve ampirik değerlendirmesi; eşzamansız akış kurtarma ve güvenli emir yaşam döngüsü yönetimini kapsayan araştırma makalemizde belgelenmiştir.
 
 ## 🤝 Topluluk ve lisans
 

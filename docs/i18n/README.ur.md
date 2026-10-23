@@ -155,7 +155,7 @@ Validation record میں آزمودہ Python versions، assets اور timeframes
 
 ## 🔬 تحقیق
 
-Engineering manuscript integration کی ضرورت، architecture، contributions اور evaluation بیان کرتا ہے۔ مصنف Overleaf-ready LaTeX source الگ رکھتا ہے؛ کوئی PDF تقسیم نہیں کی جاتی۔
+تحقیقی مقالے میں PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور تجرباتی جانچ کی تفصیلات درج ہیں، جن میں غیر ہم آہنگ اسٹریم ریکوری اور محفوظ آرڈر ہینڈلنگ شامل ہیں۔
 
 ## 🤝 کمیونٹی اور لائسنس
 

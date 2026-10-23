@@ -65,7 +65,7 @@
   "validation_title": "Tests und Leistung",
   "validation_text": "Der Prüfbericht enthält getestete Python-Versionen, Asset- und Zeitrahmenabdeckung, Demo-Ausführung, Verbindungsunterbrechungen und Messungen. Reproduzierbare Tests und Benchmark-Eingaben liegen dem Quellcode bei.",
   "paper_title": "Forschung",
-  "paper_text": "Das technische Manuskript erläutert Integrationsbedarf, Architektur, Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.",
+  "paper_text": "Die Architektur, Protokolladaption und empirische Bewertung von PyBynix sind in unserem Forschungspapier dokumentiert, das asynchrone Stream-Wiederherstellung und sichere Auftragsverwaltung behandelt.",
   "contribute_title": "Community und Lizenz",
   "contribute_text": "Beiträge, reproduzierbare Fehlerberichte und Dokumentationsverbesserungen sind willkommen. PyBynix wird unabhängig gepflegt; Marken verbleiben bei ihren jeweiligen Eigentümern."
 }

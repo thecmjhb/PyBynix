@@ -155,7 +155,7 @@ Der Prüfbericht enthält getestete Python-Versionen, Asset- und Zeitrahmenabdec
 
 ## 🔬 Forschung
 
-Das technische Manuskript erläutert Integrationsbedarf, Architektur, Beiträge und Evaluation. Der Autor pflegt die Overleaf-fertigen LaTeX-Quellen separat; es wird kein PDF verteilt.
+Die Architektur, Protokolladaption und empirische Bewertung von PyBynix sind in unserem Forschungspapier dokumentiert, das asynchrone Stream-Wiederherstellung und sichere Auftragsverwaltung behandelt.
 
 ## 🤝 Community und Lizenz
 

@@ -155,7 +155,7 @@ The validation record lists tested Python versions, asset/timeframe coverage, de
 
 ## 🔬 Research
 
-The engineering manuscript explains the integration need, architecture, contributions and evaluation. The author maintains its Overleaf-ready LaTeX source separately; no PDF is distributed.
+The architecture, protocol adaptation, and empirical evaluation of PyBynix are documented in our research paper. It covers asynchronous stream recovery, safe order lifecycle handling, and benchmark observations.
 
 ## 🤝 Community and license
 

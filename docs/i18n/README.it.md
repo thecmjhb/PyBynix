@@ -155,7 +155,7 @@ Il registro di validazione elenca versioni Python provate, copertura di asset e 
 
 ## 🔬 Ricerca
 
-Il manoscritto di ingegneria spiega l’esigenza dell’integrazione, l’architettura, i contributi e la valutazione. L’autore mantiene separatamente i sorgenti LaTeX pronti per Overleaf; non viene distribuito alcun PDF.
+L'architettura, l'adattamento del protocollo e la valutazione empirica di PyBynix sono documentati nel nostro articolo di ricerca, che copre il ripristino asincrono dei flussi e la gestione sicura degli ordini.
 
 ## 🤝 Comunità e licenza
 

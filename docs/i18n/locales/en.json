@@ -65,7 +65,7 @@
   "validation_title": "Testing and performance",
   "validation_text": "The validation record lists tested Python versions, asset/timeframe coverage, demo execution, interrupted connections and measured performance. Reproducible tests and benchmark inputs accompany the source.",
   "paper_title": "Research",
-  "paper_text": "The engineering manuscript explains the integration need, architecture, contributions and evaluation. The author maintains its Overleaf-ready LaTeX source separately; no PDF is distributed.",
+  "paper_text": "The architecture, protocol adaptation, and empirical evaluation of PyBynix are documented in our research paper. It covers asynchronous stream recovery, safe order lifecycle handling, and benchmark observations.",
   "contribute_title": "Community and license",
   "contribute_text": "Contributions, reproducible bug reports and documentation improvements are welcome. PyBynix is independently maintained; platform and language trademarks remain with their owners."
 }

@@ -65,7 +65,7 @@
   "validation_title": "Test ve performans",
   "validation_text": "Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı kapsamını, demo yürütmeyi, kesintileri ve performans ölçümlerini listeler. Yeniden üretilebilir testler ve benchmark girdileri kaynakla birlikte gelir.",
   "paper_title": "Araştırma",
-  "paper_text": "Mühendislik makalesi bütünleştirme gereksinimini, mimariyi, katkıları ve değerlendirmeyi açıklar. Yazar Overleaf için hazır LaTeX kaynağını ayrı tutar; PDF dağıtılmaz.",
+  "paper_text": "PyBynix'in mimarisi, protokol uyarlaması ve ampirik değerlendirmesi; eşzamansız akış kurtarma ve güvenli emir yaşam döngüsü yönetimini kapsayan araştırma makalemizde belgelenmiştir.",
   "contribute_title": "Topluluk ve lisans",
   "contribute_text": "Katkılar, yeniden üretilebilir hata bildirimleri ve belge iyileştirmeleri memnuniyetle karşılanır. PyBynix bağımsız geliştirilir; ticari markalar ilgili sahiplerine aittir."
 }

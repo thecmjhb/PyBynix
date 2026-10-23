@@ -65,7 +65,7 @@
   "validation_title": "Kiểm thử và hiệu năng",
   "validation_text": "Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khung thời gian, lệnh demo, gián đoạn và phép đo. Mã nguồn có kiểm thử và đầu vào benchmark tái lập được.",
   "paper_title": "Nghiên cứu",
-  "paper_text": "Bản thảo kỹ thuật giải thích nhu cầu tích hợp, kiến trúc, đóng góp và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.",
+  "paper_text": "Kiến trúc, sự thích ứng giao thức và đánh giá thực nghiệm của PyBynix được ghi lại trong bài báo nghiên cứu, bao gồm phục hồi luồng bất đồng bộ và xử lý lệnh an toàn.",
   "contribute_title": "Cộng đồng và giấy phép",
   "contribute_text": "Chào đón đóng góp, báo lỗi tái lập được và cải tiến tài liệu. PyBynix được duy trì độc lập; nhãn hiệu thuộc chủ sở hữu tương ứng."
 }

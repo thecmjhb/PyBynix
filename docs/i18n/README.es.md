@@ -155,7 +155,7 @@ El registro de validación enumera versiones de Python probadas, cobertura de ac
 
 ## 🔬 Investigación
 
-El manuscrito de ingeniería explica la necesidad de integración, la arquitectura, las contribuciones y la evaluación. El autor mantiene por separado el código LaTeX preparado para Overleaf; no se distribuye ningún PDF.
+La arquitectura, la adaptación del protocolo y la evaluación empírica de PyBynix están documentadas en nuestro artículo de investigación, cubriendo la recuperación de flujos asíncronos y la gestión segura de órdenes.
 
 ## 🤝 Comunidad y licencia
 

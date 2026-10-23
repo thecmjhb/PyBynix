@@ -155,7 +155,7 @@ Le rapport de validation détaille les versions de Python testées, les actifs e
 
 ## 🔬 Recherche
 
-Le manuscrit d’ingénierie explique le besoin d’intégration, l’architecture, les apports et l’évaluation. L’auteur maintient séparément les sources LaTeX pour Overleaf ; aucun PDF n’est distribué.
+L'architecture, l'adaptation du protocole et l'évaluation empirique de PyBynix sont documentées dans notre article de recherche, couvrant la récupération de flux asynchrone et la gestion sécurisée des ordres.
 
 ## 🤝 Communauté et licence
 

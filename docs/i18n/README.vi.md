@@ -155,7 +155,7 @@ Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khun
 
 ## 🔬 Nghiên cứu
 
-Bản thảo kỹ thuật giải thích nhu cầu tích hợp, kiến trúc, đóng góp và đánh giá. Tác giả duy trì mã LaTeX dùng cho Overleaf riêng biệt; không phân phối PDF.
+Kiến trúc, sự thích ứng giao thức và đánh giá thực nghiệm của PyBynix được ghi lại trong bài báo nghiên cứu, bao gồm phục hồi luồng bất đồng bộ và xử lý lệnh an toàn.
 
 ## 🤝 Cộng đồng và giấy phép
 
