@@ -42,14 +42,14 @@
 
 ## நிறுவுதல்
 
-Repository-ஐ download அல்லது clone செய்து அதன் directory-இல் package-ஐ நிறுவவும். தேவைக்கேற்ப browser, network மற்றும் DataFrame integration-களைச் சேர்க்கவும்.
+PyPI-இலிருந்து வெளியிடப்பட்ட package-ஐ நிறுவவும். தேவைக்கேற்ப browser, network மற்றும் DataFrame integration-களைச் சேர்க்கவும்.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Signature, return value, இயக்கக்கூடிய எடுத்த
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

@@ -28,7 +28,7 @@
     "Decimal hassasiyetini koruyan CSV/JSON, isteğe bağlı pandas ve mum yeniden örnekleme."
   ],
   "install": "Kurulum",
-  "install_text": "Depoyu indirin veya klonlayın, dizinini açın ve paketi kurun. Gerektikçe isteğe bağlı tarayıcı, ağ ve DataFrame bütünleştirmelerini ekleyin.",
+  "install_text": "Yayınlanan paketi PyPI üzerinden kurun. Gerektikçe isteğe bağlı tarayıcı, ağ ve DataFrame bütünleştirmelerini ekleyin.",
   "quickstart": "İlk piyasa akışı",
   "quickstart_text": "Herkese açık piyasa verileri hesap olmadan çalışır. Bu eksiksiz örnek mumları getirir ve gelen üç tiki okur.",
   "auth_title": "Kimlik doğrulama ve oturumlar",

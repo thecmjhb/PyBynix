@@ -28,7 +28,7 @@
     "Decimal सुरक्षित CSV/JSON export, वैकल्पिक pandas और candle resampling।"
   ],
   "install": "इंस्टॉलेशन",
-  "install_text": "Repository डाउनलोड या clone करें, उसकी directory खोलें और package install करें। आवश्यकता के अनुसार browser, networking और DataFrame integrations जोड़ें।",
+  "install_text": "PyPI से प्रकाशित package install करें। आवश्यकता के अनुसार browser, networking और DataFrame integrations जोड़ें।",
   "quickstart": "पहला market stream",
   "quickstart_text": "Public market data के लिए account आवश्यक नहीं है। यह पूरा उदाहरण candles प्राप्त करता है और तीन live ticks पढ़ता है।",
   "auth_title": "लॉगिन और sessions",

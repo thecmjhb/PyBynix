@@ -28,7 +28,7 @@
     "Decimal کی درستگی کے ساتھ CSV/JSON export، اختیاری pandas اور candle resampling۔"
   ],
   "install": "تنصیب",
-  "install_text": "Repository ڈاؤن لوڈ یا clone کریں، اس کی directory کھولیں اور package install کریں۔ ضرورت کے مطابق browser، network اور DataFrame integration شامل کریں۔",
+  "install_text": "PyPI سے شائع شدہ package install کریں۔ ضرورت کے مطابق browser، network اور DataFrame integration شامل کریں۔",
   "quickstart": "پہلا market stream",
   "quickstart_text": "Public market data کے لیے account ضروری نہیں۔ یہ مکمل مثال candles لاتی ہے اور تین live ticks پڑھتی ہے۔",
   "auth_title": "لاگ اِن اور sessions",

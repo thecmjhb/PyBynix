@@ -13,6 +13,11 @@ authors = [{name = "C. M. Jubayer Hossain Bappy"}]
 dependencies = ["httpx>=0.28,<1", "httpcore>=1,<2", "aiohttp>=3.12,<4", "python-socketio[asyncio_client]>=5.13,<6"]
 classifiers = ["Programming Language :: Python :: 3", "Programming Language :: Python :: 3.11", "Programming Language :: Python :: 3.13", "Operating System :: OS Independent"]
 
+[project.urls]
+Homepage = "https://github.com/thecmjhb/PyBynix"
+Repository = "https://github.com/thecmjhb/PyBynix"
+Issues = "https://github.com/thecmjhb/PyBynix/issues"
+
 [project.optional-dependencies]
 browser = ["playwright>=1.49,<2"]
 network = ["httpx[socks]>=0.28,<1", "aiohttp-socks>=0.10,<1", "dnspython>=2.6,<3"]

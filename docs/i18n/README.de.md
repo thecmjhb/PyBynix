@@ -42,14 +42,14 @@ Den vollständigen verifizierten Umfang finden Sie in der [Funktions- und Auswei
 
 ## Installation
 
-Lade oder klone das Repository, öffne sein Verzeichnis und installiere das Paket. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.
+Installiere das veröffentlichte Paket von PyPI. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Signaturen, Rückgabewerte, ausführbare Beispiele und Wiederherstellung sind un
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

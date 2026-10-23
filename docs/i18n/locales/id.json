@@ -28,7 +28,7 @@
     "Ekspor CSV/JSON dengan presisi Decimal, pandas opsional, dan resampling candle."
   ],
   "install": "Instalasi",
-  "install_text": "Unduh atau clone repositori, buka direktorinya, lalu instal paket. Tambahkan integrasi browser, jaringan, dan DataFrame opsional sesuai kebutuhan.",
+  "install_text": "Instal paket yang dipublikasikan dari PyPI. Tambahkan integrasi browser, jaringan, dan DataFrame opsional sesuai kebutuhan.",
   "quickstart": "Stream pasar pertama",
   "quickstart_text": "Data pasar publik dapat diakses tanpa akun. Contoh lengkap ini mengambil candle dan membaca tiga tick masuk.",
   "auth_title": "Autentikasi dan sesi",

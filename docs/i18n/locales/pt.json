@@ -28,7 +28,7 @@
     "Exportação CSV/JSON com precisão Decimal, pandas opcional e reamostragem de candles."
   ],
   "install": "Instalação",
-  "install_text": "Baixe ou clone o repositório, abra seu diretório e instale o pacote. Adicione as integrações opcionais de navegador, rede e DataFrame conforme necessário.",
+  "install_text": "Instale o pacote publicado pelo PyPI. Adicione as integrações opcionais de navegador, rede e DataFrame conforme necessário.",
   "quickstart": "Seu primeiro fluxo de mercado",
   "quickstart_text": "Dados públicos funcionam sem conta. Este exemplo completo busca candles e lê três ticks recebidos.",
   "auth_title": "Autenticação e sessões",

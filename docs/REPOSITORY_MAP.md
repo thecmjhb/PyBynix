@@ -12,7 +12,7 @@ PyBynix/
 ├── assets/               Logo concept 07 and localized language badges
 ├── benchmarks/           Reproducible benchmark code and sanitized result metadata
 ├── tools/                README generator, live lab, soak runner, and release builder
-├── .github/workflows/    Prepared CI workflow; remote execution is not claimed
+├── .github/workflows/    CI checks and tag-triggered PyPI publishing workflow
 ├── pyproject.toml        Package metadata, dependencies, CLI entry point, and test config
 ├── README.md             Generated English product entry point
 └── README.bn.md          Generated Bangla product entry point
@@ -30,6 +30,7 @@ PyBynix/
 | Protocol evidence | `docs/PROTOCOL.md` |
 | Feature and fallback coverage | `docs/FEATURE_MATRIX.md` |
 | Launch presentation and publication gate | `docs/LAUNCH_CHECKLIST.md` |
+| PyPI installation and publishing | `docs/PYPI_PUBLISHING.md` |
 | Validation scope and measured limits | `docs/VALIDATION.md` |
 | Contribution and safety rules | `CONTRIBUTING.md`, `SECURITY.md`, `NOTICE.md` |
 

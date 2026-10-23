@@ -42,14 +42,14 @@ See the full verified scope in the [feature and fallback matrix](docs/FEATURE_MA
 
 ## Installation
 
-Download or clone this repository, open its directory, then install the package. Add optional browser, networking and DataFrame integrations as needed.
+Install the published package from PyPI. Add optional browser, networking and DataFrame integrations as needed.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Detailed signatures, return values, runnable examples and recovery behavior are 
 - [Automation boundary](docs/AUTOMATION.md)
 - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
 - [Launch checklist](docs/LAUNCH_CHECKLIST.md)
+- [PyPI publishing](docs/PYPI_PUBLISHING.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 

@@ -42,14 +42,14 @@
 
 ## Установка
 
-Скачайте или клонируйте репозиторий, откройте его каталог и установите пакет. По необходимости добавьте интеграции браузера, сети и DataFrame.
+Установите опубликованный пакет из PyPI. При необходимости добавьте интеграции браузера, сети и DataFrame.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

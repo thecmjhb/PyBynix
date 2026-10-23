@@ -42,14 +42,14 @@ Xem phạm vi đã xác minh đầy đủ trong [ma trận tính năng và fallb
 
 ## Cài đặt
 
-Tải hoặc clone kho mã, mở thư mục rồi cài gói. Thêm các tích hợp trình duyệt, mạng và DataFrame tùy chọn khi cần.
+Cài đặt gói đã phát hành từ PyPI. Thêm các tích hợp trình duyệt, mạng và DataFrame tùy chọn khi cần.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Chữ ký hàm, giá trị trả về, ví dụ chạy được và cơ chế kh
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

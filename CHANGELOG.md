@@ -21,5 +21,5 @@
   latest/forming queries are never cached.
 - Completed source-fingerprinted three-stream demo soak: 600.801864 seconds, one scheduled
   reconnect, 3,597 ticks, zero malformed/duplicate ticks, on the owner's Windows demo setup.
-- Selected green/gold concept 07 branding. The public checkout remains unpublished; no premium
-  parity or production certification is claimed.
+- Selected green/gold concept 07 branding. The GitHub repository is now public; PyPI publication
+  remains a separate release action. No premium parity or production certification is claimed.

@@ -28,7 +28,7 @@
     "Decimal ఖచ్చితత్వంతో CSV/JSON export, ఐచ్ఛిక pandas, candle resampling."
   ],
   "install": "ఇన్‌స్టాలేషన్",
-  "install_text": "Repository‌ను download లేదా clone చేసి, దాని directory‌లో package‌ను install చేయండి. అవసరాన్ని బట్టి browser, network, DataFrame integrations జోడించండి.",
+  "install_text": "PyPI నుంచి ప్రచురించిన package‌ను install చేయండి. అవసరాన్ని బట్టి browser, network, DataFrame integrations జోడించండి.",
   "quickstart": "మొదటి market stream",
   "quickstart_text": "Account లేకుండానే public market data పొందవచ్చు. ఈ పూర్తి ఉదాహరణ candles తెచ్చి మూడు live ticks చదువుతుంది.",
   "auth_title": "లాగిన్ మరియు sessions",

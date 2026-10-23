@@ -28,7 +28,7 @@
     "Exportación CSV/JSON con precisión Decimal, pandas opcional y remuestreo de velas."
   ],
   "install": "Instalación",
-  "install_text": "Descarga o clona el repositorio, abre su directorio e instala el paquete. Añade las integraciones opcionales de navegador, red y DataFrame según tus necesidades.",
+  "install_text": "Instala el paquete publicado desde PyPI. Añade las integraciones opcionales de navegador, red y DataFrame según tus necesidades.",
   "quickstart": "Tu primer flujo de mercado",
   "quickstart_text": "Los datos públicos funcionan sin cuenta. Este ejemplo completo obtiene velas y lee tres ticks entrantes.",
   "auth_title": "Autenticación y sesiones",

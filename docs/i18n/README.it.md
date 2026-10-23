@@ -42,14 +42,14 @@ Consulta l'intero ambito verificato nella [matrice delle funzioni e dei fallback
 
 ## Installazione
 
-Scarica o clona il repository, apri la sua directory e installa il pacchetto. Aggiungi secondo necessità le integrazioni opzionali per browser, rete e DataFrame.
+Installa il pacchetto pubblicato da PyPI. Aggiungi secondo necessità le integrazioni opzionali per browser, rete e DataFrame.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Firme, valori restituiti, esempi eseguibili e comportamento di recupero sono des
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

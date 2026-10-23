@@ -42,14 +42,14 @@
 
 ## ఇన్‌స్టాలేషన్
 
-Repository‌ను download లేదా clone చేసి, దాని directory‌లో package‌ను install చేయండి. అవసరాన్ని బట్టి browser, network, DataFrame integrations జోడించండి.
+PyPI నుంచి ప్రచురించిన package‌ను install చేయండి. అవసరాన్ని బట్టి browser, network, DataFrame integrations జోడించండి.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Signatures, return values, నడిపించగల ఉదాహరణలు,
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

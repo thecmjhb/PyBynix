@@ -27,9 +27,10 @@ performance guarantee.
 
 ## Owner release gate
 
-- [ ] Owner approves the final public tree and publication target.
+- [x] Owner approves the final public tree and GitHub publication target.
+- [x] GitHub repository is public at `https://github.com/thecmjhb/PyBynix`.
 - [ ] Remote CI is run and reviewed; a prepared workflow is not evidence of a passed run.
-- [ ] GitHub/PyPI publication is performed only with explicit owner approval.
+- [ ] PyPI publication is performed only with explicit owner approval and Trusted Publishing configured.
 - [ ] Any later live or funded validation is recorded with its date, account scope, amount,
       and exact observed behavior.
 

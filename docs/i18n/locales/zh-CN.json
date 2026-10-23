@@ -28,7 +28,7 @@
     "保留 Decimal 精度的 CSV/JSON 导出、可选 pandas 和蜡烛重采样。"
   ],
   "install": "安装",
-  "install_text": "下载或克隆仓库，进入项目目录并安装。按需添加浏览器、网络和 DataFrame 集成。",
+  "install_text": "从 PyPI 安装已发布的软件包。按需添加浏览器、网络和 DataFrame 集成。",
   "quickstart": "订阅第一个市场",
   "quickstart_text": "公开市场数据无需账户。以下完整示例获取蜡烛数据，并读取三个实时行情更新。",
   "auth_title": "身份验证与会话",

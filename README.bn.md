@@ -42,14 +42,14 @@
 
 ## ইনস্টলেশন
 
-Repository download বা clone করে তার directory খুলে package install করো। প্রয়োজন হলে browser, network ও DataFrame integration যোগ করো।
+PyPI থেকে published package install করো। প্রয়োজন হলে browser, network ও DataFrame integration যোগ করো।
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ Method signature, return value, runnable example ও recovery behavior নিচ
 - [Automation boundary](docs/AUTOMATION.md)
 - [Feature and fallback matrix](docs/FEATURE_MATRIX.md)
 - [Launch checklist](docs/LAUNCH_CHECKLIST.md)
+- [PyPI publishing](docs/PYPI_PUBLISHING.md)
 - [Repository map](docs/REPOSITORY_MAP.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 

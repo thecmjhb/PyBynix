@@ -28,7 +28,7 @@
     "Decimal অক্ষুণ্ণ রেখে CSV/JSON export, pandas ও candle resampling।"
   ],
   "install": "ইনস্টলেশন",
-  "install_text": "Repository download বা clone করে তার directory খুলে package install করো। প্রয়োজন হলে browser, network ও DataFrame integration যোগ করো।",
+  "install_text": "PyPI থেকে published package install করো। প্রয়োজন হলে browser, network ও DataFrame integration যোগ করো।",
   "quickstart": "প্রথম live market stream",
   "quickstart_text": "Account ছাড়াই public market data নেওয়া যায়। এই সম্পূর্ণ উদাহরণটি candles আনে এবং তিনটি live tick পড়ে।",
   "auth_title": "লগইন ও session",

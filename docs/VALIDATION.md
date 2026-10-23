@@ -99,5 +99,5 @@ dispatch queues and trading. Raw results are in benchmarks/results/.
   platform updates after this observation date.
 - Linux and other Python versions, verified by an actual run rather than configuration.
 
-Release status: version 1.0.0 source checkout; not uploaded to GitHub or PyPI, and no paper
-deposit made.
+Release status: version 1.0.0 source checkout; GitHub repository published at
+`https://github.com/thecmjhb/PyBynix`, PyPI publication pending, and no paper deposit made.

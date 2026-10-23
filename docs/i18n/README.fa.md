@@ -42,14 +42,14 @@
 
 ## نصب
 
-مخزن را دریافت یا clone کنید، پوشه آن را باز کرده و بسته را نصب کنید. یکپارچه‌سازی‌های اختیاری مرورگر، شبکه و DataFrame را در صورت نیاز اضافه کنید.
+بسته منتشرشده را از PyPI نصب کنید. یکپارچه‌سازی‌های اختیاری مرورگر، شبکه و DataFrame را در صورت نیاز اضافه کنید.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

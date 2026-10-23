@@ -28,7 +28,7 @@
     "Xuất CSV/JSON giữ độ chính xác Decimal, pandas tùy chọn và tổng hợp lại nến."
   ],
   "install": "Cài đặt",
-  "install_text": "Tải hoặc clone kho mã, mở thư mục rồi cài gói. Thêm các tích hợp trình duyệt, mạng và DataFrame tùy chọn khi cần.",
+  "install_text": "Cài đặt gói đã phát hành từ PyPI. Thêm các tích hợp trình duyệt, mạng và DataFrame tùy chọn khi cần.",
   "quickstart": "Luồng thị trường đầu tiên",
   "quickstart_text": "Dữ liệu công khai hoạt động không cần tài khoản. Ví dụ đầy đủ này lấy nến và đọc ba tick mới.",
   "auth_title": "Xác thực và phiên",

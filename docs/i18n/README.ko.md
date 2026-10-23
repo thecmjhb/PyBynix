@@ -42,14 +42,14 @@
 
 ## 설치
 
-저장소를 다운로드하거나 복제하고 해당 디렉터리에서 패키지를 설치하세요. 필요에 따라 브라우저, 네트워크 및 DataFrame 통합을 추가할 수 있습니다.
+PyPI에서 게시된 패키지를 설치하세요. 필요에 따라 브라우저, 네트워크 및 DataFrame 통합을 추가할 수 있습니다.
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

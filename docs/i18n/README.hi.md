@@ -42,14 +42,14 @@
 
 ## इंस्टॉलेशन
 
-Repository डाउनलोड या clone करें, उसकी directory खोलें और package install करें। आवश्यकता के अनुसार browser, networking और DataFrame integrations जोड़ें।
+PyPI से प्रकाशित package install करें। आवश्यकता के अनुसार browser, networking और DataFrame integrations जोड़ें।
 
 ```console
-python -m pip install .
+python -m pip install pybynix
 ```
 
 ```console
-python -m pip install ".[browser,network,dataframe]"
+python -m pip install "pybynix[browser,network,dataframe]"
 python -m playwright install chromium
 ```
 
@@ -142,6 +142,7 @@ pybynix domains
 - [Automation boundary](../AUTOMATION.md)
 - [Feature and fallback matrix](../FEATURE_MATRIX.md)
 - [Launch checklist](../LAUNCH_CHECKLIST.md)
+- [PyPI publishing](../PYPI_PUBLISHING.md)
 - [Repository map](../REPOSITORY_MAP.md)
 - [Troubleshooting](../TROUBLESHOOTING.md)
 

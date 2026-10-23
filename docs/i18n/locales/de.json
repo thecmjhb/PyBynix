@@ -28,7 +28,7 @@
     "CSV/JSON-Export mit Decimal-Genauigkeit, optionales pandas und Kerzenaggregation."
   ],
   "install": "Installation",
-  "install_text": "Lade oder klone das Repository, öffne sein Verzeichnis und installiere das Paket. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.",
+  "install_text": "Installiere das veröffentlichte Paket von PyPI. Ergänze bei Bedarf die optionalen Browser-, Netzwerk- und DataFrame-Integrationen.",
   "quickstart": "Dein erster Marktstream",
   "quickstart_text": "Öffentliche Marktdaten funktionieren ohne Konto. Dieses vollständige Beispiel lädt Kerzen und liest drei eingehende Ticks.",
   "auth_title": "Anmeldung und Sitzungen",

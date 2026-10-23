@@ -28,7 +28,7 @@
     "Decimal-preserving CSV/JSON export, optional pandas and candle resampling."
   ],
   "install": "Installation",
-  "install_text": "Download or clone this repository, open its directory, then install the package. Add optional browser, networking and DataFrame integrations as needed.",
+  "install_text": "Install the published package from PyPI. Add optional browser, networking and DataFrame integrations as needed.",
   "quickstart": "Stream your first market",
   "quickstart_text": "Public market data works without an account. This complete example retrieves candles and reads three incoming ticks.",
   "auth_title": "Authentication and sessions",

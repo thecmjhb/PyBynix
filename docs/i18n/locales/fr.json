@@ -28,7 +28,7 @@
     "Export CSV/JSON conservant Decimal, pandas facultatif et rééchantillonnage des bougies."
   ],
   "install": "Installation",
-  "install_text": "Téléchargez ou clonez le dépôt, ouvrez son répertoire et installez le paquet. Ajoutez les intégrations facultatives du navigateur, du réseau et des DataFrame selon vos besoins.",
+  "install_text": "Installez le paquet publié depuis PyPI. Ajoutez les intégrations facultatives du navigateur, du réseau et des DataFrame selon vos besoins.",
   "quickstart": "Votre premier flux de marché",
   "quickstart_text": "Les données publiques fonctionnent sans compte. Cet exemple complet récupère des bougies et lit trois ticks entrants.",
   "auth_title": "Authentification et sessions",
