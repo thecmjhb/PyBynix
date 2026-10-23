@@ -140,6 +140,8 @@ pybynix domains
 Detailed signatures, return values, runnable examples and recovery behavior are documented below. Use exact trade_symbol values from the asset catalog.
 
 - [API reference](docs/API.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Protocol](docs/PROTOCOL.md)
 - [Authentication](docs/AUTHENTICATION.md)
 - [Examples](examples)
 - [Recovery and networking](docs/RECOVERY.md)
@@ -155,7 +157,7 @@ The validation record lists tested Python versions, asset/timeframe coverage, de
 
 ## 🔬 Research
 
-The architecture, protocol adaptation, and empirical evaluation of PyBynix are documented in our research paper. It covers asynchronous stream recovery, safe order lifecycle handling, and benchmark observations.
+PyBynix's architecture, protocol adaptation, and dual-supervisor design are documented in the Documentation section above (see Architecture and Protocol). A formal research paper covering the full empirical evaluation, benchmark methodology, and live soak results is in preparation for academic review.
 
 ## 🤝 Community and license
 

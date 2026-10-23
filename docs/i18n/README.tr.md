@@ -140,6 +140,8 @@ pybynix domains
 İmzalar, dönüş değerleri, çalıştırılabilir örnekler ve kurtarma davranışı aşağıda açıklanmıştır. Varlık kataloğundaki tam trade_symbol değerlerini kullanın.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı 
 
 ## 🔬 Araştırma
 
-PyBynix'in mimarisi, protokol uyarlaması ve ampirik değerlendirmesi; eşzamansız akış kurtarma ve güvenli emir yaşam döngüsü yönetimini kapsayan araştırma makalemizde belgelenmiştir.
+PyBynix'in mimarisi, protokol uyarlaması ve çift süpervizör (dual-supervisor) tasarımı yukarıdaki Documentation bölümünde (Architecture ve Protocol'e bakın) belgelenmiştir. Tam ampirik değerlendirmeyi, benchmark metodolojisini ve canlı soak sonuçlarını kapsayan resmi araştırma makalesi akademik incelemeye hazırlanmaktadır.
 
 ## 🤝 Topluluk ve lisans
 

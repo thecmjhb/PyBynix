@@ -140,6 +140,8 @@ pybynix domains
 Signature, nilai kembalian, contoh siap dijalankan, dan perilaku pemulihan dijelaskan di bawah. Gunakan trade_symbol yang persis dari katalog aset.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eks
 
 ## 🔬 Riset
 
-Arsitektur, adaptasi protokol, dan evaluasi empiris PyBynix didokumentasikan dalam makalah penelitian kami, mencakup pemulihan stream asinkron dan manajemen siklus hidup order yang aman.
+Arsitektur, adaptasi protokol, dan desain dual-supervisor PyBynix didokumentasikan di bagian Documentation di atas (lihat Architecture dan Protocol). Makalah penelitian resmi yang mencakup evaluasi empiris lengkap, metodologi benchmark, dan hasil live soak sedang disiapkan untuk tinjauan akademik.
 
 ## 🤝 Komunitas dan lisensi
 

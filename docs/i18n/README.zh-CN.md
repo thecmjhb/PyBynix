@@ -140,6 +140,8 @@ pybynix domains
 以下文档提供方法签名、返回值、可运行示例和恢复行为。请使用资产目录中的精确 trade_symbol。
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ pybynix domains
 
 ## 🔬 研究
 
-PyBynix 的架构、协议适配和实证评估记录在我们的研究论文中，涵盖异步流恢复、安全订单生命周期处理及基准测试观察。
+PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记录在上方的 Documentation 部分（参见 Architecture 与 Protocol）。涵盖完整实证评估、基准测试方法与实时 soak 结果的正式研究论文正在准备中，以供学术评审。
 
 ## 🤝 社区与许可证
 

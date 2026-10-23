@@ -65,7 +65,7 @@
   "validation_title": "Tests et performances",
   "validation_text": "Le rapport de validation détaille les versions de Python testées, les actifs et périodes, les opérations démo, les interruptions et les mesures. Le dépôt inclut des tests et entrées de benchmark reproductibles.",
   "paper_title": "Recherche",
-  "paper_text": "L'architecture, l'adaptation du protocole et l'évaluation empirique de PyBynix sont documentées dans notre article de recherche, couvrant la récupération de flux asynchrone et la gestion sécurisée des ordres.",
+  "paper_text": "L'architecture, l'adaptation du protocole et la conception à double superviseur de PyBynix sont documentées dans la section Documentation ci-dessus (voir Architecture et Protocol). Un article de recherche formel couvrant l'évaluation empirique complète, la méthodologie des benchmarks et les résultats du test de charge en direct est en préparation pour une relecture académique.",
   "contribute_title": "Communauté et licence",
   "contribute_text": "Contributions, signalements reproductibles et améliorations documentaires sont les bienvenus. PyBynix est maintenu indépendamment ; les marques appartiennent à leurs propriétaires respectifs."
 }

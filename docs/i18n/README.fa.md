@@ -140,6 +140,8 @@ pybynix domains
 امضاها، مقدار بازگشتی، مثال‌های قابل اجرا و رفتار بازیابی در ادامه آمده‌اند. از مقدار دقیق trade_symbol در فهرست دارایی‌ها استفاده کنید.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ pybynix domains
 
 ## 🔬 پژوهش
 
-معماری، انطباق پروتکل و ارزیابی تجربی PyBynix در مقاله تحقیقاتی ما مستند شده است و بازیابی جریان ناهمگام و مدیریت امن سفارش‌ها را پوشش می‌دهد.
+معماری PyBynix، انطباق پروتکل و طراحی ناظر دوگانه (dual-supervisor) در بخش Documentation بالا (به Architecture و Protocol مراجعه کنید) مستند شده‌اند. مقاله پژوهشی رسمی که ارزیابی تجربی کامل، روش‌شناسی بنچمارک و نتایج آزمون زنده را پوشش می‌دهد، در حال آماده‌سازی برای داوری آکادمیک است.
 
 ## 🤝 جامعه و مجوز
 

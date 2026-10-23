@@ -65,7 +65,7 @@
   "validation_title": "పరీక్షలు మరియు పనితీరు",
   "validation_text": "Validation record‌లో పరీక్షించిన Python versions, asset/timeframe coverage, demo execution, connection interruptions, performance measurements ఉన్నాయి. పునరావృతం చేయగల tests, benchmark inputs source‌తో లభిస్తాయి.",
   "paper_title": "పరిశోధన",
-  "paper_text": "PyBynix నిర్మాణం, ప్రోటోకాల్ అనుసరణ మరియు అనుభవపూర్వక మూల్యాంకనం మా పరిశోధనా పత్రంలో నమోదు చేయబడ్డాయి, ఇందులో అసమకాలిక స్ట్రీమ్ రికవరీ మరియు సురక్షిత ఆర్డర్ నిర్వహణ ఉన్నాయి.",
+  "paper_text": "PyBynix నిర్మాణం, ప్రోటోకాల్ అనుసరణ మరియు dual-supervisor డిజైన్ పైన ఉన్న Documentation విభాగంలో (Architecture మరియు Protocol చూడండి) నమోదు చేయబడ్డాయి. పూర్తి empirical evaluation, benchmark methodology మరియు live soak ఫలితాలను కలిగి ఉన్న అధికారిక పరిశోధనా పత్రం విద్యాపరమైన సమీక్ష కోసం సిద్ధమవుతోంది.",
   "contribute_title": "సంఘం మరియు లైసెన్స్",
   "contribute_text": "Contributions, తిరిగి నిర్ధారించగల bug reports, documentation improvements స్వాగతం. PyBynix స్వతంత్రంగా నిర్వహించబడుతుంది; trademarks వాటి యజమానులవే."
 }

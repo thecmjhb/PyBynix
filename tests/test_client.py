@@ -1,4 +1,5 @@
 import asyncio
+import time
 from decimal import Decimal
 
 import httpx
@@ -400,7 +401,11 @@ async def test_supervision_polling_uses_zero_retry_budget():
 
     client = await mocked_client(handler, max_requests_per_second=None)
     client._profile_poll_timeout = 0.05
-    client._last_profile_refresh = 0
+    # time.monotonic() has no fixed epoch (often system boot); on a freshly
+    # booted CI runner it can be well under profile_refresh_interval, so an
+    # absolute 0 does not reliably mean "due for refresh". Derive it relative
+    # to now instead.
+    client._last_profile_refresh = time.monotonic() - client.profile_refresh_interval - 1
     try:
         await client._poll_one(("EUR/USD OTC", "1m"))
         assert len(calls) == 1

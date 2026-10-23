@@ -140,6 +140,8 @@ pybynix domains
 Signatures، return values، چلنے والی مثالیں اور recovery behavior نیچے کی documentation میں ہیں۔ Asset catalog کے درست trade_symbol استعمال کریں۔
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ Validation record میں آزمودہ Python versions، assets اور timeframes
 
 ## 🔬 تحقیق
 
-تحقیقی مقالے میں PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور تجرباتی جانچ کی تفصیلات درج ہیں، جن میں غیر ہم آہنگ اسٹریم ریکوری اور محفوظ آرڈر ہینڈلنگ شامل ہیں۔
+PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور ڈوئل سپروائزر (dual-supervisor) ڈیزائن کو اوپر دیے گئے Documentation سیکشن میں دستاویزی شکل دی گئی ہے (Architecture اور Protocol ملاحظہ کریں)۔ مکمل تجرباتی جانچ، بینچ مارک طریقہ کار اور لائیو سوک نتائج پر مشتمل باضابطہ تحقیقی مقالہ تعلیمی جائزے کے لیے تیار کیا جا رہا ہے۔
 
 ## 🤝 کمیونٹی اور لائسنس
 

@@ -140,6 +140,8 @@ pybynix domains
 아래 문서에서 시그니처, 반환값, 실행 예제와 복구 동작을 확인할 수 있습니다. 자산 목록의 정확한 trade_symbol 값을 사용하세요.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ pybynix domains
 
 ## 🔬 연구
 
-PyBynix의 아키텍처, 프로토콜 적응 및 실증적 평가는 연구 논문에 문서화되어 있으며, 비동기 스트림 복구 및 안전한 주문 수명 주기 관리를 다룹니다.
+PyBynix의 아키텍처, 프로토콜 적응 및 이중 감독자(dual-supervisor) 설계는 위의 Documentation 섹션(Architecture 및 Protocol 참고)에 문서화되어 있습니다. 전체 실증 평가, 벤치마크 방법론 및 라이브 소크 결과를 다루는 공식 연구 논문은 학술 심사를 위해 준비 중입니다.
 
 ## 🤝 커뮤니티 및 라이선스
 

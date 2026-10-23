@@ -140,6 +140,8 @@ pybynix domains
 Method signature, return value, runnable example ও recovery behavior নিচের documentation-এ আছে। Asset catalog-এর exact trade_symbol ব্যবহার করো।
 
 - [API reference](docs/API.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Protocol](docs/PROTOCOL.md)
 - [Authentication](docs/AUTHENTICATION.md)
 - [Examples](examples)
 - [Recovery and networking](docs/RECOVERY.md)
@@ -155,7 +157,7 @@ Validation record-এ পরীক্ষিত Python version, asset/timeframe c
 
 ## 🔬 গবেষণা
 
-PyBynix-এর আর্কিটেকচার, প্রোটোকল অ্যাডাপ্টেশন ও এভালুয়েশন রিসার্চ পেপারে বিস্তারিত তুলে ধরা হয়েছে। এতে অ্যাসিঙ্ক্রোনাস স্ট্রিম রিকভারি, নিরাপদ অর্ডার হ্যান্ডলিং ও বেঞ্চমার্কের প্রমাণ অন্তর্ভুক্ত রয়েছে।
+PyBynix-এর আর্কিটেকচার, প্রোটোকল অ্যাডাপ্টেশন ও dual-supervisor ডিজাইন উপরের Documentation সেকশনে (Architecture ও Protocol দেখুন) তুলে ধরা হয়েছে। সম্পূর্ণ empirical evaluation, benchmark methodology ও live soak ফলাফলসহ formal research paper academic review-এর জন্য প্রস্তুত করা হচ্ছে।
 
 ## 🤝 কমিউনিটি ও লাইসেন্স
 

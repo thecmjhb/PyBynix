@@ -65,7 +65,7 @@
   "validation_title": "ٹیسٹ اور کارکردگی",
   "validation_text": "Validation record میں آزمودہ Python versions، assets اور timeframes، demo execution، connection interruptions اور performance measurements موجود ہیں۔ Reproducible tests اور benchmark inputs source کے ساتھ ہیں۔",
   "paper_title": "تحقیق",
-  "paper_text": "تحقیقی مقالے میں PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور تجرباتی جانچ کی تفصیلات درج ہیں، جن میں غیر ہم آہنگ اسٹریم ریکوری اور محفوظ آرڈر ہینڈلنگ شامل ہیں۔",
+  "paper_text": "PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور ڈوئل سپروائزر (dual-supervisor) ڈیزائن کو اوپر دیے گئے Documentation سیکشن میں دستاویزی شکل دی گئی ہے (Architecture اور Protocol ملاحظہ کریں)۔ مکمل تجرباتی جانچ، بینچ مارک طریقہ کار اور لائیو سوک نتائج پر مشتمل باضابطہ تحقیقی مقالہ تعلیمی جائزے کے لیے تیار کیا جا رہا ہے۔",
   "contribute_title": "کمیونٹی اور لائسنس",
   "contribute_text": "Contributions، دوبارہ جانچے جا سکنے والے bug reports اور documentation improvements خوش آمدید ہیں۔ PyBynix آزادانہ طور پر maintained ہے؛ trademarks متعلقہ مالکان کے ہیں۔"
 }

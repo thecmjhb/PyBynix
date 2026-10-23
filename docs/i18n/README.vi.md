@@ -140,6 +140,8 @@ pybynix domains
 Chữ ký hàm, giá trị trả về, ví dụ chạy được và cơ chế khôi phục được ghi bên dưới. Dùng đúng giá trị trade_symbol từ danh mục.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khun
 
 ## 🔬 Nghiên cứu
 
-Kiến trúc, sự thích ứng giao thức và đánh giá thực nghiệm của PyBynix được ghi lại trong bài báo nghiên cứu, bao gồm phục hồi luồng bất đồng bộ và xử lý lệnh an toàn.
+Kiến trúc, khả năng thích ứng giao thức và thiết kế dual-supervisor của PyBynix được ghi lại trong mục Documentation ở trên (xem Architecture và Protocol). Bài báo nghiên cứu chính thức bao gồm đánh giá thực nghiệm đầy đủ, phương pháp đo benchmark và kết quả soak trực tiếp đang được chuẩn bị để đánh giá học thuật.
 
 ## 🤝 Cộng đồng và giấy phép
 

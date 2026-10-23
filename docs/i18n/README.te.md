@@ -140,6 +140,8 @@ pybynix domains
 Signatures, return values, నడిపించగల ఉదాహరణలు, recovery behavior క్రింద వివరించబడ్డాయి. Asset catalog‌లోని ఖచ్చితమైన trade_symbol వాడండి.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ Validation record‌లో పరీక్షించిన Python versions, as
 
 ## 🔬 పరిశోధన
 
-PyBynix నిర్మాణం, ప్రోటోకాల్ అనుసరణ మరియు అనుభవపూర్వక మూల్యాంకనం మా పరిశోధనా పత్రంలో నమోదు చేయబడ్డాయి, ఇందులో అసమకాలిక స్ట్రీమ్ రికవరీ మరియు సురక్షిత ఆర్డర్ నిర్వహణ ఉన్నాయి.
+PyBynix నిర్మాణం, ప్రోటోకాల్ అనుసరణ మరియు dual-supervisor డిజైన్ పైన ఉన్న Documentation విభాగంలో (Architecture మరియు Protocol చూడండి) నమోదు చేయబడ్డాయి. పూర్తి empirical evaluation, benchmark methodology మరియు live soak ఫలితాలను కలిగి ఉన్న అధికారిక పరిశోధనా పత్రం విద్యాపరమైన సమీక్ష కోసం సిద్ధమవుతోంది.
 
 ## 🤝 సంఘం మరియు లైసెన్స్
 

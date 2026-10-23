@@ -241,6 +241,8 @@ pybynix domains
 {t["docs_text"]}
 
 - [API reference]({rel("docs/API.md")})
+- [Architecture]({rel("docs/ARCHITECTURE.md")})
+- [Protocol]({rel("docs/PROTOCOL.md")})
 - [Authentication]({rel("docs/AUTHENTICATION.md")})
 - [Examples]({rel("examples")})
 - [Recovery and networking]({rel("docs/RECOVERY.md")})

@@ -140,6 +140,8 @@ pybynix domains
 Firme, valori restituiti, esempi eseguibili e comportamento di recupero sono descritti qui sotto. Usa i valori trade_symbol esatti del catalogo.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ Il registro di validazione elenca versioni Python provate, copertura di asset e 
 
 ## 🔬 Ricerca
 
-L'architettura, l'adattamento del protocollo e la valutazione empirica di PyBynix sono documentati nel nostro articolo di ricerca, che copre il ripristino asincrono dei flussi e la gestione sicura degli ordini.
+L'architettura, l'adattamento del protocollo e il design a doppio supervisore di PyBynix sono documentati nella sezione Documentation sopra (vedi Architecture e Protocol). Un articolo di ricerca formale che copre la valutazione empirica completa, la metodologia dei benchmark e i risultati del soak live è in preparazione per la revisione accademica.
 
 ## 🤝 Comunità e licenza
 

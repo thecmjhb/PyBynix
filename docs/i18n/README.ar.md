@@ -140,6 +140,8 @@ pybynix domains
 توضح الوثائق أدناه التواقيع والقيم المرجعة والأمثلة القابلة للتشغيل وسلوك الاستعادة. استخدم قيم trade_symbol الدقيقة من فهرس الأصول.
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ pybynix domains
 
 ## 🔬 البحث
 
-تم توثيق بنية PyBynix وتكييف البروتوكول والتقييم التجريبي في ورقتنا البحثية، والتي تغطي استعادة التدفق غير المتزامن وإدارة دورة حياة الأوامر بأمان.
+تم توثيق بنية PyBynix وتكييف البروتوكول وتصميم المُشرفين المزدوج (dual-supervisor) في قسم التوثيق (Documentation) أعلاه (راجع Architecture و Protocol). الورقة البحثية الرسمية التي تغطي التقييم التجريبي الكامل ومنهجية القياس ونتائج الاختبار المباشر قيد الإعداد للمراجعة الأكاديمية.
 
 ## 🤝 المجتمع والترخيص
 

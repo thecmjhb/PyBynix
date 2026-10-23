@@ -65,7 +65,7 @@
   "validation_title": "சோதனையும் செயல்திறனும்",
   "validation_text": "Validation record-இல் சோதிக்கப்பட்ட Python version, asset/timeframe coverage, demo execution, connection interruption மற்றும் performance measurement உள்ளன. மீண்டும் இயக்கக்கூடிய test மற்றும் benchmark input source-உடன் வழங்கப்பட்டுள்ளன.",
   "paper_title": "ஆராய்ச்சி",
-  "paper_text": "PyBynix-ன் கட்டமைப்பு, நெறிமுறை பொருத்தம் மற்றும் மதிப்பீடு எங்கள் ஆய்வுக் கட்டுரையில் ஆவணப்படுத்தப்பட்டுள்ளது; இது ஒத்திசைவற்ற ஸ்ட்ரீம் மீட்பு மற்றும் பாதுகாப்பான ஆர்டர் மேலாண்மையை உள்ளடக்கியது.",
+  "paper_text": "PyBynix-ன் கட்டமைப்பு, நெறிமுறை பொருத்தம் மற்றும் dual-supervisor வடிவமைப்பு மேலே உள்ள Documentation பிரிவில் (Architecture மற்றும் Protocol பார்க்கவும்) ஆவணப்படுத்தப்பட்டுள்ளது. முழுமையான empirical evaluation, benchmark methodology மற்றும் live soak முடிவுகளை உள்ளடக்கிய முறையான ஆய்வுக் கட்டுரை கல்விசார் மதிப்பாய்வுக்காக தயாரிப்பில் உள்ளது.",
   "contribute_title": "சமூகமும் உரிமமும்",
   "contribute_text": "Contribution, மீண்டும் உறுதிப்படுத்தக்கூடிய bug report மற்றும் documentation மேம்பாடு வரவேற்கப்படுகின்றன. PyBynix தனித்துப் பராமரிக்கப்படுகிறது; trademark-கள் அவற்றின் உரிமையாளர்களுக்குச் சொந்தமானவை."
 }

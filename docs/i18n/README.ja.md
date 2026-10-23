@@ -140,6 +140,8 @@ pybynix domains
 シグネチャ、戻り値、実行例、復旧動作は次の資料をご覧ください。資産一覧の正確な trade_symbol を使ってください。
 
 - [API reference](../API.md)
+- [Architecture](../ARCHITECTURE.md)
+- [Protocol](../PROTOCOL.md)
 - [Authentication](../AUTHENTICATION.md)
 - [Examples](../../examples)
 - [Recovery and networking](../RECOVERY.md)
@@ -155,7 +157,7 @@ pybynix domains
 
 ## 🔬 研究
 
-PyBynix のアーキテクチャ、プロトコル適応、実証的評価は研究論文にまとめられており、非同期ストリーム復旧や安全な注文ライフサイクル管理を網羅しています。
+PyBynix のアーキテクチャ、プロトコル適応、デュアルスーパーバイザー設計は上記の Documentation セクション(Architecture と Protocol を参照)にまとめられています。完全な実証評価、ベンチマーク手法、ライブソーク結果を網羅する正式な研究論文は、学術査読に向けて準備中です。
 
 ## 🤝 コミュニティとライセンス
 
