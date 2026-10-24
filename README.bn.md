@@ -169,7 +169,7 @@ PyBynix-এর আর্কিটেকচার, প্রোটোকল অ�
 
 ```bibtex
 @misc{bappy2026pybynix,
-  author    = {Hossain Bappy, C. M. Jubayer},
+  author    = {{C. M.}, Jubayer Hossain Bappy},
   title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
                Execution Architecture for Bynix Broker},
   year      = {2026},

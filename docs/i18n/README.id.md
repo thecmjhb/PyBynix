@@ -169,7 +169,7 @@ Arsitektur, adaptasi protokol, dan desain dual-supervisor PyBynix didokumentasik
 
 ```bibtex
 @misc{bappy2026pybynix,
-  author    = {Hossain Bappy, C. M. Jubayer},
+  author    = {{C. M.}, Jubayer Hossain Bappy},
   title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
                Execution Architecture for Bynix Broker},
   year      = {2026},

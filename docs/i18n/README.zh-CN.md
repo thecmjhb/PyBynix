@@ -169,7 +169,7 @@ PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记
 
 ```bibtex
 @misc{bappy2026pybynix,
-  author    = {Hossain Bappy, C. M. Jubayer},
+  author    = {{C. M.}, Jubayer Hossain Bappy},
   title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
                Execution Architecture for Bynix Broker},
   year      = {2026},

@@ -4,16 +4,16 @@ type: software
 title: PyBynix
 version: 1.0.0
 authors:
-  - family-names: Hossain Bappy
-    given-names: C. M. Jubayer
+  - family-names: C. M.
+    given-names: Jubayer Hossain Bappy
 license: MIT
 repository-code: "https://github.com/thecmjhb/PyBynix"
 preferred-citation:
   type: generic
   title: "PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker"
   authors:
-    - family-names: Hossain Bappy
-      given-names: C. M. Jubayer
+    - family-names: C. M.
+      given-names: Jubayer Hossain Bappy
   year: 2026
   month: 10
   doi: "10.5281/zenodo.23611267"

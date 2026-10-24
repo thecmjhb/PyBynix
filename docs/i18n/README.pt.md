@@ -169,7 +169,7 @@ A arquitetura, a adaptação de protocolo e o design de supervisor duplo do PyBy
 
 ```bibtex
 @misc{bappy2026pybynix,
-  author    = {Hossain Bappy, C. M. Jubayer},
+  author    = {{C. M.}, Jubayer Hossain Bappy},
   title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
                Execution Architecture for Bynix Broker},
   year      = {2026},

@@ -169,7 +169,7 @@ PyBynix의 아키텍처, 프로토콜 적응 및 이중 감독자(dual-superviso
 
 ```bibtex
 @misc{bappy2026pybynix,
-  author    = {Hossain Bappy, C. M. Jubayer},
+  author    = {{C. M.}, Jubayer Hossain Bappy},
   title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
                Execution Architecture for Bynix Broker},
   year      = {2026},
