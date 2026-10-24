@@ -6,6 +6,12 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+PAPER_DOI = "10.5281/zenodo.23611267"
+PAPER_URL = f"https://doi.org/{PAPER_DOI}"
+PAPER_TITLE = (
+    "PyBynix: Capability-Aware Asynchronous Integration and Safe Execution "
+    "Architecture for Bynix Broker"
+)
 LANGUAGES = [
     "en",
     "bn",
@@ -157,6 +163,7 @@ def generate():
     <img src="https://img.shields.io/badge/Version-1.0.0-00843D" alt="Version 1.0.0">
     <img src="https://img.shields.io/badge/License-MIT-22c55e" alt="MIT">
     <img src="https://img.shields.io/badge/Documentation-20_languages-C49A00" alt="20 languages">
+    <a href="{PAPER_URL}"><img src="https://zenodo.org/badge/DOI/{PAPER_DOI}.svg" alt="DOI {PAPER_DOI}"></a>
   </p>
 </div>
 
@@ -259,6 +266,21 @@ pybynix domains
 ## {SECTION_EMOJIS["paper_title"]} {t["paper_title"]}
 
 {t["paper_text"]}
+
+> 📄 **[{PAPER_TITLE}]({PAPER_URL})**
+> C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI {PAPER_DOI}]({PAPER_URL})
+
+```bibtex
+@misc{{bappy2026pybynix,
+  author    = {{Hossain Bappy, C. M. Jubayer}},
+  title     = {{{PAPER_TITLE}}},
+  year      = {{2026}},
+  publisher = {{Zenodo}},
+  doi       = {{{PAPER_DOI}}},
+  url       = {{{PAPER_URL}}},
+  note      = {{Preprint}}
+}}
+```
 
 ## {SECTION_EMOJIS["contribute_title"]} {t["contribute_title"]}
 

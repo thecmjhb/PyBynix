@@ -65,7 +65,7 @@
   "validation_title": "পরীক্ষা ও performance",
   "validation_text": "Validation record-এ পরীক্ষিত Python version, asset/timeframe coverage, demo execution, connection interruption ও performance measurement আছে। Reproducible tests ও benchmark input source-এর সঙ্গে দেওয়া হয়েছে।",
   "paper_title": "গবেষণা",
-  "paper_text": "PyBynix-এর আর্কিটেকচার, প্রোটোকল অ্যাডাপ্টেশন ও dual-supervisor ডিজাইন উপরের Documentation সেকশনে (Architecture ও Protocol দেখুন) তুলে ধরা হয়েছে। সম্পূর্ণ empirical evaluation, benchmark methodology ও live soak ফলাফলসহ formal research paper academic review-এর জন্য প্রস্তুত করা হচ্ছে।",
+  "paper_text": "PyBynix-এর আর্কিটেকচার, প্রোটোকল অ্যাডাপ্টেশন ও dual-supervisor ডিজাইন উপরের Documentation সেকশনে (Architecture ও Protocol দেখুন) তুলে ধরা হয়েছে। সম্পূর্ণ empirical evaluation, benchmark methodology ও live soak ফলাফল Zenodo-তে open-access preprint হিসেবে প্রকাশিত হয়েছে।",
   "contribute_title": "কমিউনিটি ও লাইসেন্স",
   "contribute_text": "Contribution, পুনরায় যাচাই করা যায় এমন bug report এবং documentation improvement স্বাগত। PyBynix স্বাধীনভাবে পরিচালিত; platform ও language-এর trademark সংশ্লিষ্ট মালিকদের।"
 }

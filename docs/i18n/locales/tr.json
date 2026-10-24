@@ -65,7 +65,7 @@
   "validation_title": "Test ve performans",
   "validation_text": "Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı kapsamını, demo yürütmeyi, kesintileri ve performans ölçümlerini listeler. Yeniden üretilebilir testler ve benchmark girdileri kaynakla birlikte gelir.",
   "paper_title": "Araştırma",
-  "paper_text": "PyBynix'in mimarisi, protokol uyarlaması ve çift süpervizör (dual-supervisor) tasarımı yukarıdaki Documentation bölümünde (Architecture ve Protocol'e bakın) belgelenmiştir. Tam ampirik değerlendirmeyi, benchmark metodolojisini ve canlı soak sonuçlarını kapsayan resmi araştırma makalesi akademik incelemeye hazırlanmaktadır.",
+  "paper_text": "PyBynix'in mimarisi, protokol uyarlaması ve çift süpervizör (dual-supervisor) tasarımı yukarıdaki Documentation bölümünde (Architecture ve Protocol'e bakın) belgelenmiştir. Tam ampirik değerlendirme, benchmark metodolojisi ve canlı soak sonuçları Zenodo'da açık erişimli ön baskı (preprint) olarak yayımlanmıştır.",
   "contribute_title": "Topluluk ve lisans",
   "contribute_text": "Katkılar, yeniden üretilebilir hata bildirimleri ve belge iyileştirmeleri memnuniyetle karşılanır. PyBynix bağımsız geliştirilir; ticari markalar ilgili sahiplerine aittir."
 }

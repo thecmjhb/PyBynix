@@ -97,7 +97,10 @@ dispatch queues and trading. Raw results are in benchmarks/results/.
   sessions across all published alternate domains (two hosts tested).
 - Every asset/timeframe, live-market-session boundaries, funded/tournament accounts and
   platform updates after this observation date.
-- Linux and other Python versions, verified by an actual run rather than configuration.
+- Live behavior on Linux and on Python versions other than 3.11/3.13. The offline suite
+  (100 tests) passed in GitHub Actions on `ubuntu-latest` and `windows-latest` with Python
+  3.11 and 3.13 (commit `0d0eff8`, 24 October 2026); no live demo run was made on Linux.
 
-Release status: version 1.0.0 source checkout; GitHub repository published at
-`https://github.com/thecmjhb/PyBynix`, PyPI publication pending, and no paper deposit made.
+Release status: version 1.0.0. Source on GitHub (`https://github.com/thecmjhb/PyBynix`),
+package on PyPI (`https://pypi.org/project/pybynix/`), and the research paper deposited as a
+preprint on Zenodo (`https://doi.org/10.5281/zenodo.23611267`; not peer reviewed).

@@ -12,6 +12,7 @@
     <img src="https://img.shields.io/badge/Version-1.0.0-00843D" alt="Version 1.0.0">
     <img src="https://img.shields.io/badge/License-MIT-22c55e" alt="MIT">
     <img src="https://img.shields.io/badge/Documentation-20_languages-C49A00" alt="20 languages">
+    <a href="https://doi.org/10.5281/zenodo.23611267"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23611267.svg" alt="DOI 10.5281/zenodo.23611267"></a>
   </p>
 </div>
 
@@ -157,7 +158,22 @@ Validation record में tested Python versions, asset/timeframe coverage, de
 
 ## 🔬 शोध
 
-PyBynix की वास्तुकला, प्रोटोकॉल अनुकूलन और dual-supervisor डिज़ाइन ऊपर दिए गए Documentation सेक्शन में प्रलेखित हैं (Architecture और Protocol देखें)। पूर्ण अनुभवजन्य मूल्यांकन, बेंचमार्क पद्धति और लाइव सोक परिणामों वाला औपचारिक शोध पत्र अकादमिक समीक्षा के लिए तैयार किया जा रहा है।
+PyBynix की वास्तुकला, प्रोटोकॉल अनुकूलन और dual-supervisor डिज़ाइन ऊपर दिए गए Documentation सेक्शन में प्रलेखित हैं (Architecture और Protocol देखें)। पूर्ण अनुभवजन्य मूल्यांकन, बेंचमार्क पद्धति और लाइव सोक परिणाम Zenodo पर ओपन-एक्सेस प्रीप्रिंट के रूप में प्रकाशित हैं।
+
+> 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+> C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+```bibtex
+@misc{bappy2026pybynix,
+  author    = {Hossain Bappy, C. M. Jubayer},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23611267},
+  url       = {https://doi.org/10.5281/zenodo.23611267},
+  note      = {Preprint}
+}
+```
 
 ## 🤝 समुदाय और लाइसेंस
 

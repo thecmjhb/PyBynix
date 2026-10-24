@@ -40,4 +40,5 @@ The public checkout must not contain `private/`, saved sessions, credentials, br
 profiles, raw captures, order databases, or manuscript working files. The release builder
 selects tracked public files and rejects private-like paths before creating source, wheel,
 and sdist artifacts. The paper source is maintained outside this public package as
-Overleaf-ready LaTeX only; no PDF is part of the release.
+Overleaf-ready LaTeX only; no PDF is part of the release. The published preprint is
+available at `https://doi.org/10.5281/zenodo.23611267`.

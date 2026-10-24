@@ -12,6 +12,7 @@
     <img src="https://img.shields.io/badge/Version-1.0.0-00843D" alt="Version 1.0.0">
     <img src="https://img.shields.io/badge/License-MIT-22c55e" alt="MIT">
     <img src="https://img.shields.io/badge/Documentation-20_languages-C49A00" alt="20 languages">
+    <a href="https://doi.org/10.5281/zenodo.23611267"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23611267.svg" alt="DOI 10.5281/zenodo.23611267"></a>
   </p>
 </div>
 
@@ -157,7 +158,22 @@ pybynix domains
 
 ## 🔬 研究
 
-PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记录在上方的 Documentation 部分（参见 Architecture 与 Protocol）。涵盖完整实证评估、基准测试方法与实时 soak 结果的正式研究论文正在准备中，以供学术评审。
+PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记录在上方的 Documentation 部分（参见 Architecture 与 Protocol）。完整的实证评估、基准测试方法和实时 soak 结果已作为开放获取预印本发布在 Zenodo。
+
+> 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+> C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+```bibtex
+@misc{bappy2026pybynix,
+  author    = {Hossain Bappy, C. M. Jubayer},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23611267},
+  url       = {https://doi.org/10.5281/zenodo.23611267},
+  note      = {Preprint}
+}
+```
 
 ## 🤝 社区与许可证
 

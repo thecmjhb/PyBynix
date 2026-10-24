@@ -65,7 +65,7 @@
   "validation_title": "测试与性能",
   "validation_text": "验证记录列出已测试的 Python 版本、资产及周期覆盖、模拟交易、连接中断和性能测量。源码包含可复现测试与基准输入。",
   "paper_title": "研究",
-  "paper_text": "PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记录在上方的 Documentation 部分（参见 Architecture 与 Protocol）。涵盖完整实证评估、基准测试方法与实时 soak 结果的正式研究论文正在准备中，以供学术评审。",
+  "paper_text": "PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记录在上方的 Documentation 部分（参见 Architecture 与 Protocol）。完整的实证评估、基准测试方法和实时 soak 结果已作为开放获取预印本发布在 Zenodo。",
   "contribute_title": "社区与许可证",
   "contribute_text": "欢迎贡献代码、可复现的问题报告和文档改进。PyBynix 独立维护，平台与语言商标属于各自所有者。"
 }

@@ -65,7 +65,7 @@
   "validation_title": "Test e prestazioni",
   "validation_text": "Il registro di validazione elenca versioni Python provate, copertura di asset e intervalli, esecuzione demo, interruzioni e misurazioni. Il codice include test e input di benchmark riproducibili.",
   "paper_title": "Ricerca",
-  "paper_text": "L'architettura, l'adattamento del protocollo e il design a doppio supervisore di PyBynix sono documentati nella sezione Documentation sopra (vedi Architecture e Protocol). Un articolo di ricerca formale che copre la valutazione empirica completa, la metodologia dei benchmark e i risultati del soak live è in preparazione per la revisione accademica.",
+  "paper_text": "L'architettura, l'adattamento del protocollo e il design a doppio supervisore di PyBynix sono documentati nella sezione Documentation sopra (vedi Architecture e Protocol). La valutazione empirica completa, la metodologia dei benchmark e i risultati del soak live sono pubblicati come preprint ad accesso aperto su Zenodo.",
   "contribute_title": "Comunità e licenza",
   "contribute_text": "Sono benvenuti contributi, segnalazioni riproducibili e miglioramenti alla documentazione. PyBynix è mantenuto indipendentemente; i marchi appartengono ai rispettivi titolari."
 }

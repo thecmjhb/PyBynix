@@ -65,7 +65,7 @@
   "validation_title": "Kiểm thử và hiệu năng",
   "validation_text": "Hồ sơ xác minh liệt kê phiên bản Python, phạm vi tài sản và khung thời gian, lệnh demo, gián đoạn và phép đo. Mã nguồn có kiểm thử và đầu vào benchmark tái lập được.",
   "paper_title": "Nghiên cứu",
-  "paper_text": "Kiến trúc, khả năng thích ứng giao thức và thiết kế dual-supervisor của PyBynix được ghi lại trong mục Documentation ở trên (xem Architecture và Protocol). Bài báo nghiên cứu chính thức bao gồm đánh giá thực nghiệm đầy đủ, phương pháp đo benchmark và kết quả soak trực tiếp đang được chuẩn bị để đánh giá học thuật.",
+  "paper_text": "Kiến trúc, khả năng thích ứng giao thức và thiết kế dual-supervisor của PyBynix được ghi lại trong mục Documentation ở trên (xem Architecture và Protocol). Đánh giá thực nghiệm đầy đủ, phương pháp đo benchmark và kết quả soak trực tiếp được công bố dưới dạng preprint truy cập mở trên Zenodo.",
   "contribute_title": "Cộng đồng và giấy phép",
   "contribute_text": "Chào đón đóng góp, báo lỗi tái lập được và cải tiến tài liệu. PyBynix được duy trì độc lập; nhãn hiệu thuộc chủ sở hữu tương ứng."
 }

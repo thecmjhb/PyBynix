@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased - 24 October 2026
+
+- Documentation only; no change to the published 1.0.0 package code.
+- Research preprint published on Zenodo (DOI 10.5281/zenodo.23611267, not peer reviewed);
+  linked from all 20 README editions with a DOI badge and BibTeX entry, and set as the
+  preferred citation in `CITATION.cff`.
+- Architecture and Protocol documents are now linked from every README edition.
+- Logo assets regenerated at 2x resolution with clean transparent edges (no light fringe on
+  dark backgrounds).
+- Fixed a CI-only test flake: the profile-supervision test assumed `time.monotonic()` was
+  already larger than the refresh interval, which fails on freshly booted Linux runners.
+
 ## 1.0.0 - release-preparation snapshot, 22 October 2026
 
 - Independent REST + Socket.IO client based on observed Bynix behavior.
