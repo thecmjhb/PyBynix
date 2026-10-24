@@ -161,12 +161,17 @@ Validation record میں آزمودہ Python versions، assets اور timeframes
 PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور ڈوئل سپروائزر (dual-supervisor) ڈیزائن کو اوپر دیے گئے Documentation سیکشن میں دستاویزی شکل دی گئی ہے (Architecture اور Protocol ملاحظہ کریں)۔ مکمل تجرباتی جانچ، بینچ مارک طریقہ کار اور لائیو سوک نتائج Zenodo پر اوپن ایکسیس پری پرنٹ کے طور پر شائع کیے گئے ہیں۔
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ PyBynix کے آرکیٹیکچر، پروٹوکول ایڈاپٹیشن اور ڈ�
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 کمیونٹی اور لائسنس
 

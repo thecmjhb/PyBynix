@@ -161,12 +161,17 @@ Catatan validasi memuat versi Python yang diuji, cakupan aset dan timeframe, eks
 Arsitektur, adaptasi protokol, dan desain dual-supervisor PyBynix didokumentasikan di bagian Documentation di atas (lihat Architecture dan Protocol). Evaluasi empiris lengkap, metodologi benchmark, dan hasil live soak diterbitkan sebagai preprint akses terbuka di Zenodo.
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ Arsitektur, adaptasi protokol, dan desain dual-supervisor PyBynix didokumentasik
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 Komunitas dan lisensi
 

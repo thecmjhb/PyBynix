@@ -161,12 +161,17 @@ Doğrulama kaydı test edilen Python sürümlerini, varlık ve zaman aralığı 
 PyBynix'in mimarisi, protokol uyarlaması ve çift süpervizör (dual-supervisor) tasarımı yukarıdaki Documentation bölümünde (Architecture ve Protocol'e bakın) belgelenmiştir. Tam ampirik değerlendirme, benchmark metodolojisi ve canlı soak sonuçları Zenodo'da açık erişimli ön baskı (preprint) olarak yayımlanmıştır.
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ PyBynix'in mimarisi, protokol uyarlaması ve çift süpervizör (dual-supervisor
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 Topluluk ve lisans
 

@@ -268,12 +268,17 @@ pybynix domains
 {t["paper_text"]}
 
 > 📄 **[{PAPER_TITLE}]({PAPER_URL})**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI {PAPER_DOI}]({PAPER_URL})
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{{bappy2026pybynix,
   author    = {{Hossain Bappy, C. M. Jubayer}},
-  title     = {{{PAPER_TITLE}}},
+  title     = {{PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker}},
   year      = {{2026}},
   publisher = {{Zenodo}},
   doi       = {{{PAPER_DOI}}},
@@ -281,6 +286,8 @@ pybynix domains
   note      = {{Preprint}}
 }}
 ```
+
+</details>
 
 ## {SECTION_EMOJIS["contribute_title"]} {t["contribute_title"]}
 

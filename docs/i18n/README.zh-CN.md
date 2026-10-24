@@ -161,12 +161,17 @@ pybynix domains
 PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记录在上方的 Documentation 部分（参见 Architecture 与 Protocol）。完整的实证评估、基准测试方法和实时 soak 结果已作为开放获取预印本发布在 Zenodo。
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ PyBynix 的架构、协议适配与双监督者（dual-supervisor）设计已记
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 社区与许可证
 

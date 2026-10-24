@@ -161,12 +161,17 @@ Il registro di validazione elenca versioni Python provate, copertura di asset e 
 L'architettura, l'adattamento del protocollo e il design a doppio supervisore di PyBynix sono documentati nella sezione Documentation sopra (vedi Architecture e Protocol). La valutazione empirica completa, la metodologia dei benchmark e i risultati del soak live sono pubblicati come preprint ad accesso aperto su Zenodo.
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ L'architettura, l'adattamento del protocollo e il design a doppio supervisore di
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 Comunità e licenza
 

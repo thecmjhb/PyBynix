@@ -161,12 +161,17 @@ pybynix domains
 Архитектура, адаптация протокола и конструкция с двумя супервизорами (dual-supervisor) PyBynix описаны в разделе Documentation выше (см. Architecture и Protocol). Полная эмпирическая оценка, методология бенчмарков и результаты живого soak-теста опубликованы как препринт в открытом доступе на Zenodo.
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ pybynix domains
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 Сообщество и лицензия
 

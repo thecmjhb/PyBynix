@@ -161,12 +161,17 @@ pybynix domains
 PyBynix의 아키텍처, 프로토콜 적응 및 이중 감독자(dual-supervisor) 설계는 위의 Documentation 섹션(Architecture 및 Protocol 참고)에 문서화되어 있습니다. 전체 실증 평가, 벤치마크 방법론 및 라이브 소크 결과는 Zenodo에 오픈 액세스 프리프린트로 공개되어 있습니다.
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ PyBynix의 아키텍처, 프로토콜 적응 및 이중 감독자(dual-superviso
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 커뮤니티 및 라이선스
 

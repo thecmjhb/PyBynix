@@ -161,12 +161,17 @@ Validation record-এ পরীক্ষিত Python version, asset/timeframe c
 PyBynix-এর আর্কিটেকচার, প্রোটোকল অ্যাডাপ্টেশন ও dual-supervisor ডিজাইন উপরের Documentation সেকশনে (Architecture ও Protocol দেখুন) তুলে ধরা হয়েছে। সম্পূর্ণ empirical evaluation, benchmark methodology ও live soak ফলাফল Zenodo-তে open-access preprint হিসেবে প্রকাশিত হয়েছে।
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ PyBynix-এর আর্কিটেকচার, প্রোটোকল অ�
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 কমিউনিটি ও লাইসেন্স
 

@@ -161,12 +161,17 @@ Validation record-இல் சோதிக்கப்பட்ட Python versi
 PyBynix-ன் கட்டமைப்பு, நெறிமுறை பொருத்தம் மற்றும் dual-supervisor வடிவமைப்பு மேலே உள்ள Documentation பிரிவில் (Architecture மற்றும் Protocol பார்க்கவும்) ஆவணப்படுத்தப்பட்டுள்ளது. முழுமையான empirical evaluation, benchmark methodology மற்றும் live soak முடிவுகள் Zenodo-வில் open-access preprint ஆக வெளியிடப்பட்டுள்ளன.
 
 > 📄 **[PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker](https://doi.org/10.5281/zenodo.23611267)**
+>
 > C. M. Jubayer Hossain Bappy · Preprint · CC BY 4.0 · [DOI 10.5281/zenodo.23611267](https://doi.org/10.5281/zenodo.23611267)
+
+<details>
+<summary><b>BibTeX</b></summary>
 
 ```bibtex
 @misc{bappy2026pybynix,
   author    = {Hossain Bappy, C. M. Jubayer},
-  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe Execution Architecture for Bynix Broker},
+  title     = {PyBynix: Capability-Aware Asynchronous Integration and Safe
+               Execution Architecture for Bynix Broker},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23611267},
@@ -174,6 +179,8 @@ PyBynix-ன் கட்டமைப்பு, நெறிமுறை பொ�
   note      = {Preprint}
 }
 ```
+
+</details>
 
 ## 🤝 சமூகமும் உரிமமும்
 
