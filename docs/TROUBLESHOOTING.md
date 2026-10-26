@@ -2,6 +2,11 @@
 
 | Symptom | Action |
 | --- | --- |
+| `Market session required` | The host issues no market session. Update the package; market data has required a session since 26 October 2026. |
+| `Market session expired` | The client refreshes automatically. If it persists, the `sid` is being rejected — check the clock and retry with a fresh client. |
+| Candles or ticks return empty | Market payloads are sealed; an `{"e": ...}` body that does not open means the session key and the session id are out of step. Recreate the client. |
+| `ChallengeRequired` on a market call | Cloudflare is challenging this IP, not your account. `bynix.app` served market data without a challenge where `bynixbrokers.com` did not; try the other host or a different egress. |
+| `Encrypted ticks` counter stays at 0 | Subscriptions without the market session id (`s`) are accepted and then ignored. Update the package. |
 | AuthenticationError with an imported token | Use `pybynix login` or configure a password/browser provider. Check that the session host matches. |
 | ChallengeRequired | Supply an OTP callback or enable the explicit owner-interactive browser provider. |
 | Browser executable missing | Install `.[browser]`, then run `python -m playwright install chromium`. |

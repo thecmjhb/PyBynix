@@ -1,5 +1,34 @@
 # Changelog
 
+## Unreleased - 26 October 2026
+
+Market data broke: Bynix now gates it behind a market session and seals the response
+body. This entry restores `get_candles`, `get_tick` and `subscribe_ticks` against the
+observed protocol.
+
+- Added the market session handshake. Market endpoints answer
+  `401 {"detail": "Market session required"}` without an `X-Market-Session` header; the
+  client now obtains one from `POST /api/market/session` and refreshes it on expiry.
+  Guest sessions work without an account, with tighter limits.
+- Added sealed-envelope support (`pybynix/crypto.py`, ChaCha20-Poly1305 per RFC 8439).
+  Market responses arrive as `{"e": "<base64 nonce||ciphertext||tag>"}` and are opened
+  with the session key. Verified against the RFC 8439 test vector; uses `cryptography`
+  when installed and a self-contained pure-Python implementation otherwise.
+- Socket subscriptions now carry the market session id (`s`). Without it the server
+  accepts the subscription and never sends a tick.
+- Tick payloads are sealed with a rotating keyring (`{"k": <id>, "e": ...}`). The keyring
+  comes from the sealed `stream` field of the market session and is refreshed across
+  `rotate_at`.
+- New `MarketSessionManager` (`pybynix/market.py`) with single-flight creation, TTL-based
+  refresh, and the platform's own limits exposed as `client.market_limits`.
+- A Cloudflare challenge on a market call now raises `ChallengeRequired` instead of a
+  bare `APIError(403)`, so callers can tell an IP/browser block from an auth failure.
+- Hosts that predate the change still work: a 404 from `market/session` falls back to the
+  old open endpoint.
+- Protocol documentation rewritten for the session handshake, the envelope format and the
+  rotating stream keys. Tests: `test_crypto.py`, `test_market.py`, and the client mocks
+  now model the session bootstrap.
+
 ## Unreleased - 24 October 2026
 
 - Documentation only; no change to the published 1.0.0 package code.

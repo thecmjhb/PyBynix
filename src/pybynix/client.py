@@ -18,15 +18,18 @@ import httpx
 import socketio
 
 from .auth import SessionProvider
+from .crypto import ChaCha20Poly1305Error, decrypt_json
 from .errors import (
     APIError,
     AuthenticationError,
+    ChallengeRequired,
     OrderJournalError,
     OrderOutcomeUnknown,
     ProtocolError,
     RateLimitError,
 )
 from .journal import MemoryJournal
+from .market import MarketSessionManager
 from .models import AccountType, Candle, ConnectionEvent, Session, Tick
 from .network import DNSHTTPTransport, StaticResolver, validate_dns, validate_dns_servers
 from .runtime import RequestPacer
@@ -45,6 +48,25 @@ def _interval(value):
     if not re.fullmatch(r"[1-9][0-9]*[smhd]", value):
         raise ValueError("Interval must be a positive duration such as 5s or 1m")
     return value
+
+
+_NON_RENEWABLE_403 = {
+    "challenge_required",
+    "captcha_required",
+    "turnstile_required",
+    "account_changed",
+}
+
+
+def _plain_denial(response):
+    """A bare 403 that a fresh login may cure. Challenges and account switches never auto-renew."""
+    if response.headers.get("cf-mitigated") == "challenge":
+        return False
+    try:
+        body = response.json()
+    except ValueError:
+        return True
+    return not (isinstance(body, dict) and body.get("code") in _NON_RENEWABLE_403)
 
 
 class Bynix:
@@ -73,6 +95,9 @@ class Bynix:
         max_requests_per_second=10,
         max_subscriptions=256,
         anonymous=False,
+        request_pacer=None,
+        refresh_on_status=(401,),
+        market_session=None,
     ):
         self.host = _host(host)
         known = set(json.loads(files("pybynix").joinpath("domains.json").read_text()))
@@ -134,7 +159,15 @@ class Bynix:
         if not isinstance(max_subscriptions, int) or max_subscriptions < 1:
             raise ValueError("max_subscriptions must be positive")
         self.max_subscriptions = max_subscriptions
-        self._pacer = RequestPacer(max_requests_per_second)
+        if request_pacer is None:
+            request_pacer = RequestPacer(max_requests_per_second)
+        elif not isinstance(request_pacer, RequestPacer):
+            raise TypeError("request_pacer must be a RequestPacer")
+        # A RequestPacer may be shared by clients on one host to cap their combined rate.
+        self._pacer = request_pacer
+        self._refresh_statuses = frozenset(refresh_on_status)
+        if not self._refresh_statuses or not self._refresh_statuses <= {401, 403}:
+            raise ValueError("refresh_on_status must contain 401 and/or 403")
         self._request_semaphore = asyncio.Semaphore(8)
         self._journal = journal if journal is not None else MemoryJournal()
         self._scope = "unbound"
@@ -159,6 +192,18 @@ class Bynix:
         )
         self._profile_poll_timeout = min(float(timeout), 5.0)
         self._market_poll_timeout = min(float(timeout), 5.0)
+        # Market data sits behind a session that also holds the envelope key.
+        # Creating a second session for the same account invalidates the first, so
+        # several clients (one REST client plus N socket shards) must share one.
+        if market_session is not None and not all(
+            hasattr(market_session, name)
+            for name in ("ensure", "open", "is_sealed", "stream_key", "invalidate")
+        ):
+            raise TypeError(
+                "market_session must provide ensure/open/is_sealed/stream_key/invalidate"
+            )
+        self._market = market_session or MarketSessionManager(self._market_transport)
+        self._market_disabled = False
         self._socket = self._make_socket()
         self._auth_lock = asyncio.Lock()
         self._connect_lock = asyncio.Lock()
@@ -175,6 +220,7 @@ class Bynix:
         self.metrics = {
             "ticks": 0,
             "malformed_ticks": 0,
+            "encrypted_ticks": 0,
             "connections": 0,
             "requests": 0,
             "poll_fallbacks": 0,
@@ -248,6 +294,17 @@ class Bynix:
         return self._session
 
     @property
+    def market_session(self):
+        """The live market session (its keyring and limits), or None before first use."""
+        return self._market.current
+
+    @property
+    def market_limits(self):
+        """What the platform allows this session: history/minute, candles/request, …"""
+        session = self._market.current
+        return session.limits if session is not None else None
+
+    @property
     def connected(self):
         return self._ready.is_set() and not self._closed
 
@@ -256,21 +313,54 @@ class Bynix:
         for sub in tuple(self._connection_streams):
             sub.put(event)
 
+    async def _subscription_payload(self, symbol, interval):
+        """Socket subscriptions carry the market session id, or they are ignored."""
+        payload = {"symbol": symbol, "interval": interval}
+        try:
+            session = await self._market.ensure()
+        except (APIError, ProtocolError):
+            return payload
+        if session is not None:
+            payload["s"] = session.sid
+        return payload
+
     async def _on_connect(self):
         self._generation += 1
         self.metrics["connections"] += 1
         for symbol, interval in tuple(self._streams):
-            await self._socket.emit("subscribe_synthetic", {"symbol": symbol, "interval": interval})
+            await self._socket.emit(
+                "subscribe_synthetic", await self._subscription_payload(symbol, interval)
+            )
         if self._session:
             await self._socket.emit("subscribe_account", {"token": self._session.token})
         self._ready.set()
         self._connection_event("connected", "Streams may contain a gap after reconnection")
+
+    async def _open_tick(self, envelope):
+        """Open a sealed tick with the rotating stream key; None if the key is unknown."""
+        key_id = envelope.get("k")
+        key = self._market.stream_key(key_id)
+        if key is None:
+            key = await self._market.ensure_stream_key(key_id)
+        if key is None:
+            return None
+        try:
+            opened = decrypt_json(key, envelope["e"])
+        except ChaCha20Poly1305Error:
+            return None
+        self.metrics["encrypted_ticks"] += 1
+        return opened
 
     async def _on_disconnect(self, *args):
         self._ready.clear()
         self._connection_event("disconnected", "Live data gap; use history to resync")
 
     async def _on_tick(self, data):
+        if self._market.is_sealed(data):
+            data = await self._open_tick(data)
+            if data is None:
+                self.metrics["malformed_ticks"] += 1
+                return
         try:
             tick = Tick.from_wire(data)
         except (KeyError, ValueError, TypeError, ArithmeticError):
@@ -466,11 +556,9 @@ class Bynix:
     async def _poll_one(self, key):
         try:
             async with asyncio.timeout(self._market_poll_timeout):
-                data = await self._request(
+                data = await self._market_call(
                     f"synthetic/tick/{quote(key[0], safe='')}",
                     params={"interval": key[1]},
-                    auth=False,
-                    timeout=self._market_poll_timeout,
                     retries=0,
                 )
             await self._on_tick(data)
@@ -527,6 +615,116 @@ class Bynix:
     async def __aexit__(self, *args):
         await self.close()
 
+    # ── market session plumbing ──────────────────────────────────────────────
+    async def _market_transport(self, method, path, *, json=None, params=None, auth=True,
+                                allow_anonymous=False):
+        """Raw JSON call used to create a market session; no envelope handling."""
+        if self._closed:
+            raise RuntimeError("Client is closed")
+        token = self._session.token if self._session else None
+        if auth and token:
+            # A dead account token must not stop public market data, so a guest
+            # retry is allowed when the caller permits anonymous access.
+            attempts = [{"Authorization": f"Bearer {token}"}]
+            if allow_anonymous:
+                attempts.append({})
+        elif auth and not allow_anonymous:
+            raise AuthenticationError(401, "authentication_required")
+        else:
+            attempts = [{}]
+
+        for index, headers in enumerate(attempts):
+            try:
+                async with self._request_semaphore:
+                    await self._pacer.wait()
+                    response = await self._http.request(
+                        method,
+                        path.lstrip("/"),
+                        json=json,
+                        params=params,
+                        headers=headers,
+                        timeout=self.timeout,
+                    )
+            except httpx.HTTPError:
+                raise ProtocolError("HTTP transport failure") from None
+            self.metrics["requests"] += 1
+            if response.status_code == 401 and index + 1 < len(attempts):
+                continue
+            if response.status_code == 403 and response.headers.get("cf-mitigated") == "challenge":
+                raise ChallengeRequired()
+            if response.status_code == 429:
+                raise RateLimitError(response.headers.get("Retry-After"))
+            if not response.is_success:
+                raise APIError(response.status_code)
+            try:
+                return response.json()
+            except ValueError:
+                raise ProtocolError("Expected JSON response") from None
+        raise AuthenticationError(401)
+
+    async def _market_call(self, path, *, method="GET", params=None, body=None, retries=None):
+        """Call a market endpoint: attach the session and open the sealed body."""
+        if self._market_disabled:
+            return await self._request(
+                path, method=method, params=params, body=body, auth=False, retries=retries
+            )
+        budget = self.read_retries if retries is None else (retries or 0)
+        refreshed = False
+        for attempt in range(budget + 2):
+            try:
+                session = await self._market.ensure()
+            except ProtocolError:
+                # The host predates market sessions; use the plain endpoint instead.
+                self._market_disabled = True
+                return await self._request(
+                    path, method=method, params=params, body=body, auth=False, retries=retries
+                )
+            headers = {"X-Market-Session": session.sid}
+            if self._session:
+                headers["Authorization"] = f"Bearer {self._session.token}"
+            try:
+                async with self._request_semaphore:
+                    await self._pacer.wait()
+                    response = await self._http.request(
+                        method,
+                        path.lstrip("/"),
+                        params=params,
+                        json=body,
+                        headers=headers,
+                        timeout=self.timeout,
+                    )
+            except httpx.HTTPError:
+                if attempt < budget:
+                    self.metrics["read_retries"] += 1
+                    await asyncio.sleep(min(0.25 * 2**attempt, 2))
+                    continue
+                raise ProtocolError("HTTP transport failure") from None
+            self.metrics["requests"] += 1
+            if response.status_code == 401:
+                if not refreshed:
+                    refreshed = True
+                    self._market.invalidate()
+                    await self._market.refresh()
+                    continue
+                raise AuthenticationError(401)
+            if response.status_code == 403 and response.headers.get("cf-mitigated") == "challenge":
+                # A Cloudflare challenge is an IP/browser problem, not a session one.
+                raise ChallengeRequired()
+            if response.status_code == 429:
+                raise RateLimitError(response.headers.get("Retry-After"))
+            if response.status_code in {502, 503, 504} and attempt < budget:
+                self.metrics["read_retries"] += 1
+                await asyncio.sleep(min(0.25 * 2**attempt, 2))
+                continue
+            if not response.is_success:
+                raise APIError(response.status_code)
+            try:
+                data = response.json()
+            except ValueError:
+                raise ProtocolError("Expected JSON response") from None
+            return self._market.open(data, session=session)
+        raise AuthenticationError(401)
+
     async def _request(
         self,
         path,
@@ -572,6 +770,18 @@ class Bynix:
                     await self._authenticate(token)
                     continue
                 raise AuthenticationError(401)
+            if (
+                response.status_code == 403
+                and auth
+                and 403 in self._refresh_statuses
+                and not refresh_attempted
+                and method == "GET"
+                and self._provider
+                and _plain_denial(response)
+            ):
+                refresh_attempted = True
+                await self._authenticate(token)
+                continue
             if response.status_code == 429:
                 retry_after = response.headers.get("Retry-After")
                 if method == "GET" and attempt < retry_budget and retry_after:
@@ -753,7 +963,7 @@ class Bynix:
                         self._historical_candle_cache.move_to_end(cache_key)
                         return list(values)
                     self._historical_candle_cache.pop(cache_key, None)
-        data = await self._request("synthetic/history", params=params, auth=False)
+        data = await self._market_call("synthetic/history", params=params)
         if not isinstance(data.get("candles"), list):
             raise ProtocolError("Candle response lacks candles")
         candles = {c["timestamp"]: Candle.from_wire(c) for c in data["candles"]}
@@ -871,7 +1081,8 @@ class Bynix:
                     if self._socket.connected:
                         try:
                             await self._socket.emit(
-                                "unsubscribe_synthetic", {"symbol": symbol, "interval": interval}
+                                "unsubscribe_synthetic",
+                                await self._subscription_payload(symbol, interval),
                             )
                         except (
                             socketio.exceptions.BadNamespaceError,
@@ -886,7 +1097,7 @@ class Bynix:
         if first and self._socket.connected:
             try:
                 await self._socket.emit(
-                    "subscribe_synthetic", {"symbol": symbol, "interval": interval}
+                    "subscribe_synthetic", await self._subscription_payload(symbol, interval)
                 )
             except (socketio.exceptions.BadNamespaceError, socketio.exceptions.ConnectionError):
                 if self.stream_transport == "websocket":
@@ -1198,10 +1409,9 @@ class Bynix:
         return await self._journal.unresolved(self._scope)
 
     async def get_tick(self, symbol, *, interval="1m"):
-        data = await self._request(
+        data = await self._market_call(
             f"synthetic/tick/{quote(symbol, safe='')}",
             params={"interval": _interval(interval)},
-            auth=False,
         )
         try:
             return Tick.from_wire(data)

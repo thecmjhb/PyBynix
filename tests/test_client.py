@@ -20,9 +20,39 @@ async def mocked_client(handler, **kwargs):
     client = Bynix(session=Session("test-secret"), validate_orders=False, **kwargs)
     await client._http.aclose()
     client._http = httpx.AsyncClient(
-        base_url="https://bynixbrokers.com/api/", transport=httpx.MockTransport(handler)
+        base_url="https://bynixbrokers.com/api/",
+        transport=httpx.MockTransport(_with_market_session(handler)),
     )
     return client
+
+
+def _with_market_session(handler):
+    """Model the market bootstrap every market call performs.
+
+    Market endpoints answer 401 "Market session required" without an
+    ``X-Market-Session`` header, so the client creates one first. Keeping that in the
+    mock means the per-test request counts below only see the calls they care about.
+    """
+    import base64
+    import inspect
+
+    session = {
+        "sid": "test-market-sid",
+        "key": base64.b64encode(b"k" * 32).decode(),
+        "ttl": 3600,
+        "guest": True,
+        "limits": {"history_1m": 150, "candles": 1000},
+    }
+
+    async def wrapper(request):
+        if request.url.path.rstrip("/").endswith("/market/session"):
+            return httpx.Response(200, json=session)
+        result = handler(request)
+        if inspect.isawaitable(result):
+            result = await result
+        return result
+
+    return wrapper
 
 
 @pytest.mark.parametrize(

@@ -22,6 +22,7 @@ from .indicators import (
     stochastic_oscillator,
 )
 from .journal import MemoryJournal, SQLiteJournal
+from .market import MarketLimits, MarketSession, MarketSessionManager
 from .models import AccountType, Candle, ConnectionEvent, Session, Tick
 from .orchestration import (
     AutoExecutor,
@@ -32,6 +33,8 @@ from .orchestration import (
     OrderIntent,
 )
 from .pool import ClientPool
+from .runtime import RequestPacer
+from .session import BynixSessionManager, FileSessionStore
 
 __version__ = "1.0.0"
 __all__ = [
@@ -40,9 +43,12 @@ __all__ = [
     "BollingerBandsResult",
     "BrowserAuth",
     "Bynix",
+    "BynixSessionManager",
     "Candle",
     "ClientPool",
     "ConnectionEvent",
+    "FileSessionStore",
+    "RequestPacer",
     "AutoExecutor",
     "DecisionCallback",
     "ExecutionIntent",
@@ -50,6 +56,9 @@ __all__ = [
     "ExecutionRecord",
     "MemoryJournal",
     "MACDResult",
+    "MarketLimits",
+    "MarketSession",
+    "MarketSessionManager",
     "PasswordAuth",
     "SQLiteJournal",
     "Session",
