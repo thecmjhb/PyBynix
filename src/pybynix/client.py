@@ -1168,9 +1168,8 @@ class Bynix:
         current = self._sentiment.get(symbol)
         tracker = current[0] if current else SentimentTracker()
         if current is None or now - current[1] >= 60:
-            data = await self._request(
+            data = await self._market_call(
                 "synthetic/history",
-                auth=False,
                 params={"symbol": symbol, "interval": "1m", "count": 30},
             )
             tracker.set_candles([Candle.from_wire(c) for c in data["candles"]])
@@ -1293,9 +1292,8 @@ class Bynix:
         if latest and time.monotonic() - latest[1] <= 2:
             entry_price = latest[0]
         else:
-            quote_data = await self._request(
+            quote_data = await self._market_call(
                 "synthetic/history",
-                auth=False,
                 params={"symbol": symbol, "interval": "1m", "count": 1},
             )
             entry_price = Decimal(str(quote_data["price"]))
@@ -1487,8 +1485,8 @@ class Bynix:
     async def get_server_clock(self, symbol="EUR/USD OTC"):
         start = time.monotonic()
         wall_start = time.time() * 1000
-        data = await self._request(
-            "synthetic/history", auth=False, params={"symbol": symbol, "interval": "1m", "count": 1}
+        data = await self._market_call(
+            "synthetic/history", params={"symbol": symbol, "interval": "1m", "count": 1}
         )
         elapsed = (time.monotonic() - start) * 1000
         return {

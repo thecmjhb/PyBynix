@@ -2,6 +2,7 @@ import asyncio
 
 import httpx
 import pytest
+from _marketmock import market_aware
 
 from pybynix import Bynix, MemoryJournal, Session
 from pybynix.errors import OrderJournalError
@@ -31,7 +32,8 @@ async def test_accepted_order_receipt_survives_journal_failure(failure):
     )
     await client._http.aclose()
     client._http = httpx.AsyncClient(
-        base_url="https://bynixbrokers.com/api/", transport=httpx.MockTransport(handler)
+        base_url="https://bynixbrokers.com/api/",
+        transport=httpx.MockTransport(market_aware(handler)),
     )
     try:
         with pytest.raises(OrderJournalError) as error:

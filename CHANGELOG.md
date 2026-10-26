@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.0.2 - 26 October 2026
+
+Fixes order placement, which 1.0.1 broke. `place_order` needs a quote from Bynix, and
+that quote was still requested from the pre-session endpoint, so every order failed with
+`401 Market session required` even though candles and ticks worked.
+
+- `place_order`, `get_server_clock` and `get_candle_sentiment` now fetch their quote
+  through the market session like every other market call.
+- Verified end to end on a demo account: order accepted, listed in pending trades, early
+  close accepted, balance reconciled.
+- Tests: a regression test asserts the order quote carries `X-Market-Session`, and the
+  shared test mock (`tests/_marketmock.py`) now answers the market bootstrap so a mock
+  can no longer hide this class of bug.
+
 ## 1.0.1 - 26 October 2026
 
 Market data broke: Bynix now gates it behind a market session and seals the response

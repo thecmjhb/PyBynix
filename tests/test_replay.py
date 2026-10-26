@@ -72,7 +72,7 @@ async def test_sentiment_is_explicitly_labelled_as_derived():
     async def request(*args, **kwargs):
         return {"candles": []}
 
-    client._request = request
+    client._market_call = request
     try:
         result = await client.get_realtime_sentiment("EUR/USD OTC")
         assert result["is_trader_positioning"] is False

@@ -37,7 +37,7 @@ from .pool import ClientPool
 from .runtime import RequestPacer
 from .session import BynixSessionManager, FileSessionStore
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __all__ = [
     "AccessDenied",
     "AccountType",

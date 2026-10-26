@@ -8,6 +8,7 @@ from pathlib import Path
 
 import httpx
 import pytest
+from _marketmock import market_aware
 
 from pybynix import Bynix, Session, __version__
 from pybynix.errors import AuthenticationError, DuplicateOrderReference, OrderOutcomeUnknown
@@ -48,7 +49,8 @@ async def fixture_client(handler):
     client = Bynix(session=Session("test"), max_requests_per_second=None)
     await client._http.aclose()
     client._http = httpx.AsyncClient(
-        base_url="https://bynixbrokers.com/api/", transport=httpx.MockTransport(handler)
+        base_url="https://bynixbrokers.com/api/",
+        transport=httpx.MockTransport(market_aware(handler)),
     )
     return client
 

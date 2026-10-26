@@ -4,6 +4,7 @@ from decimal import Decimal
 
 import httpx
 import pytest
+from _marketmock import market_aware
 
 from pybynix import AccountType, AuthChain, Bynix, Session
 from pybynix.errors import (
@@ -22,38 +23,11 @@ async def mocked_client(handler, **kwargs):
     await client._http.aclose()
     client._http = httpx.AsyncClient(
         base_url="https://bynixbrokers.com/api/",
-        transport=httpx.MockTransport(_with_market_session(handler)),
+        transport=httpx.MockTransport(market_aware(handler)),
     )
     return client
 
 
-def _with_market_session(handler):
-    """Model the market bootstrap every market call performs.
-
-    Market endpoints answer 401 "Market session required" without an
-    ``X-Market-Session`` header, so the client creates one first. Keeping that in the
-    mock means the per-test request counts below only see the calls they care about.
-    """
-    import base64
-    import inspect
-
-    session = {
-        "sid": "test-market-sid",
-        "key": base64.b64encode(b"k" * 32).decode(),
-        "ttl": 3600,
-        "guest": True,
-        "limits": {"history_1m": 150, "candles": 1000},
-    }
-
-    async def wrapper(request):
-        if request.url.path.rstrip("/").endswith("/market/session"):
-            return httpx.Response(200, json=session)
-        result = handler(request)
-        if inspect.isawaitable(result):
-            result = await result
-        return result
-
-    return wrapper
 
 
 @pytest.mark.parametrize(
@@ -468,5 +442,35 @@ async def test_a_firewall_deny_is_not_mistaken_for_a_challenge():
         with pytest.raises(AccessDenied):
             await client.get_candles("EUR/USD OTC", count=2)
         assert client.metrics["read_retries"] == 0
+    finally:
+        await client.close()
+
+
+async def test_order_quote_and_clock_go_through_the_market_session():
+    """place_order and get_server_clock need a quote from Bynix.
+
+    Those quotes used the pre-session endpoint, so ordering failed with
+    "Market session required" even though the rest of the client worked.
+    """
+    session_headers = []
+
+    def handler(request):
+        url = str(request.url)
+        if "synthetic/history" in url:
+            session_headers.append(request.headers.get("x-market-session"))
+            if not request.headers.get("x-market-session"):
+                return httpx.Response(401, json={"detail": "Market session required"})
+            return httpx.Response(200, json={"price": 1.0755, "candles": [], "server_time": 1})
+        if url.rstrip("/").endswith("trades"):
+            return httpx.Response(200, json={"trade_id": "t1", "entry_price": 1.0755})
+        return httpx.Response(200, json={})
+
+    client = await mocked_client(handler)
+    try:
+        order = await client.place_order("EUR/USD OTC", "call", 1, 60)
+        assert order["trade_id"] == "t1"
+        clock = await client.get_server_clock("EUR/USD OTC")
+        assert clock["server_time_ms"] == 1
+        assert session_headers and all(session_headers), session_headers
     finally:
         await client.close()

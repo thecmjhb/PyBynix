@@ -9,7 +9,7 @@
   <p>Uma interface Python assíncrona para Bynix, desenvolvida para aplicações de trading, pipelines de dados e ferramentas de desenvolvimento.</p>
   <p>
     <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+">
-    <img src="https://img.shields.io/badge/Version-1.0.1-00843D" alt="Version 1.0.1">
+    <img src="https://img.shields.io/badge/Version-1.0.2-00843D" alt="Version 1.0.2">
     <img src="https://img.shields.io/badge/License-MIT-22c55e" alt="MIT">
     <img src="https://img.shields.io/badge/Documentation-20_languages-C49A00" alt="20 languages">
     <a href="https://doi.org/10.5281/zenodo.23611267"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.23611267.svg" alt="DOI 10.5281/zenodo.23611267"></a>
