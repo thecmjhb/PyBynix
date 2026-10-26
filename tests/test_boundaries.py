@@ -9,7 +9,7 @@ from pathlib import Path
 import httpx
 import pytest
 
-from pybynix import Bynix, Session
+from pybynix import Bynix, Session, __version__
 from pybynix.errors import AuthenticationError, DuplicateOrderReference, OrderOutcomeUnknown
 
 
@@ -27,7 +27,7 @@ def test_cli_help_version_and_invalid_count_are_offline():
         assert result.returncode == (
             2 if "0" in args else 0
         ), f"Args {args} failed with code {result.returncode}:\nSTDOUT: {result.stdout}\nSTDERR: {result.stderr}"
-    assert "1.0.0" in subprocess.check_output(
+    assert __version__ in subprocess.check_output(
         [sys.executable, "-c", "from pybynix.cli import main; main()", "--version"],
         text=True,
         env=env,

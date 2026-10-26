@@ -22,6 +22,25 @@ class ChallengeRequired(AuthenticationError):
         super().__init__(403, "challenge_required")
 
 
+class AccessDenied(APIError):
+    """Cloudflare's firewall refused the request outright (error 1020).
+
+    Distinct from `ChallengeRequired`: a challenge can be completed, a deny rule cannot.
+    Retrying or opening a browser only extends the block, so the SDK raises this instead
+    of retrying. The remedy is a different egress (proxy, mobile network) or waiting.
+    """
+
+    def __init__(self, detail="firewall deny"):
+        self.detail = detail
+        super().__init__(403, "access_denied")
+
+    def __str__(self):
+        return (
+            "Bynix refused this IP (Cloudflare firewall deny, error 1020); "
+            "retrying will not help — use another network or wait for the rule to expire"
+        )
+
+
 class RateLimitError(APIError):
     def __init__(self, retry_after=None):
         self.retry_after = retry_after

@@ -75,6 +75,6 @@
     "**Encrypted streams.** Socket subscriptions carry the market session id, and ticks are opened with a rotating keyring that the client refreshes across each rotation.",
     "**One session per account.** A market session can be shared between a REST client and its socket shards via `Bynix(market_session=...)`, which the platform requires.",
     "**Platform limits.** `client.market_limits` exposes the allowance the platform reports: history calls per minute, maximum candles per request and subscriptions.",
-    "**Clearer failures.** A Cloudflare challenge on a market call raises `ChallengeRequired` instead of a bare `403`, so an IP block is distinguishable from an authentication problem."
+    "**Clearer failures.** A Cloudflare challenge on a market call raises `ChallengeRequired`, and a firewall deny (error 1020) raises `AccessDenied` instead of retrying, so an IP block is distinguishable from an auth problem."
   ]
 }

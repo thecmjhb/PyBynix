@@ -3,6 +3,7 @@
 from .auth import AuthChain, BrowserAuth, PasswordAuth, SessionProvider, load_session, save_session
 from .client import Bynix
 from .data import candles_to_dataframe, candles_to_records, export_candles, resample_candles
+from .errors import AccessDenied, ChallengeRequired
 from .indicators import (
     BollingerBandsResult,
     MACDResult,
@@ -36,8 +37,9 @@ from .pool import ClientPool
 from .runtime import RequestPacer
 from .session import BynixSessionManager, FileSessionStore
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __all__ = [
+    "AccessDenied",
     "AccountType",
     "AuthChain",
     "BollingerBandsResult",
@@ -45,6 +47,7 @@ __all__ = [
     "Bynix",
     "BynixSessionManager",
     "Candle",
+    "ChallengeRequired",
     "ClientPool",
     "ConnectionEvent",
     "FileSessionStore",

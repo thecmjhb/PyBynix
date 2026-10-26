@@ -1,9 +1,9 @@
 # Changelog
 
-## Unreleased - 26 October 2026
+## 1.0.1 - 26 October 2026
 
 Market data broke: Bynix now gates it behind a market session and seals the response
-body. This entry restores `get_candles`, `get_tick` and `subscribe_ticks` against the
+body. This release restores `get_candles`, `get_tick` and `subscribe_ticks` against the
 observed protocol.
 
 - Added the market session handshake. Market endpoints answer
@@ -13,7 +13,8 @@ observed protocol.
 - Added sealed-envelope support (`pybynix/crypto.py`, ChaCha20-Poly1305 per RFC 8439).
   Market responses arrive as `{"e": "<base64 nonce||ciphertext||tag>"}` and are opened
   with the session key. Verified against the RFC 8439 test vector; uses `cryptography`
-  when installed and a self-contained pure-Python implementation otherwise.
+  when installed and a self-contained pure-Python implementation otherwise, so there is
+  no new mandatory compiled dependency.
 - Socket subscriptions now carry the market session id (`s`). Without it the server
   accepts the subscription and never sends a tick.
 - Tick payloads are sealed with a rotating keyring (`{"k": <id>, "e": ...}`). The keyring
@@ -21,13 +22,22 @@ observed protocol.
   `rotate_at`.
 - New `MarketSessionManager` (`pybynix/market.py`) with single-flight creation, TTL-based
   refresh, and the platform's own limits exposed as `client.market_limits`.
+- A market session can be shared: `Bynix(market_session=...)`. This is required in
+  practice, because creating a second session for the same account invalidates the first,
+  so a REST client and its socket shards must share one.
 - A Cloudflare challenge on a market call now raises `ChallengeRequired` instead of a
   bare `APIError(403)`, so callers can tell an IP/browser block from an auth failure.
+- Added `AccessDenied` for Cloudflare firewall denials (error 1020). A deny rule is not a
+  challenge and cannot be solved, so it is raised without retrying, which would only
+  extend the block.
 - Hosts that predate the change still work: a 404 from `market/session` falls back to the
   old open endpoint.
+- Every README edition gained a "What changed in this release" note, generated from
+  `docs/i18n/locales/en.json`.
 - Protocol documentation rewritten for the session handshake, the envelope format and the
   rotating stream keys. Tests: `test_crypto.py`, `test_market.py`, and the client mocks
-  now model the session bootstrap.
+  now model the session bootstrap. `cryptography` moved into the `dev` extra so CI covers
+  both the native and the pure-Python crypto paths.
 
 ## Unreleased - 24 October 2026
 

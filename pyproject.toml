@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pybynix"
-version = "1.0.0"
+version = "1.0.1"
 description = "Unofficial asynchronous Bynix market data and execution client"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -22,7 +22,10 @@ Issues = "https://github.com/thecmjhb/PyBynix/issues"
 browser = ["playwright>=1.49,<2"]
 network = ["httpx[socks]>=0.28,<1", "aiohttp-socks>=0.10,<1", "dnspython>=2.6,<3"]
 dataframe = ["pandas>=2.2,<4"]
-dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.9", "build>=1.2"]
+# Faster ChaCha20-Poly1305. Optional: the SDK ships a pure-Python RFC 8439 fallback,
+# so this only affects throughput on the sealed market-data path.
+crypto = ["cryptography>=42"]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.9", "build>=1.2", "cryptography>=42"]
 
 [project.scripts]
 pybynix = "pybynix.cli:main"

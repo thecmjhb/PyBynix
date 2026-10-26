@@ -20,6 +20,7 @@ import socketio
 from .auth import SessionProvider
 from .crypto import ChaCha20Poly1305Error, decrypt_json
 from .errors import (
+    AccessDenied,
     APIError,
     AuthenticationError,
     ChallengeRequired,
@@ -67,6 +68,23 @@ def _plain_denial(response):
     except ValueError:
         return True
     return not (isinstance(body, dict) and body.get("code") in _NON_RENEWABLE_403)
+
+
+def _is_firewall_deny(response):
+    """Cloudflare error 1020: a deny page, not a challenge and not an auth failure.
+
+    The marker is the page title Cloudflare serves with a firewall rule:
+    "Access denied | <host> used Cloudflare to restrict access".
+    """
+    if response.status_code != 403:
+        return False
+    if response.headers.get("cf-mitigated") == "challenge":
+        return False
+    try:
+        sample = response.text[:2048].lower()
+    except Exception:  # noqa: BLE001 - a stream that cannot be read is not a deny page
+        return False
+    return "access denied" in sample or "used cloudflare to restrict access" in sample
 
 
 class Bynix:
@@ -650,6 +668,8 @@ class Bynix:
             self.metrics["requests"] += 1
             if response.status_code == 401 and index + 1 < len(attempts):
                 continue
+            if _is_firewall_deny(response):
+                raise AccessDenied()
             if response.status_code == 403 and response.headers.get("cf-mitigated") == "challenge":
                 raise ChallengeRequired()
             if response.status_code == 429:
@@ -707,6 +727,9 @@ class Bynix:
                     await self._market.refresh()
                     continue
                 raise AuthenticationError(401)
+            if _is_firewall_deny(response):
+                # A deny rule cannot be solved; stop before it becomes a longer block.
+                raise AccessDenied()
             if response.status_code == 403 and response.headers.get("cf-mitigated") == "challenge":
                 # A Cloudflare challenge is an IP/browser problem, not a session one.
                 raise ChallengeRequired()
@@ -770,6 +793,9 @@ class Bynix:
                     await self._authenticate(token)
                     continue
                 raise AuthenticationError(401)
+            if _is_firewall_deny(response):
+                # Retrying a deny rule only extends it.
+                raise AccessDenied()
             if (
                 response.status_code == 403
                 and auth

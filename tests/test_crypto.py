@@ -43,8 +43,13 @@ def seal(key, plaintext, nonce=b"\x00" * NONCE_SIZE, aad=b""):
     return nonce + ciphertext + tag
 
 
+needs_native = pytest.mark.skipif(
+    not crypto._NATIVE, reason="cryptography is not installed; the fallback path is covered below"
+)
+
+
+@needs_native
 def test_rfc8439_vector_with_the_native_backend():
-    assert crypto._NATIVE, "cryptography should be available in the test environment"
     assert decrypt(KEY, NONCE, CIPHERTEXT + TAG, AAD) == PLAINTEXT
 
 
@@ -53,6 +58,7 @@ def test_rfc8439_vector_with_the_pure_python_backend(monkeypatch):
     assert decrypt(KEY, NONCE, CIPHERTEXT + TAG, AAD) == PLAINTEXT
 
 
+@needs_native
 def test_pure_python_poly1305_agrees_with_the_native_one(monkeypatch):
     envelope = seal(KEY, PLAINTEXT, NONCE, AAD)
     sealed = envelope[NONCE_SIZE:]  # `decrypt` takes ciphertext||tag, not the nonce

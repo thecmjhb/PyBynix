@@ -7,6 +7,7 @@ import pytest
 
 from pybynix import AccountType, AuthChain, Bynix, Session
 from pybynix.errors import (
+    AccessDenied,
     APIError,
     AuthenticationError,
     ChallengeRequired,
@@ -447,6 +448,25 @@ async def test_supervision_polling_uses_zero_retry_budget():
         profile_task.cancel()
         await profile_task
         assert len(calls) == 2
+        assert client.metrics["read_retries"] == 0
+    finally:
+        await client.close()
+
+
+async def test_a_firewall_deny_is_not_mistaken_for_a_challenge():
+    """Cloudflare error 1020 is a deny rule: no browser, no retry, a clear error."""
+
+    def handler(request):
+        return httpx.Response(
+            403,
+            text="<html><head><title>Access denied | bynixbrokers.com used Cloudflare "
+            "to restrict access</title></head></html>",
+        )
+
+    client = await mocked_client(handler)
+    try:
+        with pytest.raises(AccessDenied):
+            await client.get_candles("EUR/USD OTC", count=2)
         assert client.metrics["read_retries"] == 0
     finally:
         await client.close()

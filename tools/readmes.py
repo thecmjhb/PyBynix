@@ -120,8 +120,8 @@ WHATS_NEW = [
     "**Platform limits.** `client.market_limits` exposes the allowance the platform "
     "reports: history calls per minute, maximum candles per request and subscriptions.",
     "**Clearer failures.** A Cloudflare challenge on a market call raises "
-    "`ChallengeRequired` instead of a bare `403`, so an IP block is distinguishable "
-    "from an authentication problem.",
+    "`ChallengeRequired`, and a firewall deny (error 1020) raises `AccessDenied` "
+    "instead of retrying, so an IP block is distinguishable from an auth problem.",
 ]
 
 
@@ -181,7 +181,7 @@ def generate():
   <p>{t["intro"]}</p>
   <p>
     <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+">
-    <img src="https://img.shields.io/badge/Version-1.0.0-00843D" alt="Version 1.0.0">
+    <img src="https://img.shields.io/badge/Version-1.0.1-00843D" alt="Version 1.0.1">
     <img src="https://img.shields.io/badge/License-MIT-22c55e" alt="MIT">
     <img src="https://img.shields.io/badge/Documentation-20_languages-C49A00" alt="20 languages">
     <a href="{PAPER_URL}"><img src="https://zenodo.org/badge/DOI/{PAPER_DOI}.svg" alt="DOI {PAPER_DOI}"></a>
