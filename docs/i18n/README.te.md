@@ -30,6 +30,15 @@
 
 పూర్తి ధృవీకరించిన scope ను చూడండి [feature మరియు fallback matrix లో](../FEATURE_MATRIX.md).
 
+### What changed in this release
+
+- **Market session.** Market data is no longer anonymous: the client obtains and refreshes a market session automatically, and falls back to a guest session when no account is configured.
+- **Sealed payloads.** Market responses now arrive encrypted with ChaCha20-Poly1305 and are opened transparently; a pure-Python RFC 8439 path means no compiled dependency is required.
+- **Encrypted streams.** Socket subscriptions carry the market session id, and ticks are opened with a rotating keyring that the client refreshes across each rotation.
+- **One session per account.** A market session can be shared between a REST client and its socket shards via `Bynix(market_session=...)`, which the platform requires.
+- **Platform limits.** `client.market_limits` exposes the allowance the platform reports: history calls per minute, maximum candles per request and subscriptions.
+- **Clearer failures.** A Cloudflare challenge on a market call raises `ChallengeRequired` instead of a bare `403`, so an IP block is distinguishable from an authentication problem.
+
 ## 🛠️ సదుపాయాలు
 
 | API | సదుపాయాలు |
